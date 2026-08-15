@@ -1,12 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-
-  const themeBtn = document.getElementById("themeBtn");
-  const searchInput = document.getElementById("searchInput");
-  const searchBtn = document.getElementById("searchBtn");
-  const restaurantCards = document.querySelectorAll(".restaurant-card");
+// ===============================
+// AHMEDABAD EATS - MAIN SCRIPT
+// ===============================
 
 
-  // DARK / LIGHT MODE
+// ===============================
+// DARK / LIGHT MODE
+// ===============================
+
+const themeBtn = document.getElementById("themeBtn");
+
+if (themeBtn) {
 
   themeBtn.addEventListener("click", () => {
 
@@ -22,90 +25,192 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
+}
 
-  // REMEMBER THEME
 
-  const savedTheme = localStorage.getItem("theme");
+// ===============================
+// REMEMBER THEME
+// ===============================
 
-  if (savedTheme === "dark") {
-    document.body.classList.add("dark");
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+
+  document.body.classList.add("dark");
+
+  if (themeBtn) {
     themeBtn.textContent = "☀️";
   }
 
-
-  // SEARCH RESTAURANTS
-
-  function searchRestaurants() {
-
-    const searchText = searchInput.value.toLowerCase().trim();
-
-    restaurantCards.forEach(card => {
-
-      const restaurantName =
-        card.querySelector("h3").textContent.toLowerCase();
-
-      const category =
-        card.querySelector(".category").textContent.toLowerCase();
-
-      const description =
-        card.querySelector(".description").textContent.toLowerCase();
-
-      const location =
-        card.querySelector(".location").textContent.toLowerCase();
+}
 
 
-      const found =
-        restaurantName.includes(searchText) ||
-        category.includes(searchText) ||
-        description.includes(searchText) ||
-        location.includes(searchText);
+// ===============================
+// RESTAURANT SEARCH
+// ===============================
+
+const searchInput =
+  document.getElementById("searchInput");
+
+const searchBtn =
+  document.getElementById("searchBtn");
+
+const restaurantCards =
+  document.querySelectorAll(".restaurant-card");
 
 
-      if (found || searchText === "") {
-        card.style.display = "";
-      } else {
-        card.style.display = "none";
-      }
+function searchRestaurants() {
 
-    });
+  const searchText =
+    searchInput.value
+      .toLowerCase()
+      .trim();
+
+
+  let found = false;
+
+
+  restaurantCards.forEach((card) => {
+
+    const cardText =
+      card.textContent.toLowerCase();
+
+
+    if (
+      searchText === "" ||
+      cardText.includes(searchText)
+    ) {
+
+      card.style.display = "";
+
+      found = true;
+
+    } else {
+
+      card.style.display = "none";
+
+    }
+
+  });
+
+
+  if (
+    searchText !== "" &&
+    !found
+  ) {
+
+    alert(
+      "No restaurant found. Try another search."
+    );
 
   }
 
-
-  searchBtn.addEventListener("click", searchRestaurants);
-
-
-  searchInput.addEventListener("input", searchRestaurants);
+}
 
 
-  // VIEW MENU BUTTONS
+// Search button
 
-  document.querySelectorAll(".menu-btn").forEach(button => {
+if (searchBtn) {
 
-    button.addEventListener("click", () => {
+  searchBtn.addEventListener(
+    "click",
+    searchRestaurants
+  );
 
-      alert(
-        "Menu details will be available here soon."
-      );
-
-    });
-
-  });
+}
 
 
-  // LOCATION BUTTONS
+// Search with Enter key
 
-  document.querySelectorAll(".location-btn").forEach(button => {
+if (searchInput) {
 
-    button.addEventListener("click", () => {
+  searchInput.addEventListener(
+    "keydown",
+    (event) => {
 
-      window.open(
-        "https://www.google.com/maps/search/?api=1&query=Ahmedabad,Gujarat",
-        "_blank"
-      );
+      if (event.key === "Enter") {
+        searchRestaurants();
+      }
 
-    });
+    }
+  );
 
-  });
+}
+
+
+// ===============================
+// CLEAR SEARCH WHEN EMPTY
+// ===============================
+
+if (searchInput) {
+
+  searchInput.addEventListener(
+    "input",
+    () => {
+
+      if (
+        searchInput.value.trim() === ""
+      ) {
+
+        restaurantCards.forEach(
+          (card) => {
+            card.style.display = "";
+          }
+        );
+
+      }
+
+    }
+  );
+
+}
+
+
+// ===============================
+// SMOOTH NAVIGATION
+// ===============================
+
+document.querySelectorAll(
+  'a[href^="#"]'
+).forEach((link) => {
+
+  link.addEventListener(
+    "click",
+    function (event) {
+
+      const targetId =
+        this.getAttribute("href");
+
+      const target =
+        document.querySelector(targetId);
+
+      if (target) {
+
+        event.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+      }
+
+    }
+  );
 
 });
+
+
+// ===============================
+// CURRENT YEAR
+// ===============================
+
+const copyright =
+  document.querySelector(".copyright");
+
+if (copyright) {
+
+  copyright.textContent =
+    `© ${new Date().getFullYear()} Ahmedabad Eats`;
+
+}
