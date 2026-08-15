@@ -727,3 +727,145 @@ body.dark .about-box {
   }
 
 }
+
+
+/* =========================
+   PREMIUM FOOD VISUAL
+========================= */
+
+.restaurant-image {
+  min-height: 220px;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      #fff8ed,
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #ffd7a8,
+      #f7a35c
+    );
+}
+
+
+/* FOOD EMOJI / ORIGINAL VISUAL */
+
+.food-visual {
+  font-size: 95px;
+
+  filter:
+    drop-shadow(
+      0 15px 15px rgba(0, 0, 0, 0.18)
+    );
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+/* HOVER EFFECT */
+
+.restaurant-card:hover
+.food-visual {
+  transform:
+    scale(1.12)
+    rotate(-2deg);
+}
+
+
+/* IMAGE LABEL */
+
+.image-label {
+  position: absolute;
+
+  left: 15px;
+  bottom: 15px;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(0, 0, 0, 0.65);
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  backdrop-filter: blur(8px);
+}
+
+
+/* CARD PREMIUM EFFECT */
+
+.restaurant-card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 22px 50px rgba(0, 0, 0, 0.15);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+  .restaurant-image {
+    min-height: 230px;
+  }
+
+  .food-visual {
+    font-size: 85px;
+  }
+
+  .image-label {
+    left: 12px;
+    bottom: 12px;
+  }
+
+}
+
+
+/* DARK MODE */
+
+body.dark .restaurant-image {
+  background:
+    radial-gradient(
+      circle at 30% 20%,
+      #49301d,
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #302016,
+      #4a2b17
+    );
+}
+
+body.dark .restaurant-card {
+  border-color: #333;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.35);
+}
