@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ahmedabad Eats | Discover Food</title>
+  <title>Ahmedabad Eats | Restaurant Guide</title>
 
   <meta
     name="description"
-    content="Discover restaurants and food across Ahmedabad."
+    content="Discover restaurants, food, prices, timings and locations across Ahmedabad."
   >
 
   <link rel="stylesheet" href="style.css">
@@ -29,14 +29,13 @@
       <a href="#about">About</a>
     </nav>
 
-    <button id="themeBtn" class="theme-btn">
+    <button id="themeBtn" class="theme-btn" aria-label="Change theme">
       🌙
     </button>
 
   </header>
 
 
-  <!-- MAIN -->
   <main>
 
     <!-- HERO -->
@@ -54,7 +53,7 @@
         </h1>
 
         <p>
-          Explore restaurants, food and dining places
+          Find restaurants, food, prices, timings and locations
           around Ahmedabad.
         </p>
 
@@ -64,6 +63,7 @@
             type="text"
             id="searchInput"
             placeholder="Search restaurant or food..."
+            autocomplete="off"
           >
 
           <button id="searchBtn">
@@ -82,16 +82,12 @@
 
       <div class="section-heading">
 
-        <span>
-          EXPLORE AHMEDABAD
-        </span>
+        <span>EXPLORE AHMEDABAD</span>
 
-        <h2>
-          Popular Restaurants
-        </h2>
+        <h2>Popular Restaurants</h2>
 
         <p>
-          Find great places to eat in Ahmedabad.
+          Explore popular dining places across Ahmedabad.
         </p>
 
       </div>
@@ -111,19 +107,31 @@
           <div class="restaurant-info">
 
             <span class="category">
-              Gujarati
+              Gujarati Restaurant
             </span>
 
-            <h3>
-              Iscon Thal
-            </h3>
+            <h3>Iscon Thal</h3>
+
+            <div class="rating">
+              ⭐ 4.8
+            </div>
+
+            <p class="price">
+              💰 ₹200–₹400 approx.
+            </p>
 
             <p class="location">
-              📍 S.G. Road, Ahmedabad
+              📍 SF-1, Rudra Applis, ISKCON Cross Road,
+              Sarkhej-Gandhinagar Highway, Ahmedabad
+            </p>
+
+            <p class="timing">
+              🕐 Lunch: 11:00 AM – 3:15 PM<br>
+              Dinner: 7:00 PM – 10:15 PM
             </p>
 
             <p class="description">
-              Traditional Gujarati thali and Indian cuisine.
+              Gujarati thali and traditional Indian food.
             </p>
 
             <div class="card-buttons">
@@ -133,15 +141,6 @@
                 href="tel:+918866193093"
               >
                 📞 Call
-              </a>
-
-              <a
-                class="whatsapp-btn"
-                href="https://wa.me/918866193093"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                💬 WhatsApp
               </a>
 
               <a
@@ -171,15 +170,27 @@
           <div class="restaurant-info">
 
             <span class="category">
-              Gujarati
+              Indian Restaurant
             </span>
 
-            <h3>
-              Gordhan Thal
-            </h3>
+            <h3>Gordhan Thal</h3>
+
+            <div class="rating">
+              ⭐ 4.4
+            </div>
+
+            <p class="price">
+              💰 ₹200–₹400 approx.
+            </p>
 
             <p class="location">
-              📍 Ahmedabad, Gujarat
+              📍 Sapath Complex, S.G. Highway,
+              Opposite Rajpath Club, Bodakdev, Ahmedabad
+            </p>
+
+            <p class="timing">
+              🕐 Lunch: 11:00 AM – 2:45 PM<br>
+              Dinner: 7:00 PM – 10:00 PM
             </p>
 
             <p class="description">
@@ -193,15 +204,6 @@
                 href="tel:+917926871222"
               >
                 📞 Call
-              </a>
-
-              <a
-                class="whatsapp-btn"
-                href="https://wa.me/917926871222"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                💬 WhatsApp
               </a>
 
               <a
@@ -225,25 +227,38 @@
         <article class="restaurant-card">
 
           <div class="restaurant-image">
-            🍲
+            🏡
           </div>
 
           <div class="restaurant-info">
 
             <span class="category">
-              Gujarati Food
+              Gujarati Restaurant
             </span>
 
-            <h3>
-              Rajwadu
-            </h3>
+            <h3>Rajwadu</h3>
+
+            <div class="rating">
+              ⭐ 4.4
+            </div>
+
+            <p class="price">
+              💰 ₹400–₹1,200 approx.
+            </p>
 
             <p class="location">
-              📍 Ahmedabad, Gujarat
+              📍 Near Jivraj Tolnaka, Behind Ambaji Temple,
+              Malav Talav, Ahmedabad
+            </p>
+
+            <p class="timing">
+              🕐 Lunch: 11:00 AM – 2:30 PM<br>
+              Dinner: 7:00 PM – 11:00 PM
             </p>
 
             <p class="description">
-              Traditional Gujarati dining experience.
+              Traditional Indian and Gujarati dining
+              in a village-inspired setting.
             </p>
 
             <div class="card-buttons">
@@ -253,15 +268,6 @@
                 href="tel:+919978505653"
               >
                 📞 Call
-              </a>
-
-              <a
-                class="whatsapp-btn"
-                href="https://wa.me/919978505653"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                💬 WhatsApp
               </a>
 
               <a
@@ -285,25 +291,43 @@
         <article class="restaurant-card">
 
           <div class="restaurant-image">
-            🍽️
+            🏮
           </div>
 
           <div class="restaurant-info">
 
             <span class="category">
-              Indian & Gujarati
+              Gujarati Restaurant
             </span>
 
-            <h3>
-              Vishalla
-            </h3>
+            <h3>Vishalla</h3>
+
+            <div class="rating">
+              ⭐ 4.2
+            </div>
+
+            <p class="price">
+              💰 ₹800–₹1,200 approx.
+            </p>
 
             <p class="location">
-              📍 Ahmedabad, Gujarat
+              📍 Opp. APMC Market, Vishalla Circle,
+              Ahmedabad – 380055
+            </p>
+
+            <p class="timing">
+              🕐 Lunch: 11:00 AM – 3:00 PM<br>
+              Dinner: 7:30 PM – 11:00 PM
             </p>
 
             <p class="description">
-              Indian and Gujarati dining in a traditional atmosphere.
+              Traditional Gujarati cuisine in a
+              village-inspired atmosphere.
+            </p>
+
+            <p class="popular-food">
+              🍽️ Popular: Khandvi, Handvo,
+              Dhokla, Muthiya
             </p>
 
             <div class="card-buttons">
@@ -313,15 +337,6 @@
                 href="tel:+918200543694"
               >
                 📞 Call
-              </a>
-
-              <a
-                class="whatsapp-btn"
-                href="https://wa.me/918200543694"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                💬 WhatsApp
               </a>
 
               <a
@@ -351,17 +366,13 @@
 
       <div class="about-box">
 
-        <span>
-          ABOUT
-        </span>
+        <span>ABOUT</span>
 
-        <h2>
-          Ahmedabad Eats
-        </h2>
+        <h2>Ahmedabad Eats</h2>
 
         <p>
-          A modern way to discover restaurants and
-          food around Ahmedabad.
+          A simple, modern restaurant discovery website
+          created to explore food around Ahmedabad.
         </p>
 
       </div>
@@ -377,9 +388,7 @@
 
     <div class="footer-content">
 
-      <h3>
-        🍽️ Ahmedabad Eats
-      </h3>
+      <h3>🍽️ Ahmedabad Eats</h3>
 
       <p>
         Discover food. Explore Ahmedabad.
