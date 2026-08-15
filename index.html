@@ -4,16 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ahmedabad Eats | Discover Great Food</title>
-  <meta name="description" content="Discover restaurants, food, menus and locations across Ahmedabad.">
+  <title>Ahmedabad Eats | Discover Food</title>
+  <meta
+    name="description"
+    content="Discover restaurants, food and dining places across Ahmedabad."
+  >
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
   <header class="navbar">
-    <div class="logo">🍽️ Ahmedabad Eats</div>
+
+    <div class="logo">
+      🍽️ Ahmedabad Eats
+    </div>
 
     <nav>
       <a href="#home">Home</a>
@@ -21,49 +28,79 @@
       <a href="#about">About</a>
     </nav>
 
-    <button id="themeBtn" class="theme-btn">🌙</button>
+    <button id="themeBtn" class="theme-btn" aria-label="Change theme">
+      🌙
+    </button>
+
   </header>
 
 
+  <!-- MAIN -->
   <main>
 
+    <!-- HERO -->
     <section id="home" class="hero">
 
       <div class="hero-content">
-        <span class="badge">📍 Ahmedabad, Gujarat</span>
 
-        <h1>Discover Your Next <span>Favourite Food</span></h1>
+        <span class="badge">
+          📍 Ahmedabad, Gujarat
+        </span>
+
+        <h1>
+          Discover Your
+          <span>Favourite Food</span>
+        </h1>
 
         <p>
-          Explore restaurants, menus, prices and locations
+          Explore restaurants, food and dining places
           around Ahmedabad.
         </p>
 
         <div class="search-box">
+
           <input
             type="text"
             id="searchInput"
             placeholder="Search restaurant or food..."
+            autocomplete="off"
           >
 
-          <button id="searchBtn">Search</button>
+          <button id="searchBtn">
+            Search
+          </button>
+
         </div>
+
       </div>
 
     </section>
 
 
+    <!-- RESTAURANTS -->
     <section id="restaurants" class="restaurants-section">
 
       <div class="section-heading">
-        <span>EXPLORE</span>
-        <h2>Popular Restaurants</h2>
-        <p>Find great places to eat in Ahmedabad.</p>
+
+        <span>
+          EXPLORE AHMEDABAD
+        </span>
+
+        <h2>
+          Popular Restaurants
+        </h2>
+
+        <p>
+          Find great places to eat in Ahmedabad.
+        </p>
+
       </div>
 
 
       <div id="restaurantGrid" class="restaurant-grid">
 
+
+        <!-- RESTAURANT 1 -->
 
         <article class="restaurant-card">
 
@@ -73,21 +110,40 @@
 
           <div class="restaurant-info">
 
-            <span class="category">Gujarati</span>
+            <span class="category">
+              Gujarati
+            </span>
 
-            <h3>Iscon Thal</h3>
+            <h3>
+              Iscon Thal
+            </h3>
 
             <p class="location">
               📍 S.G. Road, Ahmedabad
             </p>
 
             <p class="description">
-              Traditional Gujarati thali and Indian food.
+              Traditional Gujarati thali and Indian cuisine.
             </p>
 
             <div class="card-buttons">
-              <button class="menu-btn">View Menu</button>
-              <button class="location-btn">📍 Location</button>
+
+              <button
+                class="menu-btn"
+                data-restaurant="Iscon Thal"
+              >
+                View Menu
+              </button>
+
+              <a
+                class="location-btn"
+                href="https://www.google.com/maps/search/?api=1&query=Iscon+Thal+Ahmedabad"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                📍 Location
+              </a>
+
             </div>
 
           </div>
@@ -95,6 +151,8 @@
         </article>
 
 
+
+        <!-- RESTAURANT 2 -->
 
         <article class="restaurant-card">
 
@@ -104,21 +162,40 @@
 
           <div class="restaurant-info">
 
-            <span class="category">Gujarati</span>
+            <span class="category">
+              Gujarati
+            </span>
 
-            <h3>Gordhan Thal</h3>
+            <h3>
+              Gordhan Thal
+            </h3>
 
             <p class="location">
               📍 Ahmedabad, Gujarat
             </p>
 
             <p class="description">
-              Gujarati cuisine with traditional flavours.
+              Gujarati food and traditional Indian flavours.
             </p>
 
             <div class="card-buttons">
-              <button class="menu-btn">View Menu</button>
-              <button class="location-btn">📍 Location</button>
+
+              <button
+                class="menu-btn"
+                data-restaurant="Gordhan Thal"
+              >
+                View Menu
+              </button>
+
+              <a
+                class="location-btn"
+                href="https://www.google.com/maps/search/?api=1&query=Gordhan+Thal+Ahmedabad"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                📍 Location
+              </a>
+
             </div>
 
           </div>
@@ -126,6 +203,8 @@
         </article>
 
 
+
+        <!-- RESTAURANT 3 -->
 
         <article class="restaurant-card">
 
@@ -135,21 +214,40 @@
 
           <div class="restaurant-info">
 
-            <span class="category">Gujarati Food</span>
+            <span class="category">
+              Gujarati Food
+            </span>
 
-            <h3>Rajwadu</h3>
+            <h3>
+              Rajwadu
+            </h3>
 
             <p class="location">
               📍 Ahmedabad, Gujarat
             </p>
 
             <p class="description">
-              A traditional Gujarati dining experience.
+              Traditional Gujarati dining experience.
             </p>
 
             <div class="card-buttons">
-              <button class="menu-btn">View Menu</button>
-              <button class="location-btn">📍 Location</button>
+
+              <button
+                class="menu-btn"
+                data-restaurant="Rajwadu"
+              >
+                View Menu
+              </button>
+
+              <a
+                class="location-btn"
+                href="https://www.google.com/maps/search/?api=1&query=Rajwadu+Ahmedabad"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                📍 Location
+              </a>
+
             </div>
 
           </div>
@@ -157,6 +255,8 @@
         </article>
 
 
+
+        <!-- RESTAURANT 4 -->
 
         <article class="restaurant-card">
 
@@ -166,43 +266,68 @@
 
           <div class="restaurant-info">
 
-            <span class="category">Indian</span>
+            <span class="category">
+              Indian
+            </span>
 
-            <h3>Vishalla</h3>
+            <h3>
+              Vishalla
+            </h3>
 
             <p class="location">
               📍 Ahmedabad, Gujarat
             </p>
 
             <p class="description">
-              Indian and Gujarati dining with a traditional atmosphere.
+              Indian and Gujarati dining in a traditional atmosphere.
             </p>
 
             <div class="card-buttons">
-              <button class="menu-btn">View Menu</button>
-              <button class="location-btn">📍 Location</button>
+
+              <button
+                class="menu-btn"
+                data-restaurant="Vishalla"
+              >
+                View Menu
+              </button>
+
+              <a
+                class="location-btn"
+                href="https://www.google.com/maps/search/?api=1&query=Vishalla+Ahmedabad"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                📍 Location
+              </a>
+
             </div>
 
           </div>
 
         </article>
 
+
       </div>
 
     </section>
 
 
+    <!-- ABOUT -->
     <section id="about" class="about-section">
 
       <div class="about-box">
 
-        <span>ABOUT US</span>
+        <span>
+          ABOUT
+        </span>
 
-        <h2>Ahmedabad Eats</h2>
+        <h2>
+          Ahmedabad Eats
+        </h2>
 
         <p>
-          A simple way to discover restaurants and food
-          across Ahmedabad.
+          A simple and modern way to discover restaurants
+          and food around Ahmedabad.
         </p>
 
       </div>
@@ -212,11 +337,14 @@
   </main>
 
 
+  <!-- FOOTER -->
   <footer>
 
     <div class="footer-content">
 
-      <h3>🍽️ Ahmedabad Eats</h3>
+      <h3>
+        🍽️ Ahmedabad Eats
+      </h3>
 
       <p>
         Discover food. Explore Ahmedabad.
