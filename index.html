@@ -3,65 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie Express - Top Restaurants</title>
+    <title>Ahmedabad Eats - Best Restaurants in Ahmedabad</title>
+    <meta name="description" content="Discover restaurants, food, menus and delicious dishes in Ahmedabad.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- ========================= NAVBAR ========================== -->
     <nav class="navbar">
-        <div class="logo">FoodieExpress</div>
+        <div class="logo">Ahmedabad Eats</div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
             <li><a href="#restaurants">Restaurants</a></li>
             <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact & Location</a></li>
-            <li><a href="#" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+                <a href="#" onclick="toggleCart(); return false;">
+                    Cart (<span id="cart-count">0</span>)
+                </a>
+            </li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ========================= HERO SECTION ========================== -->
     <header class="hero">
-        <h1>Discover Best Food & Drinks</h1>
-        <p>Order from top 10 rated restaurants near you.</p>
+        <h1>Discover the Best Food in Ahmedabad</h1>
+        <p>Explore restaurants, delicious food, menus and more across Ahmedabad.</p>
     </header>
 
-    <!-- Restaurants List Section -->
-    <section class="restaurant-section" id="restaurants">
-        <h2>Featured Restaurants</h2>
-        <div class="restaurant-grid" id="restaurant-list">
-            <!-- JavaScript loads 10 restaurants here -->
+    <!-- ========================= SEARCH & FILTER ========================== -->
+    <section class="search-section">
+        <div class="search-box">
+            <input 
+                type="text" 
+                id="restaurant-search" 
+                placeholder="Search restaurant or cuisine..." 
+                oninput="filterRestaurants()"
+            >
+        </div>
+
+        <div class="category-filter">
+            <button type="button" class="category-btn active" onclick="filterCategory('All', this)">All</button>
+            <button type="button" class="category-btn" onclick="filterCategory('Gujarati', this)">Gujarati</button>
+            <button type="button" class="category-btn" onclick="filterCategory('North Indian', this)">North Indian</button>
+            <button type="button" class="category-btn" onclick="filterCategory('South Indian', this)">South Indian</button>
+            <button type="button" class="category-btn" onclick="filterCategory('Italian', this)">Italian</button>
+            <button type="button" class="category-btn" onclick="filterCategory('Vegetarian', this)">Vegetarian</button>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <h2>About Foodie Express</h2>
-        <p>Foodie Express aapke shehar ke sabse popular aur hygienic restaurants se fresh khana aapke ghar tak pahunchata hai. Humari priority hai fast delivery, best prices, aur top-quality taste.</p>
+    <!-- ========================= RESTAURANTS ========================== -->
+    <section class="restaurant-section" id="restaurants">
+        <h2>Top Restaurants in Ahmedabad</h2>
+        
+        <div class="restaurant-grid" id="restaurant-list">
+            <!-- Restaurants are loaded by script.js -->
+        </div>
+
+        <p id="no-results" style="display:none; text-align:center; margin-top:30px;">
+            No restaurants found.
+        </p>
     </section>
 
-    <!-- Contact, Address & Live Location Section -->
+    <!-- ========================= ABOUT ========================== -->
+    <section class="about-section" id="about">
+        <h2>About Ahmedabad Eats</h2>
+        <p>
+            Ahmedabad Eats helps you discover popular restaurants and delicious food across Ahmedabad. Explore restaurant menus, check details and locations, and add your favourite dishes to the cart.
+        </p>
+        <p>
+            From Gujarati thalis and traditional Kathiyawadi food to North Indian, South Indian and international cuisine, discover something delicious for every mood.
+        </p>
+    </section>
+
+    <!-- ========================= CONTACT ========================== -->
     <section class="contact-section" id="contact">
-        <h2>Contact Us & Main Office Location</h2>
+        <h2>Contact & Location</h2>
         <div class="contact-container">
             <div class="contact-info">
-                <h3>Get In Touch</h3>
-                <p>📍 <strong>Address:</strong> Foodie Express HQ, Block B, Connaught Place, New Delhi, India - 110001</p>
+                <h3>Ahmedabad Eats</h3>
+                <p>📍 <strong>Location:</strong> Ahmedabad, Gujarat, India</p>
                 <p>📞 <strong>Phone:</strong> +91 98765 43210</p>
-                <p>✉️ <strong>Email:</strong> support@foodieexpress.com</p>
-                <p>⏰ <strong>Opening Hours:</strong> 24/7 Open</p>
+                <p>✉️ <strong>Email:</strong> support@ahmedabadeats.com</p>
+                <p>⏰ <strong>Support:</strong> 10:00 AM – 10:00 PM</p>
             </div>
+            
             <div class="map-container">
-                <h3>Live Location</h3>
+                <h3>Ahmedabad Location</h3>
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.98083811833!2d77.21672131508215!3d28.63042038241804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b741d057%3A0xcdee88e47393c3f1!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1629800000000!5m2!1sen!2sin" 
-                    width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy">
+                    src="https://www.google.com/maps?q=Ahmedabad,Gujarat,India&output=embed" 
+                    width="100%" 
+                    height="250" 
+                    style="border:0; border-radius:8px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         </div>
     </section>
 
-    <!-- Menu Modal -->
+    <!-- ========================= MENU MODAL ========================== -->
     <div id="menu-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeMenu()">&times;</span>
@@ -70,33 +112,49 @@
         </div>
     </div>
 
-    <!-- Restaurant Details & Map Modal -->
+    <!-- ========================= RESTAURANT DETAILS MODAL ========================== -->
     <div id="details-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeDetails()">&times;</span>
             <h2 id="detail-rest-name">Restaurant Details</h2>
-            <p id="detail-rest-address" style="margin: 10px 0; color: #94a3b8;"></p>
-            <p id="detail-rest-phone" style="margin-bottom: 15px; color: #38bdf8;"></p>
+            <p id="detail-rest-address" style="margin:10px 0; color:#94a3b8;"></p>
+            <p id="detail-rest-phone" style="margin-bottom:15px; color:#38bdf8;"></p>
+            
             <h3>Location</h3>
-            <iframe id="detail-rest-map" width="100%" height="220" style="border:0; border-radius: 8px; margin-top: 10px;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe 
+                id="detail-rest-map" 
+                width="100%" 
+                height="220" 
+                style="border:0; border-radius:8px; margin-top:10px;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
         </div>
     </div>
 
-    <!-- Cart Sidebar Drawer -->
+    <!-- ========================= CART DRAWER ========================== -->
     <div id="cart-drawer" class="cart-drawer">
         <div class="cart-header">
             <h2>Your Cart</h2>
             <span class="close-btn" onclick="toggleCart()">&times;</span>
         </div>
+        
         <div id="cart-items" class="cart-items-list">
             <p class="empty-msg">Your cart is empty.</p>
         </div>
+        
         <div class="cart-footer">
             <h3>Total: ₹<span id="cart-total">0</span></h3>
             <button class="checkout-btn" onclick="checkout()">Place Order</button>
         </div>
     </div>
 
+    <!-- ========================= FOOTER ========================== -->
+    <footer style="text-align:center; padding:25px; margin-top:30px;">
+        <p>© 2026 Ahmedabad Eats. All rights reserved.</p>
+    </footer>
+
+    <!-- ========================= JAVASCRIPT ========================== -->
     <script src="script.js"></script>
 </body>
 </html>
