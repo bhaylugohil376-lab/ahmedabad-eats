@@ -2,13 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ahmedabad Food Guide | Restaurants & Food Menu</title>
-  <meta name="description"
-        content="Discover restaurants, Gujarati thali, food menus and dining places in Ahmedabad, Gujarat.">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Ahmedabad Food Guide - Discover restaurants, Gujarati food, menus and food places in Ahmedabad, Gujarat."
+  >
+
+  <meta
+    name="theme-color"
+    content="#e85d04"
+  >
+
+  <title>Ahmedabad Food Guide</title>
 
   <style>
+
+    /* =========================
+       RESET
+    ========================= */
+
     * {
       margin: 0;
       padding: 0;
@@ -20,10 +37,19 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       background: #fffaf4;
       color: #222;
+
       line-height: 1.6;
+
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
     }
 
     a {
@@ -31,30 +57,50 @@
       color: inherit;
     }
 
-    /* HEADER */
+    button,
+    input {
+      font-family: inherit;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.96);
-      border-bottom: 1px solid #eee;
+
+      background:
+        rgba(255, 255, 255, 0.96);
+
+      border-bottom:
+        1px solid #eeeeee;
+
       backdrop-filter: blur(10px);
     }
 
     .nav {
       max-width: 1200px;
       margin: auto;
+
       padding: 15px 20px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 20px;
     }
 
     .logo {
       font-size: 24px;
       font-weight: 800;
+
       color: #e85d04;
+
+      white-space: nowrap;
     }
 
     .logo span {
@@ -63,32 +109,64 @@
 
     nav {
       display: flex;
+      align-items: center;
+
       gap: 18px;
       flex-wrap: wrap;
     }
 
     nav a {
-      font-weight: 600;
       font-size: 14px;
+      font-weight: 600;
+
+      transition:
+        color 0.2s ease;
     }
 
     nav a:hover {
       color: #e85d04;
     }
 
-    /* HERO */
+    .dark-toggle {
+      border: none;
+
+      background: #222;
+      color: white;
+
+      padding: 9px 13px;
+
+      border-radius: 9px;
+
+      cursor: pointer;
+
+      font-size: 16px;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
-      min-height: 520px;
+      min-height: 560px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       text-align: center;
+
       padding: 70px 20px;
-      background:
-        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-        url("https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1600&q=80")
-        center/cover;
+
       color: white;
+
+      background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.58),
+          rgba(0, 0, 0, 0.58)
+        ),
+        url("https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1600&q=80")
+        center / cover no-repeat;
     }
 
     .hero-content {
@@ -96,175 +174,299 @@
     }
 
     .hero h1 {
-      font-size: clamp(38px, 7vw, 72px);
-      margin-bottom: 15px;
+      font-size:
+        clamp(40px, 7vw, 72px);
+
+      line-height: 1.1;
+
+      margin-bottom: 18px;
     }
 
     .hero p {
       font-size: 20px;
-      margin-bottom: 25px;
+
+      margin-bottom: 28px;
+
+      color: #f4f4f4;
     }
+
+
+    /* =========================
+       BUTTON
+    ========================= */
 
     .btn {
       display: inline-block;
+
       padding: 13px 22px;
+
+      border: none;
       border-radius: 10px;
+
       background: #e85d04;
       color: white;
+
       font-weight: 700;
-      border: none;
+
       cursor: pointer;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
     .btn:hover {
       background: #c94d00;
+
+      transform:
+        translateY(-2px);
     }
 
-    /* GENERAL */
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
     section {
       max-width: 1200px;
+
       margin: auto;
-      padding: 70px 20px;
+
+      padding: 75px 20px;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 35px;
+
+      margin-bottom: 38px;
     }
 
     .section-title h2 {
       font-size: 36px;
-      margin-bottom: 8px;
+
+      line-height: 1.2;
+
+      margin-bottom: 10px;
     }
 
     .section-title p {
       color: #666;
     }
 
-    /* ABOUT */
+
+    /* =========================
+       ABOUT
+    ========================= */
+
     .about-box {
       background: white;
-      padding: 35px;
+
+      padding: 38px;
+
       border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.07);
+
+      box-shadow:
+        0 8px 30px
+        rgba(0, 0, 0, 0.07);
     }
 
     .about-box h3 {
       color: #e85d04;
-      margin-bottom: 12px;
+
+      font-size: 24px;
+
+      margin-bottom: 13px;
     }
 
     .about-box p {
-      margin-bottom: 15px;
       color: #555;
+
+      margin-bottom: 16px;
     }
 
     .about-points {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-      margin-top: 25px;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+      margin-top: 28px;
     }
 
     .point {
       background: #fff3e8;
-      padding: 20px;
-      border-radius: 14px;
+
+      padding: 22px;
+
+      border-radius: 15px;
+
       text-align: center;
     }
 
     .point strong {
       display: block;
+
       font-size: 18px;
-      margin-bottom: 5px;
+
+      margin-bottom: 6px;
     }
 
-    /* SEARCH */
+
+    /* =========================
+       SEARCH
+    ========================= */
+
     .search-box {
-      max-width: 600px;
-      margin: 0 auto 35px;
+      max-width: 650px;
+
+      margin:
+        0 auto 38px;
     }
 
     .search-box input {
       width: 100%;
-      padding: 16px;
-      border: 1px solid #ddd;
+
+      padding: 16px 18px;
+
+      border:
+        1px solid #dddddd;
+
       border-radius: 12px;
+
       font-size: 16px;
+
       outline: none;
+
+      background: white;
+
+      transition:
+        border 0.2s ease;
     }
 
     .search-box input:focus {
       border-color: #e85d04;
     }
 
-    /* RESTAURANTS */
+
+    /* =========================
+       RESTAURANTS
+    ========================= */
+
     .restaurant-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 28px;
     }
 
     .restaurant-card {
       background: white;
+
       border-radius: 18px;
+
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(0,0,0,.07);
-      transition: .25s;
+
+      box-shadow:
+        0 8px 30px
+        rgba(0, 0, 0, 0.07);
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     }
 
     .restaurant-card:hover {
-      transform: translateY(-5px);
+      transform:
+        translateY(-5px);
+
+      box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.12);
     }
 
     .restaurant-image {
-      height: 220px;
-      background: #eee;
+      width: 100%;
+
+      height: 230px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
+      background: #eeeeee;
+
       color: #777;
+
       font-weight: 600;
     }
 
+    .restaurant-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      display: block;
+    }
+
     .restaurant-content {
-      padding: 22px;
+      padding: 23px;
     }
 
     .restaurant-content h3 {
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
+      font-size: 25px;
 
-    .tag {
-      display: inline-block;
-      background: #fff0e5;
-      color: #d94f00;
-      padding: 5px 10px;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .restaurant-content p {
       color: #666;
+
       margin-bottom: 10px;
     }
 
+    .tag {
+      display: inline-block;
+
+      background: #fff0e5;
+
+      color: #d94f00;
+
+      padding: 5px 11px;
+
+      border-radius: 30px;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      margin-bottom: 12px;
+    }
+
     .details {
-      margin: 15px 0;
+      margin: 16px 0;
+
       font-size: 14px;
+
+      color: #444;
     }
 
     .details div {
-      margin: 7px 0;
+      margin: 8px 0;
     }
 
     .actions {
       display: flex;
+
       gap: 10px;
+
       flex-wrap: wrap;
+
+      margin-top: 18px;
     }
 
     .call-btn {
@@ -275,6 +477,10 @@
       background: #0f642e;
     }
 
+    .whatsapp-btn {
+      background: #16803c;
+    }
+
     .map-btn {
       background: #333;
     }
@@ -283,25 +489,50 @@
       background: #111;
     }
 
-    /* MENU */
+
+    /* =========================
+       MENU
+    ========================= */
+
     .menu-info {
       background: white;
-      padding: 30px;
+
+      padding: 35px;
+
       border-radius: 18px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.06);
+
       text-align: center;
+
+      box-shadow:
+        0 8px 30px
+        rgba(0, 0, 0, 0.06);
+    }
+
+    .menu-info h3 {
+      font-size: 25px;
+
+      margin-bottom: 10px;
     }
 
     .menu-info p {
       color: #666;
-      margin: 10px 0 20px;
+
+      margin:
+        10px 0 20px;
     }
 
-    /* FOOTER */
+
+    /* =========================
+       FOOTER
+    ========================= */
+
     footer {
       background: #171717;
+
       color: white;
-      padding: 45px 20px;
+
+      padding: 50px 20px;
+
       text-align: center;
     }
 
@@ -310,14 +541,18 @@
     }
 
     footer p {
-      color: #bbb;
+      color: #bbbbbb;
     }
 
     .footer-links {
-      margin: 20px 0;
+      margin: 22px 0;
+
       display: flex;
+
       justify-content: center;
-      gap: 20px;
+
+      gap: 22px;
+
       flex-wrap: wrap;
     }
 
@@ -325,51 +560,82 @@
       color: #ff7b00;
     }
 
-    /* DARK MODE */
+
+    /* =========================
+       DARK MODE
+    ========================= */
+
     body.dark {
       background: #121212;
-      color: #eee;
+      color: #eeeeee;
     }
 
-    body.dark header,
+    body.dark header {
+      background:
+        rgba(29, 29, 29, 0.96);
+
+      border-color: #333;
+    }
+
+    body.dark .logo span {
+      color: #eeeeee;
+    }
+
+    body.dark nav a {
+      color: #eeeeee;
+    }
+
     body.dark .restaurant-card,
     body.dark .about-box,
     body.dark .menu-info {
       background: #1d1d1d;
-      color: #eee;
     }
 
-    body.dark .restaurant-content p,
-    body.dark .about-box p,
-    body.dark .section-title p,
-    body.dark .details {
-      color: #bbb;
+    body.dark
+    .restaurant-content p,
+    body.dark
+    .about-box p,
+    body.dark
+    .section-title p,
+    body.dark
+    .details {
+      color: #bbbbbb;
     }
 
     body.dark .point {
       background: #292929;
     }
 
-    body.dark nav a {
-      color: #eee;
-    }
+    body.dark
+    .search-box input {
+      background: #1d1d1d;
 
-    .dark-toggle {
-      background: #222;
       color: white;
-      padding: 9px 13px;
-      border-radius: 9px;
-      border: none;
-      cursor: pointer;
+
+      border-color: #444;
     }
 
-    /* MOBILE */
-    @media (max-width: 800px) {
+    body.dark
+    .search-box input::placeholder {
+      color: #999;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
       .nav {
-        flex-direction: column;
+        flex-wrap: wrap;
       }
 
       nav {
+        width: 100%;
+
+        order: 3;
+
         justify-content: center;
       }
 
@@ -380,70 +646,177 @@
       .about-points {
         grid-template-columns: 1fr;
       }
-
-      .hero {
-        min-height: 450px;
-      }
     }
 
-    @media (max-width: 500px) {
+
+    @media (max-width: 600px) {
+
+      .nav {
+        padding: 13px 15px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      nav {
+        gap: 13px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 480px;
+
+        padding: 60px 15px;
+      }
+
       .hero h1 {
         font-size: 42px;
       }
 
+      .hero p {
+        font-size: 17px;
+      }
+
       section {
-        padding: 50px 15px;
+        padding:
+          55px 15px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
       }
 
       .about-box {
-        padding: 22px;
+        padding: 23px;
       }
 
       .restaurant-content {
-        padding: 18px;
+        padding: 19px;
+      }
+
+      .restaurant-content h3 {
+        font-size: 22px;
+      }
+
+      .restaurant-image {
+        height: 210px;
+      }
+
+      .actions .btn {
+        flex: 1;
+
+        text-align: center;
       }
     }
+
+
+    @media (max-width: 380px) {
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .about-box {
+        padding: 18px;
+      }
+
+      .restaurant-image {
+        height: 190px;
+      }
+    }
+
   </style>
 </head>
 
+
 <body>
 
-  <!-- HEADER -->
+
+  <!-- =========================
+       HEADER
+  ========================= -->
+
   <header>
+
     <div class="nav">
 
-      <a href="#" class="logo">
-        Ahmedabad <span>Food Guide</span>
+      <a
+        href="#home"
+        class="logo"
+      >
+        Ahmedabad
+        <span>Food Guide</span>
       </a>
 
+
       <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#restaurants">Restaurants</a>
-        <a href="#menu">Food Menu</a>
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#restaurants">
+          Restaurants
+        </a>
+
+        <a href="#menu">
+          Food Menu
+        </a>
+
       </nav>
 
-      <button class="dark-toggle" onclick="toggleDarkMode()">
+
+      <button
+        class="dark-toggle"
+        onclick="toggleDarkMode()"
+        aria-label="Toggle dark mode"
+      >
         🌙
       </button>
 
     </div>
+
   </header>
 
 
-  <!-- HERO -->
-  <section class="hero" id="home">
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <section
+    class="hero"
+    id="home"
+  >
 
     <div class="hero-content">
 
-      <h1>Ahmedabad Food Guide</h1>
+      <h1>
+        Ahmedabad Food Guide
+      </h1>
 
       <p>
-        Discover restaurants, Gujarati food, thali and
-        great places to eat in Ahmedabad.
+        Discover restaurants,
+        Gujarati food, thali
+        and great places to eat
+        in Ahmedabad.
       </p>
 
-      <a href="#restaurants" class="btn">
+      <a
+        href="#restaurants"
+        class="btn"
+      >
         Explore Restaurants
       </a>
 
@@ -452,51 +825,92 @@
   </section>
 
 
-  <!-- ABOUT -->
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
   <section id="about">
 
     <div class="section-title">
-      <h2>About Ahmedabad Food Guide</h2>
-      <p>Your local food discovery website</p>
+
+      <h2>
+        About Ahmedabad Food Guide
+      </h2>
+
+      <p>
+        Your local food discovery website
+      </p>
+
     </div>
+
 
     <div class="about-box">
 
-      <h3>🍽️ About This Website</h3>
+      <h3>
+        🍽️ About This Website
+      </h3>
 
       <p>
-        Ahmedabad Food Guide is designed to help people discover
-        restaurants and food places across Ahmedabad, Gujarat.
+        Ahmedabad Food Guide is designed
+        to help people discover restaurants
+        and food places across Ahmedabad,
+        Gujarat.
       </p>
 
       <p>
-        The website will provide restaurant information such as
-        food categories, menu details, location, contact information,
-        opening hours and other useful information.
+        The website can provide useful
+        restaurant information such as
+        food categories, menu details,
+        food descriptions, prices,
+        location, contact information
+        and opening hours.
       </p>
 
       <p>
-        Gujarati food and traditional thali are an important part
-        of Ahmedabad's food culture. This website is designed to
-        make discovering these places easier from a mobile phone
-        or computer.
+        Gujarati food and traditional
+        thali are an important part of
+        Ahmedabad's food culture.
+        Our goal is to make discovering
+        local food places easier from
+        a mobile phone or computer.
       </p>
+
 
       <div class="about-points">
 
         <div class="point">
-          <strong>🍛 Food Menu</strong>
-          Restaurant dishes and menu information
+
+          <strong>
+            🍛 Food Menu
+          </strong>
+
+          Food names,
+          descriptions and prices
+
         </div>
 
-        <div class="point">
-          <strong>📍 Location</strong>
-          Find restaurants around Ahmedabad
-        </div>
 
         <div class="point">
-          <strong>📞 Contact</strong>
-          Call restaurants directly
+
+          <strong>
+            📍 Location
+          </strong>
+
+          Find restaurants
+          around Ahmedabad
+
+        </div>
+
+
+        <div class="point">
+
+          <strong>
+            📞 Contact
+          </strong>
+
+          Contact restaurants
+          directly
+
         </div>
 
       </div>
@@ -506,62 +920,106 @@
   </section>
 
 
-  <!-- RESTAURANTS -->
+  <!-- =========================
+       RESTAURANTS
+  ========================= -->
+
   <section id="restaurants">
 
     <div class="section-title">
-      <h2>Ahmedabad Restaurants</h2>
-      <p>10 restaurants to start our food directory</p>
+
+      <h2>
+        Ahmedabad Restaurants
+      </h2>
+
+      <p>
+        Our restaurant directory
+      </p>
+
     </div>
+
+
+    <!-- SEARCH -->
 
     <div class="search-box">
 
       <input
-        type="text"
+        type="search"
         id="searchInput"
         placeholder="🔎 Search restaurant..."
-        onkeyup="searchRestaurants()"
+        oninput="searchRestaurants()"
+        aria-label="Search restaurants"
       >
 
     </div>
 
 
-    <div class="restaurant-grid" id="restaurantGrid">
+    <!-- RESTAURANT GRID -->
+
+    <div
+      class="restaurant-grid"
+      id="restaurantGrid"
+    >
 
 
-      <!-- 1 -->
+      <!-- RESTAURANT 1 -->
+
       <article class="restaurant-card">
 
         <div class="restaurant-image">
-          REAL RESTAURANT PHOTO
+
+          <span>
+            Restaurant Photo
+          </span>
+
         </div>
 
         <div class="restaurant-content">
 
-          <span class="tag">Gujarati Restaurant</span>
+          <span class="tag">
+            Gujarati Restaurant
+          </span>
 
-          <h3>Agashiye</h3>
+          <h3>
+            Agashiye
+          </h3>
 
           <p>
-            Traditional Gujarati dining experience in Ahmedabad.
+            Traditional Gujarati dining
+            experience in Ahmedabad.
           </p>
 
           <div class="details">
-            <div>📍 The House of MG, Lal Darwaja, Ahmedabad</div>
-            <div>🕐 Lunch & Dinner</div>
+
+            <div>
+              📍 The House of MG,
+              Lal Darwaja, Ahmedabad
+            </div>
+
+            <div>
+              🍛 Gujarati cuisine
+            </div>
+
           </div>
 
           <div class="actions">
-            <a class="btn call-btn" href="tel:+917925506946">
+
+            <a
+              class="btn call-btn"
+              href="tel:"
+            >
               📞 Call
             </a>
 
             <a
               class="btn map-btn"
               target="_blank"
-              href="https://www.google.com/maps/search/?api=1&query=Agashiye+Ahmedabad">
+              rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=Agashiye+Ahmedabad"
+            >
               📍 Map
             </a>
+
           </div>
 
         </div>
@@ -569,39 +1027,64 @@
       </article>
 
 
-      <!-- 2 -->
+      <!-- RESTAURANT 2 -->
+
       <article class="restaurant-card">
 
         <div class="restaurant-image">
-          REAL RESTAURANT PHOTO
+
+          <span>
+            Restaurant Photo
+          </span>
+
         </div>
 
         <div class="restaurant-content">
 
-          <span class="tag">Gujarati Thali</span>
+          <span class="tag">
+            Gujarati Thali
+          </span>
 
-          <h3>Iscon Thal</h3>
+          <h3>
+            Iscon Thal
+          </h3>
 
           <p>
-            Gujarati thali restaurant near ISKCON Cross Road.
+            Gujarati thali dining
+            in Ahmedabad.
           </p>
 
           <div class="details">
-            <div>📍 ISKCON Cross Road, Ahmedabad</div>
-            <div>🕐 Lunch & Dinner</div>
+
+            <div>
+              📍 ISKCON Cross Road,
+              Ahmedabad
+            </div>
+
+            <div>
+              🍛 Gujarati Thali
+            </div>
+
           </div>
 
           <div class="actions">
-            <a class="btn call-btn" href="tel:+918866193093">
+
+            <a
+              class="btn call-btn"
+              href="tel:"
+            >
               📞 Call
             </a>
 
             <a
               class="btn map-btn"
               target="_blank"
-              href="https://www.google.com/maps/search/?api=1&query=Iscon+Thal+Ahmedabad">
+              rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=Iscon+Thal+Ahmedabad"
+            >
               📍 Map
             </a>
+
           </div>
 
         </div>
@@ -609,39 +1092,63 @@
       </article>
 
 
-      <!-- 3 -->
+      <!-- RESTAURANT 3 -->
+
       <article class="restaurant-card">
 
         <div class="restaurant-image">
-          REAL RESTAURANT PHOTO
+
+          <span>
+            Restaurant Photo
+          </span>
+
         </div>
 
         <div class="restaurant-content">
 
-          <span class="tag">Gujarati Restaurant</span>
+          <span class="tag">
+            Gujarati Restaurant
+          </span>
 
-          <h3>The Raj Thaal</h3>
+          <h3>
+            The Raj Thaal
+          </h3>
 
           <p>
-            Restaurant and thali dining place in the Bopal area.
+            Gujarati dining place
+            in Ahmedabad.
           </p>
 
           <div class="details">
-            <div>📍 Sardar Patel Ring Road, Bopal</div>
-            <div>🕐 Lunch & Dinner</div>
+
+            <div>
+              📍 Ahmedabad
+            </div>
+
+            <div>
+              🍛 Gujarati cuisine
+            </div>
+
           </div>
 
           <div class="actions">
-            <a class="btn call-btn" href="tel:+917096049108">
+
+            <a
+              class="btn call-btn"
+              href="tel:"
+            >
               📞 Call
             </a>
 
             <a
               class="btn map-btn"
               target="_blank"
-              href="https://www.google.com/maps/search/?api=1&query=The+Raj+Thaal+Ahmedabad">
+              rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=The+Raj+Thaal+Ahmedabad"
+            >
               📍 Map
             </a>
+
           </div>
 
         </div>
@@ -649,39 +1156,64 @@
       </article>
 
 
-      <!-- 4 -->
+      <!-- RESTAURANT 4 -->
+
       <article class="restaurant-card">
 
         <div class="restaurant-image">
-          REAL RESTAURANT PHOTO
+
+          <span>
+            Restaurant Photo
+          </span>
+
         </div>
 
         <div class="restaurant-content">
 
-          <span class="tag">Gujarati Food</span>
+          <span class="tag">
+            Gujarati Food
+          </span>
 
-          <h3>Vishalla</h3>
+          <h3>
+            Vishalla
+          </h3>
 
           <p>
-            Traditional village-style Gujarati dining experience.
+            Traditional village-style
+            Gujarati dining experience.
           </p>
 
           <div class="details">
-            <div>📍 Vishalla Circle, Vasna, Ahmedabad</div>
-            <div>🕐 11:00 AM – 11:00 PM</div>
+
+            <div>
+              📍 Vishalla Circle,
+              Vasna, Ahmedabad
+            </div>
+
+            <div>
+              🍛 Gujarati cuisine
+            </div>
+
           </div>
 
           <div class="actions">
-            <a class="btn call-btn" href="tel:+918200543694">
+
+            <a
+              class="btn call-btn"
+              href="tel:"
+            >
               📞 Call
             </a>
 
             <a
               class="btn map-btn"
               target="_blank"
-              href="https://www.google.com/maps/search/?api=1&query=Vishalla+Ahmedabad">
+              rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=Vishalla+Ahmedabad"
+            >
               📍 Map
             </a>
+
           </div>
 
         </div>
@@ -689,39 +1221,63 @@
       </article>
 
 
-      <!-- 5 -->
+      <!-- RESTAURANT 5 -->
+
       <article class="restaurant-card">
 
         <div class="restaurant-image">
-          REAL RESTAURANT PHOTO
+
+          <span>
+            Restaurant Photo
+          </span>
+
         </div>
 
         <div class="restaurant-content">
 
-          <span class="tag">Gujarati Restaurant</span>
+          <span class="tag">
+            Gujarati Restaurant
+          </span>
 
-          <h3>Rotlo Gujarati Rasthal</h3>
+          <h3>
+            Rotlo Gujarati Rasthal
+          </h3>
 
           <p>
-            Gujarati dining place in the Vastrapur area.
+            Gujarati food and
+            traditional dining.
           </p>
 
           <div class="details">
-            <div>📍 Vastrapur, Ahmedabad</div>
-            <div>🕐 Lunch & Dinner</div>
+
+            <div>
+              📍 Ahmedabad
+            </div>
+
+            <div>
+              🍛 Gujarati cuisine
+            </div>
+
           </div>
 
           <div class="actions">
-            <a class="btn call-btn" href="tel:+919510729842">
+
+            <a
+              class="btn call-btn"
+              href="tel:"
+            >
               📞 Call
             </a>
 
             <a
               class="btn map-btn"
               target="_blank"
-              href="https://www.google.com/maps/search/?api=1&query=Rotlo+Gujarati+Rasthal+Ahmedabad">
+              rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=Rotlo+Gujarati+Rasthal+Ahmedabad"
+            >
               📍 Map
             </a>
+
           </div>
 
         </div>
@@ -729,39 +1285,63 @@
       </article>
 
 
-      <!-- 6 -->
+      <!-- RESTAURANT 6 -->
+
       <article class="restaurant-card">
 
         <div class="restaurant-image">
-          REAL RESTAURANT PHOTO
+
+          <span>
+            Restaurant Photo
+          </span>
+
         </div>
 
         <div class="restaurant-content">
 
-          <span class="tag">Gujarati Thali</span>
+          <span class="tag">
+            Gujarati Thali
+          </span>
 
-          <h3>Shree Pancham Thal</h3>
+          <h3>
+            Shree Pancham Thal
+          </h3>
 
           <p>
-            Gujarati thali restaurant in the Science City area.
+            Gujarati thali dining
+            in Ahmedabad.
           </p>
 
           <div class="details">
-            <div>📍 Science City Road, Sola, Ahmedabad</div>
-            <div>🕐 Lunch & Dinner</div>
+
+            <div>
+              📍 Ahmedabad
+            </div>
+
+            <div>
+              🍛 Gujarati Thali
+            </div>
+
           </div>
 
           <div class="actions">
-            <a class="btn call-btn" href="tel:+916355480997">
+
+            <a
+              class="btn call-btn"
+              href="tel:"
+            >
               📞 Call
             </a>
 
             <a
               class="btn map-btn"
               target="_blank"
-              href="https://www.google.com/maps/search/?api=1&query=Shree+Pancham+Thal+Ahmedabad">
+              rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=Shree+Pancham+Thal+Ahmedabad"
+            >
               📍 Map
             </a>
+
           </div>
 
         </div>
@@ -769,39 +1349,63 @@
       </article>
 
 
-      <!-- 7 -->
+      <!-- RESTAURANT 7 -->
+
       <article class="restaurant-card">
 
         <div class="restaurant-image">
-          REAL RESTAURANT PHOTO
+
+          <span>
+            Restaurant Photo
+          </span>
+
         </div>
 
         <div class="restaurant-content">
 
-          <span class="tag">Gujarati Theme Restaurant</span>
+          <span class="tag">
+            Gujarati Theme Restaurant
+          </span>
 
-          <h3>Rajwadu</h3>
+          <h3>
+            Rajwadu
+          </h3>
 
           <p>
-            Traditional Indian and Gujarati village-style restaurant.
+            Traditional Indian and
+            Gujarati dining experience.
           </p>
 
           <div class="details">
-            <div>📍 Jivraj Tolnaka, Malav Talav Road</div>
-            <div>🕐 Lunch & Dinner</div>
+
+            <div>
+              📍 Ahmedabad
+            </div>
+
+            <div>
+              🍛 Gujarati cuisine
+            </div>
+
           </div>
 
           <div class="actions">
-            <a class="btn call-btn" href="tel:+919978505653">
+
+            <a
+              class="btn call-btn"
+              href="tel:"
+            >
               📞 Call
             </a>
 
             <a
               class="btn map-btn"
               target="_blank"
-              href="https://www.google.com/maps/search/?api=1&query=Rajwadu+Ahmedabad">
+              rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=Rajwadu+Ahmedabad"
+            >
               📍 Map
             </a>
+
           </div>
 
         </div>
@@ -809,39 +1413,63 @@
       </article>
 
 
-      <!-- 8 -->
+      <!-- RESTAURANT 8 -->
+
       <article class="restaurant-card">
 
         <div class="restaurant-image">
-          REAL RESTAURANT PHOTO
+
+          <span>
+            Restaurant Photo
+          </span>
+
         </div>
 
         <div class="restaurant-content">
 
-          <span class="tag">Gujarati Restaurant</span>
+          <span class="tag">
+            Gujarati Restaurant
+          </span>
 
-          <h3>Aagrah Restaurant</h3>
+          <h3>
+            Aagrah Restaurant
+          </h3>
 
           <p>
-            Gujarati restaurant at Balaji Agora Mall area.
+            Indian and Gujarati
+            dining place.
           </p>
 
           <div class="details">
-            <div>📍 200 Ft Ring Road, Ahmedabad</div>
-            <div>🕐 Lunch & Dinner</div>
+
+            <div>
+              📍 Ahmedabad
+            </div>
+
+            <div>
+              🍛 Indian cuisine
+            </div>
+
           </div>
 
           <div class="actions">
-            <a class="btn call-btn" href="tel:+917046035079">
+
+            <a
+              class="btn call-btn"
+              href="tel:"
+            >
               📞 Call
             </a>
 
             <a
               class="btn map-btn"
               target="_blank"
-              href="https://www.google.com/maps/search/?api=1&query=Aagrah+Restaurant+Ahmedabad">
+              rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=Aagrah+Restaurant+Ahmedabad"
+            >
               📍 Map
             </a>
+
           </div>
 
         </div>
@@ -849,39 +1477,63 @@
       </article>
 
 
-      <!-- 9 -->
+      <!-- RESTAURANT 9 -->
+
       <article class="restaurant-card">
 
         <div class="restaurant-image">
-          REAL RESTAURANT PHOTO
+
+          <span>
+            Restaurant Photo
+          </span>
+
         </div>
 
         <div class="restaurant-content">
 
-          <span class="tag">Gujarati Restaurant</span>
+          <span class="tag">
+            Gujarati Restaurant
+          </span>
 
-          <h3>Atithi Dining Hall</h3>
+          <h3>
+            Atithi Dining Hall
+          </h3>
 
           <p>
-            Gujarati dining restaurant in Bodakdev, Ahmedabad.
+            Gujarati dining place
+            in Ahmedabad.
           </p>
 
           <div class="details">
-            <div>📍 Zanzarwadi Road, Bodakdev</div>
-            <div>🕐 Lunch & Dinner</div>
+
+            <div>
+              📍 Ahmedabad
+            </div>
+
+            <div>
+              🍛 Gujarati cuisine
+            </div>
+
           </div>
 
           <div class="actions">
-            <a class="btn call-btn" href="tel:+919090003388">
+
+            <a
+              class="btn call-btn"
+              href="tel:"
+            >
               📞 Call
             </a>
 
             <a
               class="btn map-btn"
               target="_blank"
-              href="https://www.google.com/maps/search/?api=1&query=Atithi+Dining+Hall+Ahmedabad">
+              rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=Atithi+Dining+Hall+Ahmedabad"
+            >
               📍 Map
             </a>
+
           </div>
 
         </div>
@@ -889,148 +1541,236 @@
       </article>
 
 
-      <!-- 10 -->
+      <!-- RESTAURANT 10 -->
+
       <article class="restaurant-card">
 
         <div class="restaurant-image">
-          REAL RESTAURANT PHOTO
+
+          <span>
+            Restaurant Photo
+          </span>
+
         </div>
 
         <div class="restaurant-content">
 
-          <span class="tag">Indian Restaurant</span>
+          <span class="tag">
+            Indian Restaurant
+          </span>
 
-          <h3>Gordhan Thal</h3>
+          <h3>
+            Gordhan Thal
+          </h3>
 
           <p>
-            Thali restaurant near Rajpath Club, Bodakdev.
+            Thali dining restaurant
+            in Ahmedabad.
           </p>
 
           <div class="details">
-            <div>📍 S.G. Highway, Bodakdev</div>
-            <div>🕐 Lunch & Dinner</div>
+
+            <div>
+              📍 Ahmedabad
+            </div>
+
+            <div>
+              🍛 Thali
+            </div>
+
           </div>
 
           <div class="actions">
-            <a class="btn call-btn" href="tel:+917926871222">
+
+            <a
+              class="btn call-btn"
+              href="tel:"
+            >
               📞 Call
             </a>
 
             <a
               class="btn map-btn"
               target="_blank"
-              href="https://www.google.com/maps/search/?api=1&query=Gordhan+Thal+Ahmedabad">
+              rel="noopener"
+              href="https://www.google.com/maps/search/?api=1&query=Gordhan+Thal+Ahmedabad"
+            >
               📍 Map
             </a>
+
           </div>
 
         </div>
 
       </article>
+
 
     </div>
 
   </section>
 
 
-  <!-- FOOD MENU -->
+  <!-- =========================
+       FOOD MENU
+  ========================= -->
+
   <section id="menu">
 
     <div class="section-title">
-      <h2>Food Menu</h2>
-      <p>Detailed food menus will be added restaurant by restaurant.</p>
+
+      <h2>
+        Food Menu
+      </h2>
+
+      <p>
+        Detailed food information
+      </p>
+
     </div>
+
 
     <div class="menu-info">
 
-      <h3>🍛 Real Food Menu System</h3>
+      <h3>
+        🍛 Restaurant Food Menu
+      </h3>
 
       <p>
-        Each restaurant can have its own menu with:
-        food photo, food name, description, ingredients,
+        Each restaurant will have its own
+        food menu with food photos,
+        food name, description, ingredients,
         category and price.
       </p>
 
       <p>
-        Example categories:
-        Gujarati Thali • Snacks • Dhokla • Khandvi •
-        Rotla • Dal • Sabzi • Sweets • Drinks
+        Categories can include:
+        Gujarati Thali, Dhokla, Khandvi,
+        Fafda, Jalebi, Rotla, Dal,
+        Sabzi, Sweets and Drinks.
       </p>
-
-      <a href="#restaurants" class="btn">
-        View Restaurants
-      </a>
 
     </div>
 
   </section>
 
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
 
-    <h2>Ahmedabad Food Guide</h2>
+    <h2>
+      Ahmedabad Food Guide
+    </h2>
 
     <p>
-      Discover Ahmedabad's food and restaurants.
+      Discover Ahmedabad's food
+      and restaurants.
     </p>
 
     <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#restaurants">Restaurants</a>
-      <a href="#menu">Food Menu</a>
+
+      <a href="#home">
+        Home
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#restaurants">
+        Restaurants
+      </a>
+
+      <a href="#menu">
+        Food Menu
+      </a>
+
     </div>
 
     <p>
-      © 2026 Ahmedabad Food Guide. All rights reserved.
+      © 2026 Ahmedabad Food Guide.
+      All rights reserved.
     </p>
 
   </footer>
 
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
   <script>
 
-    /* DARK MODE */
+    /* =========================
+       DARK MODE
+    ========================= */
+
     function toggleDarkMode() {
+
       document.body.classList.toggle("dark");
 
-      const isDark =
+      const dark =
         document.body.classList.contains("dark");
 
       localStorage.setItem(
         "ahmedabadFoodDarkMode",
-        isDark ? "on" : "off"
+        dark ? "on" : "off"
       );
+
     }
+
+
+    /* Load saved dark mode */
 
     if (
-      localStorage.getItem("ahmedabadFoodDarkMode") === "on"
+      localStorage.getItem(
+        "ahmedabadFoodDarkMode"
+      ) === "on"
     ) {
+
       document.body.classList.add("dark");
+
     }
 
 
-    /* RESTAURANT SEARCH */
+    /* =========================
+       RESTAURANT SEARCH
+    ========================= */
+
     function searchRestaurants() {
 
       const input =
-        document.getElementById("searchInput")
+        document
+          .getElementById("searchInput")
           .value
-          .toLowerCase();
+          .toLowerCase()
+          .trim();
+
 
       const cards =
-        document.querySelectorAll(".restaurant-card");
+        document.querySelectorAll(
+          ".restaurant-card"
+        );
+
 
       cards.forEach(function(card) {
 
         const text =
           card.innerText.toLowerCase();
 
-        if (text.includes(input)) {
+
+        if (
+          text.includes(input)
+        ) {
+
           card.style.display = "";
+
         } else {
+
           card.style.display = "none";
+
         }
 
       });
@@ -1038,6 +1778,7 @@
     }
 
   </script>
+
 
 </body>
 </html>
