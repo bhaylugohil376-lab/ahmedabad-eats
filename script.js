@@ -1,5 +1,6 @@
 // ============================================================
-// AHMEDABAD EATS - COMPLETE SCRIPT
+// AHMEDABAD EATS - ORIGINAL JAVASCRIPT
+// 15 RESTAURANTS + SEARCH + FILTER + MENU + CART + MAP
 // ============================================================
 
 
@@ -8,6 +9,7 @@
 // ============================================================
 
 const restaurants = [
+
     {
         id: 1,
         name: "Agashiye",
@@ -15,16 +17,18 @@ const restaurants = [
         rating: "4.6",
         time: "35 mins",
         price: "₹800+ for two",
-        address: "The House of MG, Sidi Saiyyed Mosque, Lal Darwaja, Ahmedabad",
-        phone: "",
+        address: "The House of MG, Sidi Saiyyed Mosque, Lal Darwaja, Ahmedabad - 380001",
+        phone: "+91 79 2550 6946",
         mapUrl: "https://www.google.com/maps?q=Agashiye+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&q=80",
+
         menu: [
-            { id: 101, name: "Gujarati Thali", price: 450 },
-            { id: 102, name: "Farsan", price: 150 },
-            { id: 103, name: "Gujarati Sweet", price: 120 }
+            { name: "Gujarati Thali", price: 450 },
+            { name: "Farsan", price: 150 },
+            { name: "Gujarati Sweet", price: 120 }
         ]
     },
+
 
     {
         id: 2,
@@ -33,18 +37,20 @@ const restaurants = [
         rating: "4.5",
         time: "30 mins",
         price: "₹600+ for two",
-        address: "Panchavati Road, Law Garden, Ahmedabad",
-        phone: "",
+        address: "Panchavati Road, Law Garden, Ahmedabad - 380006",
+        phone: "+91 79 2640 5900",
         mapUrl: "https://www.google.com/maps?q=Swati+Snacks+Law+Garden+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=800&q=80",
+
         menu: [
-            { id: 201, name: "Panki", price: 275 },
-            { id: 202, name: "Handvo", price: 295 },
-            { id: 203, name: "Pav Bhaji", price: 350 },
-            { id: 204, name: "Dahi Sev Puri", price: 220 },
-            { id: 205, name: "Shrikhand", price: 175 }
+            { name: "Panki Chutney", price: 275 },
+            { name: "Handvo", price: 295 },
+            { name: "Pav Bhaji", price: 350 },
+            { name: "Dahi Sev Puri", price: 220 },
+            { name: "Shrikhand", price: 175 }
         ]
     },
+
 
     {
         id: 3,
@@ -53,16 +59,18 @@ const restaurants = [
         rating: "4.4",
         time: "40 mins",
         price: "₹400–₹1,200",
-        address: "Malav Talav, Ahmedabad",
-        phone: "",
+        address: "Nr. Jivraj Tolnaka, Behind Ambaji Temple, Malav Talav, Ahmedabad - 380007",
+        phone: "+91 99785 05653",
         mapUrl: "https://www.google.com/maps?q=Rajwadu+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&q=80",
+
         menu: [
-            { id: 301, name: "Gujarati Thali", price: 575 },
-            { id: 302, name: "Gujarati Farsan", price: 150 },
-            { id: 303, name: "Rotla", price: 100 }
+            { name: "Rajwadu Unlimited Thali", price: 575 },
+            { name: "Gujarati Farsan", price: 150 },
+            { name: "Rotla", price: 100 }
         ]
     },
+
 
     {
         id: 4,
@@ -71,16 +79,18 @@ const restaurants = [
         rating: "4.2",
         time: "40 mins",
         price: "₹800–₹1,200",
-        address: "Vasna, Ahmedabad",
-        phone: "",
+        address: "Opp. APMC Market, Vishala Circle, Vasna, Ahmedabad - 380055",
+        phone: "+91 82005 43694",
         mapUrl: "https://www.google.com/maps?q=Vishalla+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80",
+
         menu: [
-            { id: 401, name: "Gujarati Thali", price: 450 },
-            { id: 402, name: "Rotla", price: 120 },
-            { id: 403, name: "Chaas", price: 60 }
+            { name: "Gujarati Thali", price: 450 },
+            { name: "Rotla", price: 120 },
+            { name: "Chaas", price: 60 }
         ]
     },
+
 
     {
         id: 5,
@@ -89,16 +99,18 @@ const restaurants = [
         rating: "4.4",
         time: "35 mins",
         price: "₹200–₹400",
-        address: "S.G. Highway, Ahmedabad",
-        phone: "",
+        address: "Sapath Complex, Sarkhej-Gandhinagar Highway, Bodakdev, Ahmedabad - 380015",
+        phone: "+91 79 2687 1222",
         mapUrl: "https://www.google.com/maps?q=Gordhan+Thal+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80",
+
         menu: [
-            { id: 501, name: "Gujarati Thali", price: 350 },
-            { id: 502, name: "Farsan", price: 120 },
-            { id: 503, name: "Shrikhand", price: 120 }
+            { name: "Gujarati Thali", price: 350 },
+            { name: "Farsan", price: 120 },
+            { name: "Shrikhand", price: 120 }
         ]
     },
+
 
     {
         id: 6,
@@ -107,16 +119,18 @@ const restaurants = [
         rating: "4.8",
         time: "30 mins",
         price: "₹200–₹400",
-        address: "Iscon Cross Road, Ahmedabad",
-        phone: "",
+        address: "SF-1, Rudra Applis, Iscon Cross Road, Ahmedabad - 380059",
+        phone: "+91 88661 93093",
         mapUrl: "https://www.google.com/maps?q=Iscon+Thal+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80",
+
         menu: [
-            { id: 601, name: "Gujarati Thali", price: 350 },
-            { id: 602, name: "Paneer Sabji", price: 180 },
-            { id: 603, name: "Dal Rice", price: 150 }
+            { name: "Gujarati Thali", price: 350 },
+            { name: "Paneer Sabji", price: 180 },
+            { name: "Dal Rice", price: 150 }
         ]
     },
+
 
     {
         id: 7,
@@ -125,16 +139,18 @@ const restaurants = [
         rating: "4.4",
         time: "35 mins",
         price: "₹400–₹800",
-        address: "Ahmedabad, Gujarat",
-        phone: "",
+        address: "Shreekunj Mandapam, Ahmedabad - 380015",
+        phone: "+91 98240 90111",
         mapUrl: "https://www.google.com/maps?q=650+The+Global+Kitchen+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=800&q=80",
+
         menu: [
-            { id: 701, name: "Paneer Tikka", price: 240 },
-            { id: 702, name: "Dal Tadka", price: 180 },
-            { id: 703, name: "Veg Biryani", price: 220 }
+            { name: "Paneer Tikka", price: 240 },
+            { name: "Dal Tadka", price: 180 },
+            { name: "Veg Biryani", price: 220 }
         ]
     },
+
 
     {
         id: 8,
@@ -143,16 +159,18 @@ const restaurants = [
         rating: "4.5",
         time: "40 mins",
         price: "₹800–₹2,000",
-        address: "Bodakdev, Ahmedabad",
-        phone: "",
+        address: "Opp. Mahila Municipal Garden, Rajpath Rangoli Road, Bodakdev, Ahmedabad - 380059",
+        phone: "+91 97254 38230",
         mapUrl: "https://www.google.com/maps?q=Under+The+Neem+Trees+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+
         menu: [
-            { id: 801, name: "Paneer Tikka", price: 280 },
-            { id: 802, name: "Masala Dosa", price: 160 },
-            { id: 803, name: "Butter Naan", price: 70 }
+            { name: "Paneer Tikka", price: 280 },
+            { name: "Masala Dosa", price: 160 },
+            { name: "Butter Naan", price: 70 }
         ]
     },
+
 
     {
         id: 9,
@@ -161,16 +179,18 @@ const restaurants = [
         rating: "4.8",
         time: "35 mins",
         price: "₹400–₹1,400",
-        address: "Mithakhali, Ellisbridge, Ahmedabad",
-        phone: "",
+        address: "Hotel Nalanda, Mithakhali Six Road, Ellisbridge, Ahmedabad - 380006",
+        phone: "+91 79 2642 6262",
         mapUrl: "https://www.google.com/maps?q=Spiceville+Restaurant+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80",
+
         menu: [
-            { id: 901, name: "Paneer Tikka", price: 280 },
-            { id: 902, name: "Butter Chicken", price: 340 },
-            { id: 903, name: "Garlic Naan", price: 90 }
+            { name: "Paneer Tikka", price: 280 },
+            { name: "Butter Chicken", price: 340 },
+            { name: "Garlic Naan", price: 90 }
         ]
     },
+
 
     {
         id: 10,
@@ -179,16 +199,18 @@ const restaurants = [
         rating: "4.5",
         time: "30 mins",
         price: "₹200–₹400",
-        address: "Vastrapur, Ahmedabad",
-        phone: "",
+        address: "FF-136/137, Himalaya Arcade A, Vastrapur, Ahmedabad - 380015",
+        phone: "+91 95107 29842",
         mapUrl: "https://www.google.com/maps?q=Rotlo+Gujarati+Rasthal+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&q=80",
+
         menu: [
-            { id: 1001, name: "Bajra Rotla", price: 100 },
-            { id: 1002, name: "Sev Tameta", price: 150 },
-            { id: 1003, name: "Kathiyawadi Thali", price: 300 }
+            { name: "Bajra Rotla", price: 100 },
+            { name: "Sev Tameta", price: 150 },
+            { name: "Kathiyawadi Thali", price: 300 }
         ]
     },
+
 
     {
         id: 11,
@@ -197,16 +219,18 @@ const restaurants = [
         rating: "4.3",
         time: "35 mins",
         price: "₹200–₹400",
-        address: "Iscon Cross Road, Ahmedabad",
-        phone: "",
+        address: "101, Dev Arc Commercial Complex, Iscon Cross Road, Ahmedabad - 380015",
+        phone: "+91 96628 02220",
         mapUrl: "https://www.google.com/maps?q=The+Grand+Thakar+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&q=80",
+
         menu: [
-            { id: 1101, name: "Gujarati Thali", price: 350 },
-            { id: 1102, name: "Farsan", price: 120 },
-            { id: 1103, name: "Basundi", price: 120 }
+            { name: "Gujarati Thali", price: 350 },
+            { name: "Farsan", price: 120 },
+            { name: "Basundi", price: 120 }
         ]
     },
+
 
     {
         id: 12,
@@ -215,16 +239,18 @@ const restaurants = [
         rating: "4.4",
         time: "35 mins",
         price: "₹500–₹1,000",
-        address: "Ashram Road, Ahmedabad",
-        phone: "",
+        address: "Fortune Landmark, Ashram Road, Ahmedabad - 380013",
+        phone: "+91 79 6682 4444",
         mapUrl: "https://www.google.com/maps?q=Earthen+Oven+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80",
+
         menu: [
-            { id: 1201, name: "Tandoori Paneer", price: 320 },
-            { id: 1202, name: "Dal Makhani", price: 280 },
-            { id: 1203, name: "Naan", price: 80 }
+            { name: "Tandoori Paneer", price: 320 },
+            { name: "Dal Makhani", price: 280 },
+            { name: "Naan", price: 80 }
         ]
     },
+
 
     {
         id: 13,
@@ -233,16 +259,18 @@ const restaurants = [
         rating: "4.3",
         time: "40 mins",
         price: "₹1,000+ for two",
-        address: "Hyatt Regency Ahmedabad, Ashram Road, Ahmedabad",
-        phone: "",
+        address: "Hyatt Regency Ahmedabad, 17/A Ashram Road, Usmanpura, Ahmedabad - 380009",
+        phone: "+91 94267 68480",
         mapUrl: "https://www.google.com/maps?q=Tinello+Hyatt+Regency+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&q=80",
+
         menu: [
-            { id: 1301, name: "Pasta", price: 450 },
-            { id: 1302, name: "Pizza", price: 500 },
-            { id: 1303, name: "Dessert", price: 300 }
+            { name: "Pasta Margherita", price: 450 },
+            { name: "Woodfired Pizza", price: 500 },
+            { name: "Tiramisu Dessert", price: 300 }
         ]
     },
+
 
     {
         id: 14,
@@ -251,16 +279,18 @@ const restaurants = [
         rating: "4.1",
         time: "35 mins",
         price: "₹500–₹1,000",
-        address: "C.G. Road, Ahmedabad",
-        phone: "",
+        address: "Supermall, C.G. Road, near Lal Bungalow, Ellisbridge, Ahmedabad - 380006",
+        phone: "+91 88988 58988",
         mapUrl: "https://www.google.com/maps?q=Bluez+Restaurant+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+
         menu: [
-            { id: 1401, name: "Paneer Tikka", price: 260 },
-            { id: 1402, name: "Rava Dosa", price: 180 },
-            { id: 1403, name: "Butter Naan", price: 70 }
+            { name: "Paneer Tikka", price: 260 },
+            { name: "Rava Dosa", price: 180 },
+            { name: "Butter Naan", price: 70 }
         ]
     },
+
 
     {
         id: 15,
@@ -269,16 +299,18 @@ const restaurants = [
         rating: "4.5",
         time: "40 mins",
         price: "₹400–₹1,200",
-        address: "Ahmedabad, Gujarat",
-        phone: "",
+        address: "Shreekunj Mandapam, Ahmedabad - 380015",
+        phone: "+91 90815 55577",
         mapUrl: "https://www.google.com/maps?q=Rangeen+Ahmedabad&output=embed",
         image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80",
+
         menu: [
-            { id: 1501, name: "Pasta", price: 320 },
-            { id: 1502, name: "Paneer Main Course", price: 380 },
-            { id: 1503, name: "Dessert", price: 220 }
+            { name: "Arrabbiata Pasta", price: 320 },
+            { name: "Paneer Main Course", price: 380 },
+            { name: "Sizzling Dessert", price: 220 }
         ]
     }
+
 ];
 
 
@@ -287,6 +319,7 @@ const restaurants = [
 // ============================================================
 
 let cart = [];
+
 let selectedCategory = "All";
 
 
@@ -295,10 +328,12 @@ let selectedCategory = "All";
 // ============================================================
 
 function saveCartToStorage() {
+
     localStorage.setItem(
         "ahmedabad_eats_cart",
         JSON.stringify(cart)
     );
+
 }
 
 
@@ -307,23 +342,30 @@ function loadCartFromStorage() {
     const savedCart =
         localStorage.getItem("ahmedabad_eats_cart");
 
-    if (!savedCart) return;
+    if (!savedCart) {
+        cart = [];
+        return;
+    }
 
     try {
-        const parsed = JSON.parse(savedCart);
 
-        if (Array.isArray(parsed)) {
-            cart = parsed;
-        }
+        const parsedCart = JSON.parse(savedCart);
+
+        cart = Array.isArray(parsedCart)
+            ? parsedCart
+            : [];
 
     } catch (error) {
+
         cart = [];
+
     }
+
 }
 
 
 // ============================================================
-// RESTAURANT RENDER
+// RENDER RESTAURANTS
 // ============================================================
 
 function renderRestaurants(data = restaurants) {
@@ -338,7 +380,7 @@ function renderRestaurants(data = restaurants) {
 
     container.innerHTML = "";
 
-    if (data.length === 0) {
+    if (!data.length) {
 
         if (noResults) {
             noResults.style.display = "block";
@@ -358,31 +400,33 @@ function renderRestaurants(data = restaurants) {
 
         card.className = "card";
 
+
         card.innerHTML = `
+
             <img
                 src="${rest.image}"
-                alt="${escapeHTML(rest.name)}"
+                alt="${rest.name}"
                 loading="lazy"
             >
 
             <div class="card-info">
 
-                <h3>${escapeHTML(rest.name)}</h3>
+                <h3>
+                    ${rest.name}
+                </h3>
 
                 <p class="cuisine">
-                    ${escapeHTML(rest.cuisine)}
+                    ${rest.cuisine}
                 </p>
 
                 <p class="details">
-                    ⏱️ ${escapeHTML(rest.time)}
-                    •
-                    ${escapeHTML(rest.price)}
+                    ⏱️ ${rest.time} • ${rest.price}
                 </p>
 
                 <div class="card-bottom">
 
                     <span class="rating">
-                        ★ ${escapeHTML(rest.rating)}
+                        ★ ${rest.rating}
                     </span>
 
                     <button
@@ -402,11 +446,14 @@ function renderRestaurants(data = restaurants) {
                 </div>
 
             </div>
+
         `;
+
 
         container.appendChild(card);
 
     });
+
 }
 
 
@@ -419,17 +466,25 @@ function filterRestaurants() {
     const searchElement =
         document.getElementById("restaurant-search");
 
-    const search =
+    const searchInput =
         searchElement
             ? searchElement.value.toLowerCase().trim()
             : "";
 
+
     const filtered =
         restaurants.filter(rest => {
 
-            const restaurantText =
-                `${rest.name} ${rest.cuisine} ${rest.address}`
-                    .toLowerCase();
+            const restaurantText = [
+
+                rest.name,
+                rest.cuisine,
+                rest.address
+
+            ]
+            .join(" ")
+            .toLowerCase();
+
 
             const menuText =
                 rest.menu
@@ -437,22 +492,29 @@ function filterRestaurants() {
                     .join(" ")
                     .toLowerCase();
 
+
             const matchesSearch =
-                !search ||
-                restaurantText.includes(search) ||
-                menuText.includes(search);
+                restaurantText.includes(searchInput) ||
+                menuText.includes(searchInput);
+
 
             const matchesCategory =
                 selectedCategory === "All" ||
                 rest.cuisine
                     .toLowerCase()
-                    .includes(selectedCategory.toLowerCase());
+                    .includes(
+                        selectedCategory.toLowerCase()
+                    );
 
-            return matchesSearch && matchesCategory;
+
+            return matchesSearch &&
+                   matchesCategory;
 
         });
 
+
     renderRestaurants(filtered);
+
 }
 
 
@@ -460,26 +522,32 @@ function filterRestaurants() {
 // CATEGORY FILTER
 // ============================================================
 
-function filterCategory(category, button) {
+function filterCategory(category, btnElement) {
 
     selectedCategory = category;
 
+
     document
         .querySelectorAll(".category-btn")
-        .forEach(btn => {
-            btn.classList.remove("active");
+        .forEach(button => {
+
+            button.classList.remove("active");
+
         });
 
-    if (button) {
-        button.classList.add("active");
+
+    if (btnElement) {
+        btnElement.classList.add("active");
     }
 
+
     filterRestaurants();
+
 }
 
 
 // ============================================================
-// MENU MODAL
+// MENU
 // ============================================================
 
 function openMenu(id) {
@@ -489,62 +557,71 @@ function openMenu(id) {
 
     if (!restaurant) return;
 
+
     const title =
         document.getElementById("modal-rest-name");
 
     const container =
         document.getElementById("modal-menu-items");
 
-    if (!title || !container) return;
+    const modal =
+        document.getElementById("menu-modal");
+
+
+    if (!title || !container || !modal) return;
+
 
     title.innerText =
-        `${restaurant.name} - Menu`;
+        restaurant.name + " - Menu";
+
 
     container.innerHTML = "";
 
 
-    restaurant.menu.forEach(item => {
+    restaurant.menu.forEach((item, index) => {
 
         const menuItem =
             document.createElement("div");
 
         menuItem.className = "menu-item";
 
+
         menuItem.innerHTML = `
+
             <div>
+
                 <strong>
-                    ${escapeHTML(item.name)}
+                    ${item.name}
                 </strong>
 
                 <br>
 
-                <small style="color:#94a3b8;">
+                <small>
                     ₹${item.price}
                 </small>
+
             </div>
 
             <button
                 class="add-btn"
                 onclick="addToCart(
                     ${restaurant.id},
-                    ${item.id}
+                    ${index}
                 )"
             >
                 + Add
             </button>
+
         `;
+
 
         container.appendChild(menuItem);
 
     });
 
 
-    const modal =
-        document.getElementById("menu-modal");
+    modal.style.display = "flex";
 
-    if (modal) {
-        modal.style.display = "flex";
-    }
 }
 
 
@@ -556,11 +633,12 @@ function closeMenu() {
     if (modal) {
         modal.style.display = "none";
     }
+
 }
 
 
 // ============================================================
-// DETAILS MODAL
+// RESTAURANT DETAILS
 // ============================================================
 
 function openDetails(id) {
@@ -587,30 +665,33 @@ function openDetails(id) {
         document.getElementById("details-modal");
 
 
+    if (!modal) return;
+
+
     if (name) {
         name.innerText = restaurant.name;
     }
 
+
     if (address) {
         address.innerText =
-            `📍 Address: ${restaurant.address}`;
+            "📍 Address: " + restaurant.address;
     }
+
 
     if (phone) {
-
         phone.innerText =
-            restaurant.phone
-                ? `📞 Contact: ${restaurant.phone}`
-                : "📞 Contact: Please check restaurant's official contact details";
+            "📞 Contact: " + restaurant.phone;
     }
+
 
     if (map) {
         map.src = restaurant.mapUrl;
     }
 
-    if (modal) {
-        modal.style.display = "flex";
-    }
+
+    modal.style.display = "flex";
+
 }
 
 
@@ -622,6 +703,7 @@ function closeDetails() {
     if (modal) {
         modal.style.display = "none";
     }
+
 }
 
 
@@ -629,99 +711,56 @@ function closeDetails() {
 // CART
 // ============================================================
 
-function addToCart(restaurantId, menuId) {
+function addToCart(restaurantId, menuIndex) {
 
     const restaurant =
-        restaurants.find(rest => rest.id === restaurantId);
+        restaurants.find(
+            rest => rest.id === restaurantId
+        );
 
     if (!restaurant) return;
 
+
     const item =
-        restaurant.menu.find(menu => menu.id === menuId);
+        restaurant.menu[menuIndex];
 
     if (!item) return;
 
 
-    const existing =
-        cart.find(cartItem =>
-            cartItem.restaurantId === restaurantId &&
-            cartItem.menuId === menuId
-        );
+    cart.push({
 
+        restaurant: restaurant.name,
 
-    if (existing) {
+        name: item.name,
 
-        existing.quantity += 1;
+        price: Number(item.price)
 
-    } else {
-
-        cart.push({
-            restaurantId: restaurantId,
-            restaurantName: restaurant.name,
-            menuId: menuId,
-            name: item.name,
-            price: item.price,
-            quantity: 1
-        });
-
-    }
+    });
 
 
     saveCartToStorage();
+
     updateCartUI();
-}
 
-
-function increaseQuantity(index) {
-
-    if (!cart[index]) return;
-
-    cart[index].quantity += 1;
-
-    saveCartToStorage();
-    updateCartUI();
-}
-
-
-function decreaseQuantity(index) {
-
-    if (!cart[index]) return;
-
-    cart[index].quantity -= 1;
-
-    if (cart[index].quantity <= 0) {
-        cart.splice(index, 1);
-    }
-
-    saveCartToStorage();
-    updateCartUI();
 }
 
 
 function removeFromCart(index) {
 
-    if (!cart[index]) return;
+    if (
+        index < 0 ||
+        index >= cart.length
+    ) {
+        return;
+    }
+
 
     cart.splice(index, 1);
 
     saveCartToStorage();
+
     updateCartUI();
-}
 
-
-function clearCart() {
-
-    if (cart.length === 0) return;
-
-    const confirmed =
-        confirm("Kya aap cart empty karna chahte hain?");
-
-    if (!confirmed) return;
-
-    cart = [];
-
-    saveCartToStorage();
-    updateCartUI();
 }
 
 
@@ -741,35 +780,20 @@ function updateCartUI() {
         document.getElementById("cart-total");
 
 
-    if (!container || !totalElement) return;
-
-
-    let totalItems = 0;
-    let totalPrice = 0;
-
-
-    cart.forEach(item => {
-
-        totalItems += item.quantity;
-
-        totalPrice +=
-            item.price * item.quantity;
-
-    });
-
-
     if (count) {
-        count.innerText = totalItems;
+        count.innerText = cart.length;
     }
 
 
-    if (cart.length === 0) {
+    if (!container || !totalElement) {
+        return;
+    }
 
-        container.innerHTML = `
-            <p class="empty-msg">
-                Your cart is empty.
-            </p>
-        `;
+
+    if (!cart.length) {
+
+        container.innerHTML =
+            '<p class="empty-msg">Your cart is empty.</p>';
 
         totalElement.innerText = "0";
 
@@ -780,90 +804,60 @@ function updateCartUI() {
     container.innerHTML = "";
 
 
+    let total = 0;
+
+
     cart.forEach((item, index) => {
+
+        total += Number(item.price);
+
 
         const row =
             document.createElement("div");
 
-        row.className = "cart-item-row";
+        row.className =
+            "cart-item-row";
+
 
         row.innerHTML = `
+
             <div>
 
                 <strong>
-                    ${escapeHTML(item.name)}
+                    ${item.name}
                 </strong>
 
                 <br>
 
-                <small style="color:#38bdf8;">
-                    ₹${item.price}
+                <small>
+                    ${item.restaurant}
                 </small>
 
-                <div style="margin-top:6px;">
+                <br>
 
-                    <button
-                        type="button"
-                        onclick="decreaseQuantity(${index})"
-                    >
-                        −
-                    </button>
-
-                    <span style="margin:0 8px;">
-                        ${item.quantity}
-                    </span>
-
-                    <button
-                        type="button"
-                        onclick="increaseQuantity(${index})"
-                    >
-                        +
-                    </button>
-
-                </div>
+                <small>
+                    ₹${item.price}
+                </small>
 
             </div>
 
             <button
-                type="button"
                 onclick="removeFromCart(${index})"
-                style="
-                    background:#ef4444;
-                    color:white;
-                    border:none;
-                    padding:4px 8px;
-                    border-radius:4px;
-                    cursor:pointer;
-                "
             >
                 X
             </button>
+
         `;
+
 
         container.appendChild(row);
 
     });
 
 
-    container.innerHTML += `
-        <button
-            type="button"
-            onclick="clearCart()"
-            style="
-                margin-top:15px;
-                padding:8px 12px;
-                border:none;
-                border-radius:6px;
-                cursor:pointer;
-            "
-        >
-            Clear Cart
-        </button>
-    `;
-
-
     totalElement.innerText =
-        totalPrice;
+        total.toLocaleString("en-IN");
+
 }
 
 
@@ -876,9 +870,10 @@ function toggleCart() {
     const drawer =
         document.getElementById("cart-drawer");
 
-    if (!drawer) return;
+    if (drawer) {
+        drawer.classList.toggle("active");
+    }
 
-    drawer.classList.toggle("active");
 }
 
 
@@ -888,7 +883,7 @@ function toggleCart() {
 
 function checkout() {
 
-    if (cart.length === 0) {
+    if (!cart.length) {
 
         alert(
             "Cart empty hai! Pehle kuch item add karein."
@@ -898,42 +893,19 @@ function checkout() {
     }
 
 
-    const total =
-        cart.reduce(
-            (sum, item) =>
-                sum + item.price * item.quantity,
-            0
-        );
-
-
-    const confirmed =
-        confirm(
-            `Order total ₹${total} hai.\n\nOrder place karein?`
-        );
-
-
-    if (!confirmed) return;
-
-
     alert(
-        "🎉 Order successfully placed!"
+        "🎉 Order Successful! Aapka khana jald hi pahocha diya jayega."
     );
 
 
     cart = [];
 
     saveCartToStorage();
+
     updateCartUI();
 
-    const drawer =
-        document.getElementById("cart-drawer");
+    toggleCart();
 
-    if (
-        drawer &&
-        drawer.classList.contains("active")
-    ) {
-        drawer.classList.remove("active");
-    }
 }
 
 
@@ -941,62 +913,85 @@ function checkout() {
 // CLOSE MODALS WHEN CLICKING OUTSIDE
 // ============================================================
 
-window.addEventListener("click", function(event) {
+window.addEventListener(
+    "click",
+    function(event) {
 
-    const menuModal =
-        document.getElementById("menu-modal");
+        const menuModal =
+            document.getElementById("menu-modal");
 
-    const detailsModal =
-        document.getElementById("details-modal");
+        const detailsModal =
+            document.getElementById("details-modal");
 
 
-    if (
-        event.target === menuModal
-    ) {
-        closeMenu();
+        if (
+            menuModal &&
+            event.target === menuModal
+        ) {
+            closeMenu();
+        }
+
+
+        if (
+            detailsModal &&
+            event.target === detailsModal
+        ) {
+            closeDetails();
+        }
+
     }
+);
 
 
-    if (
-        event.target === detailsModal
-    ) {
-        closeDetails();
+// ============================================================
+// ESC KEY
+// ============================================================
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (event.key === "Escape") {
+
+            closeMenu();
+
+            closeDetails();
+
+        }
+
     }
-
-});
-
-
-// ============================================================
-// ESCAPE KEY
-// ============================================================
-
-document.addEventListener("keydown", function(event) {
-
-    if (event.key !== "Escape") return;
-
-    closeMenu();
-    closeDetails();
-
-});
+);
 
 
 // ============================================================
-// BASIC HTML ESCAPING
+// FUTURE HELPER
 // ============================================================
 
-function escapeHTML(value) {
-
-    return String(value)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
+// Future mein new restaurant add karna ho:
+//
+// restaurants.push({
+//     id: 16,
+//     name: "New Restaurant",
+//     cuisine: "Gujarati",
+//     rating: "4.5",
+//     time: "30 mins",
+//     price: "₹500 for two",
+//     address: "Ahmedabad",
+//     phone: "+91 XXXXX XXXXX",
+//     mapUrl: "Google Maps Embed URL",
+//     image: "Image URL",
+//     menu: [
+//         { name: "Food Item", price: 200 }
+//     ]
+// });
+//
+// Phir:
+// renderRestaurants();
+//
 
 
 // ============================================================
-// INITIALIZATION
+// INITIAL LOAD
 // ============================================================
 
 document.addEventListener(
