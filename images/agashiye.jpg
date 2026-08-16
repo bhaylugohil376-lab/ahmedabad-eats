@@ -1,0 +1,44 @@
+// 1
+image: "images/agashiye.jpg",
+
+// 2
+image: "images/global-kitchen.jpg",
+
+// 3
+image: "images/vishalla.jpg",
+
+// 4
+image: "images/spiceville.jpg",
+
+// 5
+image: "images/green-house.jpg",
+
+// 6
+image: "images/neem-trees.jpg",
+
+// 7
+image: "images/tinello.jpg",
+
+// 8
+image: "images/earthen-oven.jpg",
+
+// 9
+image: "images/gordhan-thal.jpg",
+
+// 10
+image: "images/mango.jpg",
+
+// 11
+image: "images/bluez.jpg",
+
+// 12
+image: "images/oriental-grill.jpg",
+
+// 13
+image: "images/kabab-factory.jpg",
+
+// 14
+image: "images/foodinn.jpg",
+
+// 15
+image: "images/eatery.jpg"
