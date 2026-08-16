@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Express - Top Restaurants</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">FoodieExpress</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#restaurants">Restaurants</a></li>
+            <li><a href="#">Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Discover Best Food & Drinks</h1>
+        <p>Order from top 10 rated restaurants near you.</p>
+    </header>
+
+    <section class="restaurant-section" id="restaurants">
+        <h2>Featured Restaurants</h2>
+        <div class="restaurant-grid" id="restaurant-list">
+            <!-- JavaScript will load 10 restaurants here -->
+        </div>
+    </section>
+
+    <!-- Menu Modal -->
+    <div id="menu-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeMenu()">&times;</span>
+            <h2 id="modal-rest-name">Restaurant Menu</h2>
+            <div id="modal-menu-items"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
