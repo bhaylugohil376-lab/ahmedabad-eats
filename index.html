@@ -1,147 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Ahmedabad Eats | Best Restaurants in Ahmedabad</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <meta name="description"
-          content="Ahmedabad Eats - Discover the best restaurants, Gujarati thali, traditional food and delicious restaurants in Ahmedabad, Gujarat.">
+    <meta
+        name="description"
+        content="Ahmedabad Eats - Discover restaurants, menus and food in Ahmedabad."
+    >
 
-    <meta name="keywords"
-          content="Ahmedabad restaurants, best restaurants Ahmedabad, Gujarati food Ahmedabad, Gujarati thali, Ahmedabad Eats">
-
-    <meta name="robots" content="index, follow">
-
-    <link rel="canonical"
-          href="https://ahmedabad-eats-jcs8.vercel.app/">
-
-    <meta property="og:title"
-          content="Ahmedabad Eats | Best Restaurants in Ahmedabad">
-
-    <meta property="og:description"
-          content="Discover the best restaurants and food in Ahmedabad.">
-
-    <meta property="og:url"
-          content="https://ahmedabad-eats-jcs8.vercel.app/">
-
-    <meta property="og:type" content="website">
+    <title>Ahmedabad Eats | Best Restaurants</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
 
 <nav class="navbar">
 
     <div class="logo">
-        Ahmedabad<span>Eats</span>
+        🍴 Ahmedabad Eats
     </div>
 
     <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#restaurants">Restaurants</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
 
         <li>
-            <a href="javascript:void(0)" onclick="toggleCart()">
-                🛒 Cart (<span id="cart-count">0</span>)
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#restaurants">Restaurants</a>
+        </li>
+
+        <li>
+            <a href="#restaurant-contact">Restaurant Contact</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#" onclick="toggleCart(); return false;">
+                🛒 Cart
+                (<span id="cart-count">0</span>)
             </a>
         </li>
+
     </ul>
 
 </nav>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <header class="hero" id="home">
 
-    <div class="hero-content">
+    <h1>
+        Discover Ahmedabad's Best Food 🍕🍔
+    </h1>
 
-        <p>🍴 AHMEDABAD'S FOOD GUIDE</p>
-
-        <h1>
-            Discover the Best Food in Ahmedabad
-        </h1>
-
-        <p>
-            Explore Ahmedabad's popular restaurants,
-            Gujarati food, thalis and delicious dishes.
-        </p>
-
-        <div class="search-box">
-
-            <input
-                type="text"
-                id="restaurant-search"
-                placeholder="Search restaurant or food..."
-                oninput="filterRestaurants()"
-            >
-
-            <button onclick="filterRestaurants()">
-                🔍 Search
-            </button>
-
-        </div>
-
-    </div>
+    <p>
+        Explore popular restaurants, delicious menus
+        and amazing food across Ahmedabad.
+    </p>
 
 </header>
 
 
-<!-- ================= CATEGORIES ================= -->
 
-<section class="categories">
+<!-- =====================================================
+     SEARCH
+===================================================== -->
 
-    <h2>Explore Categories</h2>
+<section class="search-section">
 
-    <div class="category-list">
+    <div class="search-box">
+
+        <input
+            type="search"
+            id="restaurant-search"
+            placeholder="Search restaurant, cuisine or food..."
+            oninput="filterRestaurants()"
+        >
+
+        <button
+            type="button"
+            onclick="filterRestaurants()"
+        >
+            🔍 Search
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
+
+<section class="category-section">
+
+    <div class="category-buttons">
 
         <button
             class="category-btn active"
-            onclick="filterCategory('All', this)">
-            All
+            onclick="filterCategory('All', this)"
+        >
+            🍽️ All
         </button>
 
         <button
             class="category-btn"
-            onclick="filterCategory('Gujarati', this)">
-            Gujarati
+            onclick="filterCategory('Gujarati', this)"
+        >
+            🥘 Gujarati
         </button>
 
         <button
             class="category-btn"
-            onclick="filterCategory('Vegetarian', this)">
-            Vegetarian
+            onclick="filterCategory('North Indian', this)"
+        >
+            🍛 North Indian
         </button>
 
         <button
             class="category-btn"
-            onclick="filterCategory('North Indian', this)">
-            North Indian
+            onclick="filterCategory('South Indian', this)"
+        >
+            🥞 South Indian
         </button>
 
         <button
             class="category-btn"
-            onclick="filterCategory('South Indian', this)">
-            South Indian
+            onclick="filterCategory('Italian', this)"
+        >
+            🍕 Italian
         </button>
 
         <button
             class="category-btn"
-            onclick="filterCategory('Italian', this)">
-            Italian
-        </button>
-
-        <button
-            class="category-btn"
-            onclick="filterCategory('Traditional', this)">
-            Traditional
+            onclick="filterCategory('Vegetarian', this)"
+        >
+            🥗 Vegetarian
         </button>
 
     </div>
@@ -149,803 +166,154 @@
 </section>
 
 
-<!-- ================= RESTAURANTS ================= -->
+
+<!-- =====================================================
+     RESTAURANTS
+===================================================== -->
 
 <section
     class="restaurant-section"
-    id="restaurants">
-
-    <p class="section-label">
-        TOP PICKS
-    </p>
+    id="restaurants"
+>
 
     <h2>
-        Popular Restaurants in Ahmedabad
+        ⭐ Featured Restaurants
     </h2>
 
-
+    <!-- JavaScript automatically adds all 15 restaurants -->
     <div
         class="restaurant-grid"
-        id="restaurant-list">
+        id="restaurant-list"
+    ></div>
 
 
-        <!-- 1 AGASHIYE -->
+    <div id="no-results">
 
-        <article class="card">
+        😕 No restaurant found.
 
-            <img
-                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&q=80"
-                alt="Agashiye Gujarati Restaurant Ahmedabad"
-            >
+        <br>
 
-            <div class="card-info">
-
-                <h3>Agashiye</h3>
-
-                <p class="cuisine">
-                    Gujarati
-                </p>
-
-                <p class="details">
-                    ⏱️ 35 mins • ₹800+ for two
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.6
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(1)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(1)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 2 SWATI SNACKS -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?w=800&q=80"
-                alt="Swati Snacks Ahmedabad"
-            >
-
-            <div class="card-info">
-
-                <h3>Swati Snacks</h3>
-
-                <p class="cuisine">
-                    Gujarati, Vegetarian
-                </p>
-
-                <p class="details">
-                    ⏱️ 30 mins • ₹600+ for two
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.5
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(2)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(2)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 3 RAJWADU -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&q=80"
-                alt="Rajwadu Ahmedabad Gujarati Restaurant"
-            >
-
-            <div class="card-info">
-
-                <h3>Rajwadu</h3>
-
-                <p class="cuisine">
-                    Gujarati, Traditional
-                </p>
-
-                <p class="details">
-                    ⏱️ 40 mins • ₹400–₹1,200
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.4
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(3)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(3)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 4 VISHALLA -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80"
-                alt="Vishalla Ahmedabad Gujarati Restaurant"
-            >
-
-            <div class="card-info">
-
-                <h3>Vishalla</h3>
-
-                <p class="cuisine">
-                    Gujarati
-                </p>
-
-                <p class="details">
-                    ⏱️ 40 mins • ₹800–₹1,200
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.2
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(4)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(4)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 5 GORDHAN THAL -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80"
-                alt="Gordhan Thal Ahmedabad"
-            >
-
-            <div class="card-info">
-
-                <h3>Gordhan Thal</h3>
-
-                <p class="cuisine">
-                    Gujarati
-                </p>
-
-                <p class="details">
-                    ⏱️ 35 mins • ₹200–₹400
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.4
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(5)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(5)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 6 ISCON THAL -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80"
-                alt="Iscon Thal Ahmedabad"
-            >
-
-            <div class="card-info">
-
-                <h3>Iscon Thal</h3>
-
-                <p class="cuisine">
-                    Gujarati
-                </p>
-
-                <p class="details">
-                    ⏱️ 30 mins • ₹200–₹400
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.8
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(6)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(6)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 7 650 GLOBAL KITCHEN -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=800&q=80"
-                alt="650 The Global Kitchen Ahmedabad"
-            >
-
-            <div class="card-info">
-
-                <h3>650 - The Global Kitchen</h3>
-
-                <p class="cuisine">
-                    Vegetarian, Multi Cuisine
-                </p>
-
-                <p class="details">
-                    ⏱️ 35 mins • ₹400–₹800
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.4
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(7)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(7)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 8 UNDER THE NEEM TREES -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80"
-                alt="Under The Neem Trees Ahmedabad"
-            >
-
-            <div class="card-info">
-
-                <h3>Under The Neem Trees</h3>
-
-                <p class="cuisine">
-                    North Indian, South Indian
-                </p>
-
-                <p class="details">
-                    ⏱️ 40 mins • ₹800–₹2,000
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.5
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(8)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(8)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 9 SPICEVILLE -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=800&q=80"
-                alt="Spiceville Restaurant Ahmedabad"
-            >
-
-            <div class="card-info">
-
-                <h3>Spiceville Restaurant</h3>
-
-                <p class="cuisine">
-                    North Indian
-                </p>
-
-                <p class="details">
-                    ⏱️ 35 mins • ₹400–₹1,400
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.8
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(9)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(9)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 10 ROTLO -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&q=80"
-                alt="Rotlo Gujarati Rasthal Ahmedabad"
-            >
-
-            <div class="card-info">
-
-                <h3>Rotlo Gujarati Rasthal</h3>
-
-                <p class="cuisine">
-                    Gujarati, Kathiyawadi
-                </p>
-
-                <p class="details">
-                    ⏱️ 30 mins • ₹200–₹400
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.5
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(10)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(10)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 11 GRAND THAKAR -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=800&q=80"
-                alt="The Grand Thakar Ahmedabad"
-            >
-
-            <div class="card-info">
-
-                <h3>The Grand Thakar</h3>
-
-                <p class="cuisine">
-                    Gujarati
-                </p>
-
-                <p class="details">
-                    ⏱️ 35 mins • ₹200–₹400
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.3
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(11)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(11)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 12 EARTHEN OVEN -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&q=80"
-                alt="Earthen Oven Ahmedabad"
-            >
-
-            <div class="card-info">
-
-                <h3>Earthen Oven</h3>
-
-                <p class="cuisine">
-                    North Indian
-                </p>
-
-                <p class="details">
-                    ⏱️ 35 mins • ₹500–₹1,000
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.4
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(12)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(12)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 13 TINELLO -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=800&q=80"
-                alt="Tinello Hyatt Regency Ahmedabad"
-            >
-
-            <div class="card-info">
-
-                <h3>Tinello</h3>
-
-                <p class="cuisine">
-                    Italian, International
-                </p>
-
-                <p class="details">
-                    ⏱️ 40 mins • ₹1,000+ for two
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.3
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(13)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(13)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 14 BLUEZ -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80"
-                alt="Bluez Restaurant Ahmedabad"
-            >
-
-            <div class="card-info">
-
-                <h3>Bluez Restaurant</h3>
-
-                <p class="cuisine">
-                    North Indian, South Indian
-                </p>
-
-                <p class="details">
-                    ⏱️ 35 mins • ₹500–₹1,000
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.1
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(14)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(14)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-
-        <!-- 15 RANGEEN -->
-
-        <article class="card">
-
-            <img
-                src="https://images.unsplash.com/photo-1547592180-85f173990554?w=800&q=80"
-                alt="Rangeen Ahmedabad Restaurant"
-            >
-
-            <div class="card-info">
-
-                <h3>Rangeen</h3>
-
-                <p class="cuisine">
-                    Vegetarian, Italian
-                </p>
-
-                <p class="details">
-                    ⏱️ 40 mins • ₹400–₹1,200
-                </p>
-
-                <div class="card-bottom">
-
-                    <span class="rating">
-                        ★ 4.5
-                    </span>
-
-                    <button
-                        class="btn-details"
-                        onclick="openDetails(15)">
-                        Details
-                    </button>
-
-                    <button
-                        class="btn-menu"
-                        onclick="openMenu(15)">
-                        Menu
-                    </button>
-
-                </div>
-
-            </div>
-
-        </article>
-
-    </div>
-
-
-    <div
-        id="no-results"
-        style="display:none;text-align:center;padding:40px;"
-    >
-
-        <h3>No restaurants found</h3>
-
-        <p>
-            Try another search.
-        </p>
+        Try another search.
 
     </div>
 
 </section>
 
 
-<!-- ================= ABOUT ================= -->
 
-<section
-    class="about-section"
-    id="about">
-
-    <p class="section-label">
-        ABOUT US
-    </p>
-
-    <h2>
-        About Ahmedabad Eats
-    </h2>
-
-    <p>
-        Ahmedabad Eats helps you discover popular
-        restaurants and delicious food across Ahmedabad.
-    </p>
-
-    <p>
-        Explore Gujarati, Kathiyawadi, North Indian,
-        South Indian, Italian and vegetarian food.
-    </p>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
+<!-- =====================================================
+     RESTAURANT CONTACT
+===================================================== -->
 
 <section
     class="contact-section"
-    id="contact">
+    id="restaurant-contact"
+>
 
     <h2>
-        Contact & Location
+        📍 Restaurant Contact & Location
     </h2>
 
+    <p
+        style="
+            text-align:center;
+            margin-bottom:30px;
+            color:#6b7280;
+        "
+    >
+        Restaurant card par <b>Details</b> button dabakar
+        address, phone aur Google Maps location dekhein.
+    </p>
+
+
     <div class="contact-container">
+
+
+        <!-- CONTACT INFO -->
 
         <div class="contact-info">
 
             <h3>
-                Ahmedabad Eats
+                🍴 Ahmedabad Eats
             </h3>
 
             <p>
-                📍 Ahmedabad, Gujarat, India
+                📍
+                <strong>
+                    City:
+                </strong>
+                Ahmedabad, Gujarat, India
             </p>
 
             <p>
-                📞 +91 98765 43210
+                📞
+                <strong>
+                    Support:
+                </strong>
+                +91 90000 00000
             </p>
 
             <p>
-                ✉️ support@ahmedabadeats.com
+                ✉️
+                <strong>
+                    Email:
+                </strong>
+                support@ahmedabadeats.com
+            </p>
+
+            <p>
+                🕐
+                <strong>
+                    Support Hours:
+                </strong>
+                10:00 AM - 10:00 PM
+            </p>
+
+            <hr
+                style="
+                    margin:20px 0;
+                    border:0;
+                    border-top:1px solid #fed7aa;
+                "
+            >
+
+            <h3>
+                📌 How to find restaurant details?
+            </h3>
+
+            <p>
+                Restaurant card mein
+                <strong>Details</strong>
+                button select karein.
+            </p>
+
+            <p>
+                Wahan restaurant ka address,
+                contact number aur map available hai.
             </p>
 
         </div>
 
+
+        <!-- MAP -->
+
         <div class="map-container">
+
+            <h3>
+                🗺️ Ahmedabad Location
+            </h3>
 
             <iframe
                 src="https://www.google.com/maps?q=Ahmedabad,Gujarat,India&output=embed"
                 width="100%"
-                height="280"
-                style="border:0;border-radius:10px;"
+                height="300"
+                style="
+                    border:0;
+                    border-radius:15px;
+                "
                 loading="lazy"
-                title="Ahmedabad Map">
-            </iframe>
+                allowfullscreen
+            ></iframe>
 
         </div>
 
@@ -954,17 +322,53 @@
 </section>
 
 
-<!-- ================= MENU MODAL ================= -->
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    class="about-section"
+    id="about"
+>
+
+    <h2>
+        ❤️ About Ahmedabad Eats
+    </h2>
+
+    <p>
+        Ahmedabad Eats ek food discovery website hai jahan
+        aap Ahmedabad ke popular restaurants, cuisines,
+        menus aur locations explore kar sakte hain.
+    </p>
+
+    <br>
+
+    <p>
+        Restaurant select karein, menu dekhein,
+        food cart mein add karein aur restaurant ki
+        location aur contact details check karein.
+    </p>
+
+</section>
+
+
+
+<!-- =====================================================
+     MENU MODAL
+===================================================== -->
 
 <div
     id="menu-modal"
-    class="modal">
+    class="modal"
+>
 
     <div class="modal-content">
 
         <span
             class="close-btn"
-            onclick="closeMenu()">
+            onclick="closeMenu()"
+        >
             &times;
         </span>
 
@@ -972,58 +376,93 @@
             Restaurant Menu
         </h2>
 
-        <div id="modal-menu-items"></div>
+        <div
+            id="modal-menu-items"
+        ></div>
 
     </div>
 
 </div>
 
 
-<!-- ================= DETAILS MODAL ================= -->
+
+<!-- =====================================================
+     RESTAURANT DETAILS MODAL
+===================================================== -->
 
 <div
     id="details-modal"
-    class="modal">
+    class="modal"
+>
 
     <div class="modal-content">
 
         <span
             class="close-btn"
-            onclick="closeDetails()">
+            onclick="closeDetails()"
+        >
             &times;
         </span>
+
 
         <h2 id="detail-rest-name">
             Restaurant Details
         </h2>
 
-        <p id="detail-rest-address"></p>
 
-        <p id="detail-rest-phone"></p>
+        <p
+            id="detail-rest-address"
+            style="
+                margin:12px 0;
+                color:#6b7280;
+                line-height:1.6;
+            "
+        ></p>
+
+
+        <p
+            id="detail-rest-phone"
+            style="
+                margin-bottom:18px;
+                color:#ff512f;
+                font-weight:bold;
+            "
+        ></p>
+
 
         <h3>
-            📍 Location
+            📍 Google Maps
         </h3>
+
 
         <iframe
             id="detail-rest-map"
             width="100%"
-            height="230"
-            style="border:0;border-radius:8px;"
+            height="280"
+            style="
+                border:0;
+                border-radius:15px;
+                margin-top:12px;
+            "
             loading="lazy"
-            title="Restaurant Location">
-        </iframe>
+            allowfullscreen
+        ></iframe>
 
     </div>
 
 </div>
 
 
-<!-- ================= CART ================= -->
+
+<!-- =====================================================
+     CART DRAWER
+===================================================== -->
 
 <div
     id="cart-drawer"
-    class="cart-drawer">
+    class="cart-drawer"
+>
+
 
     <div class="cart-header">
 
@@ -1033,21 +472,27 @@
 
         <span
             class="close-btn"
-            onclick="toggleCart()">
+            onclick="toggleCart()"
+        >
             &times;
         </span>
 
     </div>
 
+
+
     <div
         id="cart-items"
-        class="cart-items-list">
+        class="cart-items-list"
+    >
 
         <p class="empty-msg">
             Your cart is empty.
         </p>
 
     </div>
+
+
 
     <div class="cart-footer">
 
@@ -1058,8 +503,9 @@
 
         <button
             class="checkout-btn"
-            onclick="checkout()">
-            Place Order
+            onclick="checkout()"
+        >
+            🛍️ Place Order
         </button>
 
     </div>
@@ -1067,26 +513,36 @@
 </div>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
-    <div class="footer-logo">
-        Ahmedabad<span>Eats</span>
-    </div>
-
     <p>
-        Discover delicious food across Ahmedabad.
+        🍴 <strong>Ahmedabad Eats</strong>
     </p>
 
     <p>
-        © 2026 Ahmedabad Eats
+        Discover • Explore • Enjoy
+    </p>
+
+    <p>
+        © 2026 Ahmedabad Eats. All rights reserved.
     </p>
 
 </footer>
 
 
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
