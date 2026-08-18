@@ -1,549 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <meta
-        name="description"
-        content="Ahmedabad Eats - Discover restaurants, menus and food in Ahmedabad."
-    >
+  <meta
+    name="description"
+    content="Ahmedabad Eats - Discover restaurants, food menus and dining places in Ahmedabad."
+  >
 
-    <title>Ahmedabad Eats | Best Restaurants</title>
+  <title>Ahmedabad Eats | Find Best Restaurants</title>
 
-    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-<!-- =====================================================
-     NAVBAR
-===================================================== -->
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-<nav class="navbar">
+  <header class="header">
 
     <div class="logo">
-        <a href="#home" class="logo-link">
-            <img src="logo.png" alt="Ahmedabad Eats Logo">
-            <span>Ahmedabad Eats</span>
-        </a>
+      🍽️ Ahmedabad Eats
     </div>
 
-    <ul class="nav-links">
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#restaurants">Restaurants</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-        <li>
-            <a href="#home">Home</a>
-        </li>
-
-        <li>
-            <a href="#restaurants">Restaurants</a>
-        </li>
-
-        <li>
-            <a href="#restaurant-contact">Restaurant Contact</a>
-        </li>
-
-        <li>
-            <a href="#about">About</a>
-        </li>
-
-        <li>
-            <a href="#" onclick="toggleCart(); return false;">
-                🛒 Cart
-                (<span id="cart-count">0</span>)
-            </a>
-        </li>
-
-    </ul>
-
-</nav>
+  </header>
 
 
+  <!-- =========================
+       HERO
+  ========================== -->
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+  <section class="hero" id="home">
 
-<header class="hero" id="home">
+    <div class="hero-content">
 
-    <h1>
-        Discover Ahmedabad's Best Food 🍕🍔
-    </h1>
+      <h1>
+        Discover the Best Food
+        in Ahmedabad 🍛
+      </h1>
 
-    <p>
-        Explore popular restaurants, delicious menus
-        and amazing food across Ahmedabad.
-    </p>
+      <p>
+        Find restaurants, explore menus,
+        ratings and prices in Ahmedabad.
+      </p>
 
-</header>
+      <a href="#restaurants" class="hero-button">
+        Explore Restaurants
+      </a>
+
+    </div>
+
+  </section>
 
 
+  <!-- =========================
+       SEARCH + FILTER
+  ========================== -->
 
-<!-- =====================================================
-     SEARCH
-===================================================== -->
+  <section class="search-section" id="restaurants">
 
-<section class="search-section">
+    <div class="section-heading">
 
-    <div class="search-box">
+      <h2>Find Your Restaurant 🔎</h2>
+
+      <p>
+        Search and filter restaurants by
+        cuisine, price and rating.
+      </p>
+
+    </div>
+
+
+    <div class="filter-box">
+
+      <!-- SEARCH -->
+
+      <div class="filter-item">
+
+        <label for="searchInput">
+          Search
+        </label>
 
         <input
-            type="search"
-            id="restaurant-search"
-            placeholder="Search restaurant, cuisine or food..."
-            oninput="filterRestaurants()"
+          type="search"
+          id="searchInput"
+          placeholder="Search restaurant, cuisine..."
         >
 
-        <button
-            type="button"
-            onclick="filterRestaurants()"
-        >
-            🔍 Search
-        </button>
+      </div>
+
+
+      <!-- CUISINE -->
+
+      <div class="filter-item">
+
+        <label for="cuisineFilter">
+          Cuisine
+        </label>
+
+        <select id="cuisineFilter">
+
+          <option value="all">
+            All Cuisines
+          </option>
+
+          <option value="Gujarati">
+            Gujarati
+          </option>
+
+          <option value="North Indian">
+            North Indian
+          </option>
+
+          <option value="Multi-Cuisine">
+            Multi-Cuisine
+          </option>
+
+          <option value="Street Food">
+            Street Food
+          </option>
+
+          <option value="Fast Food">
+            Fast Food
+          </option>
+
+          <option value="Cafe">
+            Cafe
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- PRICE -->
+
+      <div class="filter-item">
+
+        <label for="priceFilter">
+          Price
+        </label>
+
+        <select id="priceFilter">
+
+          <option value="all">
+            All Prices
+          </option>
+
+          <option value="under500">
+            Under ₹500
+          </option>
+
+          <option value="500-800">
+            ₹500 - ₹800
+          </option>
+
+          <option value="above800">
+            Above ₹800
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- RATING -->
+
+      <div class="filter-item">
+
+        <label for="ratingFilter">
+          Rating
+        </label>
+
+        <select id="ratingFilter">
+
+          <option value="all">
+            All Ratings
+          </option>
+
+          <option value="4">
+            ⭐ 4.0+
+          </option>
+
+          <option value="4.3">
+            ⭐ 4.3+
+          </option>
+
+          <option value="4.5">
+            ⭐ 4.5+
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <!-- CLEAR -->
+
+      <button
+        type="button"
+        class="clear-button"
+        onclick="clearFilters()"
+      >
+        Clear Filters
+      </button>
 
     </div>
 
-</section>
+  </section>
 
 
+  <!-- =========================
+       RESTAURANT LIST
+  ========================== -->
 
-<!-- =====================================================
-     CATEGORIES
-===================================================== -->
+  <main>
 
-<section class="category-section">
+    <section class="restaurant-section">
 
-    <div class="category-buttons">
-
-        <button
-            class="category-btn active"
-            onclick="filterCategory('All', this)"
-        >
-            🍽️ All
-        </button>
-
-        <button
-            class="category-btn"
-            onclick="filterCategory('Gujarati', this)"
-        >
-            🥘 Gujarati
-        </button>
-
-        <button
-            class="category-btn"
-            onclick="filterCategory('North Indian', this)"
-        >
-            🍛 North Indian
-        </button>
-
-        <button
-            class="category-btn"
-            onclick="filterCategory('South Indian', this)"
-        >
-            🥞 South Indian
-        </button>
-
-        <button
-            class="category-btn"
-            onclick="filterCategory('Italian', this)"
-        >
-            🍕 Italian
-        </button>
-
-        <button
-            class="category-btn"
-            onclick="filterCategory('Vegetarian', this)"
-        >
-            🥗 Vegetarian
-        </button>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     RESTAURANTS
-===================================================== -->
-
-<section
-    class="restaurant-section"
-    id="restaurants"
->
-
-    <h2>
-        ⭐ Featured Restaurants
-    </h2>
-
-    <!-- JavaScript automatically adds all 15 restaurants -->
-
-    <div
+      <div
+        id="restaurantList"
         class="restaurant-grid"
-        id="restaurant-list"
-    ></div>
+      >
+        <!-- Restaurants JS se automatically load honge -->
+      </div>
+
+    </section>
+
+  </main>
 
 
-    <div id="no-results">
+  <!-- =========================
+       ABOUT
+  ========================== -->
 
-        😕 No restaurant found.
+  <section class="about-section" id="about">
 
-        <br>
+    <div class="about-content">
 
-        Try another search.
+      <h2>About Ahmedabad Eats</h2>
+
+      <p>
+        Ahmedabad Eats is a restaurant discovery website
+        created to help people explore food and restaurants
+        across Ahmedabad.
+      </p>
+
+      <p>
+        Search restaurants, check cuisine, compare prices,
+        see ratings and explore available menu items.
+      </p>
 
     </div>
 
-</section>
+  </section>
 
 
+  <!-- =========================
+       CONTACT
+  ========================== -->
 
-<!-- =====================================================
-     RESTAURANT CONTACT
-===================================================== -->
+  <section class="contact-section" id="contact">
 
-<section
-    class="contact-section"
-    id="restaurant-contact"
->
+    <h2>Contact Us</h2>
 
-    <h2>
-        📍 Restaurant Contact & Location
-    </h2>
+    <p>
+      Have a restaurant or food suggestion?
+      Get in touch with Ahmedabad Eats.
+    </p>
 
-    <p
-        style="
-            text-align:center;
-            margin-bottom:30px;
-            color:#6b7280;
-        "
+    <a
+      href="mailto:contact@ahmedabadeats.com"
+      class="contact-button"
     >
-        Restaurant card par <b>Details</b> button dabakar
-        address, phone aur Google Maps location dekhein.
-    </p>
+      Contact Us
+    </a>
+
+  </section>
 
 
-    <div class="contact-container">
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-
-        <!-- CONTACT INFO -->
-
-        <div class="contact-info">
-
-            <h3>
-                🍴 Ahmedabad Eats
-            </h3>
-
-            <p>
-                📍
-                <strong>
-                    City:
-                </strong>
-                Ahmedabad, Gujarat, India
-            </p>
-
-            <p>
-                📞
-                <strong>
-                    Support:
-                </strong>
-                +91 90000 00000
-            </p>
-
-            <p>
-                ✉️
-                <strong>
-                    Email:
-                </strong>
-                support@ahmedabadeats.com
-            </p>
-
-            <p>
-                🕐
-                <strong>
-                    Support Hours:
-                </strong>
-                10:00 AM - 10:00 PM
-            </p>
-
-            <hr
-                style="
-                    margin:20px 0;
-                    border:0;
-                    border-top:1px solid #fed7aa;
-                "
-            >
-
-            <h3>
-                📌 How to find restaurant details?
-            </h3>
-
-            <p>
-                Restaurant card mein
-                <strong>Details</strong>
-                button select karein.
-            </p>
-
-            <p>
-                Wahan restaurant ka address,
-                contact number aur map available hai.
-            </p>
-
-        </div>
-
-
-        <!-- MAP -->
-
-        <div class="map-container">
-
-            <h3>
-                🗺️ Ahmedabad Location
-            </h3>
-
-            <iframe
-                src="https://www.google.com/maps?q=Ahmedabad,Gujarat,India&output=embed"
-                width="100%"
-                height="300"
-                style="
-                    border:0;
-                    border-radius:15px;
-                "
-                loading="lazy"
-                allowfullscreen
-            ></iframe>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section
-    class="about-section"
-    id="about"
->
-
-    <h2>
-        ❤️ About Ahmedabad Eats
-    </h2>
+  <footer class="footer">
 
     <p>
-        Ahmedabad Eats ek food discovery website hai jahan
-        aap Ahmedabad ke popular restaurants, cuisines,
-        menus aur locations explore kar sakte hain.
+      © 2026 Ahmedabad Eats. All rights reserved.
     </p>
 
-    <br>
+    <div class="footer-links">
 
-    <p>
-        Restaurant select karein, menu dekhein,
-        food cart mein add karein aur restaurant ki
-        location aur contact details check karein.
-    </p>
+      <a href="#about">
+        About
+      </a>
 
-</section>
+      <a href="#contact">
+        Contact
+      </a>
 
+      <a href="#">
+        Privacy Policy
+      </a>
 
-
-<!-- =====================================================
-     MENU MODAL
-===================================================== -->
-
-<div
-    id="menu-modal"
-    class="modal"
->
-
-    <div class="modal-content">
-
-        <span
-            class="close-btn"
-            onclick="closeMenu()"
-        >
-            &times;
-        </span>
-
-        <h2 id="modal-rest-name">
-            Restaurant Menu
-        </h2>
-
-        <div
-            id="modal-menu-items"
-        ></div>
+      <a href="#">
+        Terms
+      </a>
 
     </div>
 
-</div>
+  </footer>
 
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
 
-<!-- =====================================================
-     RESTAURANT DETAILS MODAL
-===================================================== -->
-
-<div
-    id="details-modal"
-    class="modal"
->
-
-    <div class="modal-content">
-
-        <span
-            class="close-btn"
-            onclick="closeDetails()"
-        >
-            &times;
-        </span>
-
-
-        <h2 id="detail-rest-name">
-            Restaurant Details
-        </h2>
-
-
-        <p
-            id="detail-rest-address"
-            style="
-                margin:12px 0;
-                color:#6b7280;
-                line-height:1.6;
-            "
-        ></p>
-
-
-        <p
-            id="detail-rest-phone"
-            style="
-                margin-bottom:18px;
-                color:#ff512f;
-                font-weight:bold;
-            "
-        ></p>
-
-
-        <h3>
-            📍 Google Maps
-        </h3>
-
-        <iframe
-            id="detail-rest-map"
-            width="100%"
-            height="280"
-            style="
-                border:0;
-                border-radius:15px;
-                margin-top:12px;
-            "
-            loading="lazy"
-            allowfullscreen
-        ></iframe>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     CART DRAWER
-===================================================== -->
-
-<div
-    id="cart-drawer"
-    class="cart-drawer"
->
-
-
-    <div class="cart-header">
-
-        <h2>
-            🛒 Your Cart
-        </h2>
-
-        <span
-            class="close-btn"
-            onclick="toggleCart()"
-        >
-            &times;
-        </span>
-
-    </div>
-
-
-
-    <div
-        id="cart-items"
-        class="cart-items-list"
-    >
-
-        <p class="empty-msg">
-            Your cart is empty.
-        </p>
-
-    </div>
-
-
-
-    <div class="cart-footer">
-
-        <h3>
-            Total:
-            ₹<span id="cart-total">0</span>
-        </h3>
-
-        <button
-            class="checkout-btn"
-            onclick="checkout()"
-        >
-            🛍️ Place Order
-        </button>
-
-    </div>
-
-</div>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <p>
-        🍴 <strong>Ahmedabad Eats</strong>
-    </p>
-
-    <p>
-        Discover • Explore • Enjoy
-    </p>
-
-    <p>
-        © 2026 Ahmedabad Eats. All rights reserved.
-    </p>
-
-</footer>
-
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 
 </body>
-
 </html>
