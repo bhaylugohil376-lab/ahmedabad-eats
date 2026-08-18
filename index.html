@@ -1,78 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Ahmedabad Eats - Best Restaurants in Ahmedabad</title>
-<meta name="description" content="Discover restaurants, cuisines, menus and dining places in Ahmedabad with Ahmedabad Eats.">
+
+<meta
+  name="description"
+  content="Discover restaurants, cuisines, menus, ratings and dining places in Ahmedabad with Ahmedabad Eats."
+>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
-body{background:#0f172a;color:#f8fafc;padding:20px}
-header{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:22px}
-.logo{font-size:28px;font-weight:bold}.logo span{color:#f59e0b}
-.cart-btn{background:#38bdf8;border:0;padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:bold}
-.filters{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr auto;gap:10px;margin-bottom:25px}
-.filters input,.filters select,.filters button{padding:12px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#fff;outline:none}
-.filters button{background:#f59e0b;color:#000;font-weight:bold;cursor:pointer}
-#restaurant-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
-.card{background:#1e293b;border-radius:14px;overflow:hidden;border:1px solid #334155;transition:.25s}
-.card:hover{transform:translateY(-4px)}
-.card img{width:100%;height:190px;object-fit:cover}
-.card-info{padding:15px}.card-info h2{margin-bottom:5px}
-.cuisine{color:#94a3b8;font-size:.9rem;margin:4px 0}
-.details{color:#cbd5e1;font-size:.85rem;line-height:1.7;margin:8px 0 14px}
-.card-bottom{display:flex;justify-content:space-between;align-items:center;gap:7px}
-.rating{background:#15803d;color:#fff;padding:4px 7px;border-radius:5px;font-size:.85rem}
-.btn-details,.btn-menu{border:0;padding:7px 10px;border-radius:6px;cursor:pointer;font-size:.85rem}
-.btn-details{background:#334155;color:#fff}.btn-menu{background:#eab308;color:#000;font-weight:bold}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);justify-content:center;align-items:center;z-index:100}
-.modal-content{background:#1e293b;padding:20px;border-radius:12px;width:90%;max-width:520px;max-height:85vh;overflow-y:auto;position:relative}
-.close-btn{position:absolute;top:10px;right:15px;background:none;border:0;color:#94a3b8;font-size:28px;cursor:pointer}
-.menu-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-bottom:1px solid #334155}
-.add-btn{background:#22c55e;border:0;color:#fff;padding:6px 12px;border-radius:5px;cursor:pointer}
-.drawer{position:fixed;top:0;right:-350px;width:320px;height:100%;background:#1e293b;border-left:1px solid #334155;transition:.3s;padding:20px;display:flex;flex-direction:column;z-index:200}
-.drawer.active{right:0}.cart-items{flex-grow:1;overflow-y:auto;margin:15px 0}
-.cart-item-row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #334155}
-.checkout-btn{background:#22c55e;color:#fff;border:0;padding:12px;width:100%;border-radius:8px;font-weight:bold;cursor:pointer}
-@media(max-width:800px){.filters{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){body{padding:12px}.logo{font-size:22px}.filters{grid-template-columns:1fr}#restaurant-list{grid-template-columns:1fr}.drawer{width:90%}}
+
+/* ==========================================
+   GLOBAL
+   ========================================== */
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#0f172a;
+  color:#f8fafc;
+  padding:20px;
+  min-height:100vh;
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+header{
+  max-width:1200px;
+  margin:0 auto 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#f59e0b;
+}
+
+.cart-btn{
+  background:#38bdf8;
+  color:#0f172a;
+  border:0;
+  padding:10px 16px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+
+/* ==========================================
+   FILTERS
+   ========================================== */
+
+.filters{
+  max-width:1200px;
+  margin:0 auto 25px;
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1fr auto;
+  gap:10px;
+}
+
+.filters input,
+.filters select,
+.filters button{
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #334155;
+  background:#1e293b;
+  color:#fff;
+  outline:none;
+}
+
+.filters input::placeholder{
+  color:#94a3b8;
+}
+
+.filters button{
+  background:#f59e0b;
+  color:#000;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+
+/* ==========================================
+   RESTAURANTS
+   ========================================== */
+
+#restaurant-list{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#1e293b;
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid #334155;
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 25px rgba(0,0,0,.3);
+}
+
+.card img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  display:block;
+}
+
+.card-info{
+  padding:15px;
+}
+
+.card-info h2{
+  margin-bottom:5px;
+  font-size:20px;
+}
+
+.cuisine{
+  color:#94a3b8;
+  font-size:.9rem;
+  margin:4px 0;
+}
+
+.details{
+  color:#cbd5e1;
+  font-size:.85rem;
+  line-height:1.7;
+  margin:8px 0 14px;
+}
+
+.card-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:7px;
+}
+
+.rating{
+  background:#15803d;
+  color:#fff;
+  padding:4px 7px;
+  border-radius:5px;
+  font-size:.85rem;
+}
+
+.btn-details,
+.btn-menu{
+  border:0;
+  padding:7px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:.85rem;
+}
+
+.btn-details{
+  background:#334155;
+  color:#fff;
+}
+
+.btn-menu{
+  background:#eab308;
+  color:#000;
+  font-weight:bold;
+}
+
+
+/* ==========================================
+   ABOUT SECTION
+   ========================================== */
+
+.about-section{
+  max-width:1200px;
+  margin:60px auto 30px;
+  padding:35px;
+  background:#1e293b;
+  border:1px solid #334155;
+  border-radius:18px;
+}
+
+.about-content{
+  max-width:1050px;
+  margin:auto;
+}
+
+.about-badge{
+  display:inline-block;
+  background:#f59e0b;
+  color:#111827;
+  padding:7px 12px;
+  border-radius:20px;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.about-content h2{
+  font-size:32px;
+  margin-bottom:15px;
+}
+
+.about-content > p{
+  color:#cbd5e1;
+  line-height:1.8;
+  margin-bottom:12px;
+  font-size:16px;
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-top:25px;
+}
+
+.about-card{
+  background:#0f172a;
+  border:1px solid #334155;
+  border-radius:12px;
+  padding:20px;
+}
+
+.about-icon{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.about-card h3{
+  margin-bottom:8px;
+  font-size:18px;
+}
+
+.about-card p{
+  color:#94a3b8;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.about-note{
+  margin-top:25px;
+  padding:16px;
+  background:#172554;
+  border-left:4px solid #38bdf8;
+  border-radius:8px;
+  color:#cbd5e1;
+  line-height:1.6;
+}
+
+
+/* ==========================================
+   MODALS
+   ========================================== */
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+  padding:20px;
+}
+
+.modal-content{
+  background:#1e293b;
+  padding:20px;
+  border-radius:12px;
+  width:90%;
+  max-width:520px;
+  max-height:85vh;
+  overflow-y:auto;
+  position:relative;
+  border:1px solid #334155;
+}
+
+.close-btn{
+  position:absolute;
+  top:10px;
+  right:15px;
+  background:none;
+  border:0;
+  color:#94a3b8;
+  font-size:28px;
+  cursor:pointer;
+}
+
+.menu-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:12px 0;
+  border-bottom:1px solid #334155;
+}
+
+.add-btn{
+  background:#22c55e;
+  border:0;
+  color:#fff;
+  padding:6px 12px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+
+/* ==========================================
+   CART
+   ========================================== */
+
+.drawer{
+  position:fixed;
+  top:0;
+  right:-350px;
+  width:320px;
+  height:100%;
+  background:#1e293b;
+  border-left:1px solid #334155;
+  transition:.3s;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  z-index:2000;
+}
+
+.drawer.active{
+  right:0;
+}
+
+.cart-items{
+  flex-grow:1;
+  overflow-y:auto;
+  margin:15px 0;
+}
+
+.cart-item-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px;
+  padding-bottom:10px;
+  border-bottom:1px solid #334155;
+}
+
+.checkout-btn{
+  background:#22c55e;
+  color:#fff;
+  border:0;
+  padding:12px;
+  width:100%;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+
+/* ==========================================
+   NO RESULTS
+   ========================================== */
+
+.no-results{
+  grid-column:1/-1;
+  text-align:center;
+  padding:50px 20px;
+  background:#1e293b;
+  border-radius:14px;
+  border:1px solid #334155;
+}
+
+.no-results h2{
+  margin-bottom:8px;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+
+@media(max-width:900px){
+
+  .filters{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  body{
+    padding:12px;
+  }
+
+  header{
+    align-items:flex-start;
+  }
+
+  .logo{
+    font-size:22px;
+  }
+
+  .filters{
+    grid-template-columns:1fr;
+  }
+
+  #restaurant-list{
+    grid-template-columns:1fr;
+  }
+
+  .about-section{
+    padding:22px 16px;
+    margin-top:40px;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-content h2{
+    font-size:24px;
+  }
+
+  .drawer{
+    width:90%;
+  }
+
+}
+
 </style>
 </head>
 
+
 <body>
+
+
+<!-- ==========================================
+     HEADER
+     ========================================== -->
+
 <header>
-  <div class="logo">🍽️ Ahmedabad <span>Eats</span></div>
-  <button class="cart-btn" onclick="toggleCart()">🛒 Cart (<span id="cart-count">0</span>)</button>
+
+  <div class="logo">
+    🍽️ Ahmedabad <span>Eats</span>
+  </div>
+
+  <button class="cart-btn" onclick="toggleCart()">
+    🛒 Cart (<span id="cart-count">0</span>)
+  </button>
+
 </header>
 
+
+<!-- ==========================================
+     SEARCH & FILTERS
+     ========================================== -->
+
 <div class="filters">
-  <input id="search" type="text" placeholder="🔍 Search restaurant or cuisine..." oninput="applyFilters()">
+
+  <input
+    id="search"
+    type="text"
+    placeholder="🔍 Search restaurant or cuisine..."
+    oninput="applyFilters()"
+  >
+
   <select id="cuisineFilter" onchange="applyFilters()">
-    <option value="All">🍛 All Cuisine</option>
-    <option value="Gujarati">Gujarati</option>
-    <option value="Indian">Indian</option>
-    <option value="North Indian">North Indian</option>
-    <option value="Multi Cuisine">Multi Cuisine</option>
+
+    <option value="All">
+      🍛 All Cuisine
+    </option>
+
+    <option value="Gujarati">
+      Gujarati
+    </option>
+
+    <option value="Indian">
+      Indian
+    </option>
+
+    <option value="North Indian">
+      North Indian
+    </option>
+
+    <option value="Multi Cuisine">
+      Multi Cuisine
+    </option>
+
   </select>
+
+
   <select id="priceFilter" onchange="applyFilters()">
-    <option value="All">💰 All Prices</option>
-    <option value="₹">₹ Budget</option>
-    <option value="₹₹">₹₹ Moderate</option>
-    <option value="₹₹₹">₹₹₹ Premium</option>
+
+    <option value="All">
+      💰 All Prices
+    </option>
+
+    <option value="₹">
+      ₹ Budget
+    </option>
+
+    <option value="₹₹">
+      ₹₹ Moderate
+    </option>
+
+    <option value="₹₹₹">
+      ₹₹₹ Premium
+    </option>
+
   </select>
+
+
   <select id="ratingFilter" onchange="applyFilters()">
-    <option value="All">⭐ All Ratings</option>
-    <option value="4.5">4.5+ ⭐</option>
-    <option value="4.0">4.0+ ⭐</option>
-    <option value="3.5">3.5+ ⭐</option>
+
+    <option value="All">
+      ⭐ All Ratings
+    </option>
+
+    <option value="4.5">
+      4.5+ ⭐
+    </option>
+
+    <option value="4.0">
+      4.0+ ⭐
+    </option>
+
+    <option value="3.5">
+      3.5+ ⭐
+    </option>
+
   </select>
-  <button onclick="resetFilters()">🔄 Reset</button>
+
+
+  <button onclick="resetFilters()">
+    🔄 Reset
+  </button>
+
 </div>
+
+
+<!-- ==========================================
+     RESTAURANT LIST
+     ========================================== -->
 
 <main id="restaurant-list"></main>
 
-  <!-- ==========================================
+
+<!-- ==========================================
      ABOUT AHMEDABAD EATS
      ========================================== -->
 
@@ -80,9 +582,13 @@ header{display:flex;justify-content:space-between;align-items:center;gap:15px;ma
 
   <div class="about-content">
 
-    <span class="about-badge">🍽️ ABOUT AHMEDABAD EATS</span>
+    <span class="about-badge">
+      🍽️ ABOUT AHMEDABAD EATS
+    </span>
 
-    <h2>Discover the Best Restaurants in Ahmedabad</h2>
+    <h2>
+      Discover the Best Restaurants in Ahmedabad
+    </h2>
 
     <p>
       Ahmedabad Eats is a restaurant discovery platform created to help
@@ -91,219 +597,1061 @@ header{display:flex;justify-content:space-between;align-items:center;gap:15px;ma
     </p>
 
     <p>
-      From traditional Gujarati thalis and Kathiyawadi food to North Indian,
-      Italian, international and multi-cuisine restaurants, Ahmedabad Eats
-      makes it easier to discover your next place to eat.
+      From traditional Gujarati and Kathiyawadi food to Indian,
+      North Indian, Italian and multi-cuisine restaurants, Ahmedabad Eats
+      helps you discover different dining options across the city.
     </p>
+
 
     <div class="about-grid">
 
-      <div class="about-card">
-        <div class="about-icon">🔍</div>
-        <h3>Easy Restaurant Search</h3>
-        <p>
-          Search restaurants by name, cuisine or location and quickly find
-          options that match your preference.
-        </p>
-      </div>
 
       <div class="about-card">
-        <div class="about-icon">🍛</div>
-        <h3>Explore Cuisines</h3>
+
+        <div class="about-icon">
+          🔍
+        </div>
+
+        <h3>
+          Easy Restaurant Search
+        </h3>
+
         <p>
-          Explore Gujarati, Indian, North Indian, Italian and multi-cuisine
-          dining options.
+          Search restaurants by name or cuisine and quickly find
+          food options that match your preference.
         </p>
+
       </div>
 
-      <div class="about-card">
-        <div class="about-icon">⭐</div>
-        <h3>Ratings & Filters</h3>
-        <p>
-          Use ratings and price filters to narrow down restaurants and find
-          suitable options faster.
-        </p>
-      </div>
 
       <div class="about-card">
-        <div class="about-icon">📍</div>
-        <h3>Restaurant Details</h3>
+
+        <div class="about-icon">
+          🍛
+        </div>
+
+        <h3>
+          Explore Cuisines
+        </h3>
+
         <p>
-          View restaurant information, address and map location before
-          deciding where to eat.
+          Explore Gujarati, Indian, North Indian and multi-cuisine
+          dining options in Ahmedabad.
         </p>
+
       </div>
+
+
+      <div class="about-card">
+
+        <div class="about-icon">
+          ⭐
+        </div>
+
+        <h3>
+          Ratings & Filters
+        </h3>
+
+        <p>
+          Use cuisine, price and rating filters to find suitable
+          restaurants faster.
+        </p>
+
+      </div>
+
+
+      <div class="about-card">
+
+        <div class="about-icon">
+          📍
+        </div>
+
+        <h3>
+          Restaurant Details
+        </h3>
+
+        <p>
+          View restaurant information, address and map location
+          before deciding where to eat.
+        </p>
+
+      </div>
+
 
     </div>
 
+
     <div class="about-note">
-      <strong>Our goal:</strong>
-      Make discovering Ahmedabad's food scene simple, convenient and
-      enjoyable for everyone.
+
+      <strong>Our Goal:</strong>
+
+      Make discovering Ahmedabad's food scene simple,
+      convenient and enjoyable for everyone.
+
     </div>
 
   </div>
 
 </section>
 
+
+<!-- ==========================================
+     MENU MODAL
+     ========================================== -->
+
 <div id="menu-modal" class="modal">
+
   <div class="modal-content">
-    <button class="close-btn" onclick="closeMenu()">&times;</button>
-    <h2 id="modal-rest-name">Menu</h2>
+
+    <button
+      class="close-btn"
+      onclick="closeMenu()"
+    >
+      &times;
+    </button>
+
+    <h2 id="modal-rest-name">
+      Menu
+    </h2>
+
     <hr style="border-color:#334155;margin:12px 0">
+
     <div id="modal-menu-items"></div>
+
   </div>
+
 </div>
+
+
+<!-- ==========================================
+     DETAILS MODAL
+     ========================================== -->
 
 <div id="details-modal" class="modal">
+
   <div class="modal-content">
-    <button class="close-btn" onclick="closeDetails()">&times;</button>
-    <h2 id="detail-rest-name">Restaurant Details</h2>
-    <p id="detail-rest-address" style="margin-top:12px;color:#cbd5e1"></p>
-    <p id="detail-rest-phone" style="margin:8px 0 15px;color:#cbd5e1"></p>
-    <iframe id="detail-rest-map" width="100%" height="200" style="border:0;border-radius:8px" loading="lazy"></iframe>
+
+    <button
+      class="close-btn"
+      onclick="closeDetails()"
+    >
+      &times;
+    </button>
+
+    <h2 id="detail-rest-name">
+      Restaurant Details
+    </h2>
+
+    <p
+      id="detail-rest-address"
+      style="margin-top:12px;color:#cbd5e1"
+    ></p>
+
+    <p
+      id="detail-rest-phone"
+      style="margin:8px 0 15px;color:#cbd5e1"
+    ></p>
+
+    <iframe
+      id="detail-rest-map"
+      width="100%"
+      height="200"
+      style="border:0;border-radius:8px"
+      loading="lazy"
+    ></iframe>
+
   </div>
+
 </div>
+
+
+<!-- ==========================================
+     CART DRAWER
+     ========================================== -->
 
 <div id="cart-drawer" class="drawer">
-  <div style="display:flex;justify-content:space-between;align-items:center">
-    <h2>Your Cart</h2>
-    <button class="close-btn" style="position:static" onclick="toggleCart()">&times;</button>
+
+  <div
+    style="
+      display:flex;
+      justify-content:space-between;
+      align-items:center
+    "
+  >
+
+    <h2>
+      Your Cart
+    </h2>
+
+    <button
+      class="close-btn"
+      style="position:static"
+      onclick="toggleCart()"
+    >
+      &times;
+    </button>
+
   </div>
-  <div id="cart-items" class="cart-items"><p>Your cart is empty.</p></div>
-  <div style="margin-bottom:15px;font-size:1.1rem"><strong>Total: ₹<span id="cart-total">0</span></strong></div>
-  <button class="checkout-btn" onclick="checkout()">Checkout</button>
+
+
+  <div
+    id="cart-items"
+    class="cart-items"
+  >
+
+    <p>
+      Your cart is empty.
+    </p>
+
+  </div>
+
+
+  <div
+    style="
+      margin-bottom:15px;
+      font-size:1.1rem
+    "
+  >
+
+    <strong>
+      Total: ₹<span id="cart-total">0</span>
+    </strong>
+
+  </div>
+
+
+  <button
+    class="checkout-btn"
+    onclick="checkout()"
+  >
+    Checkout
+  </button>
+
 </div>
 
+
 <script>
-const restaurants=[
-{id:1,name:"Agashiye",cuisine:"Gujarati",rating:4.5,time:"12:00 PM - 3:00 PM",price:"₹₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",menu:[["Gujarati Thali",450],["Khaman",120],["Fafda Jalebi",150],["Shrikhand",120]]},
-{id:2,name:"650 - The Global Kitchen",cuisine:"Multi Cuisine",rating:4.4,time:"12:00 PM - 11:00 PM",price:"₹₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80",menu:[["Paneer Tikka",280],["Pasta",320],["Pizza",350],["Brownie",180]]},
-{id:3,name:"Swati Snacks",cuisine:"Gujarati",rating:4.6,time:"11:00 AM - 10:00 PM",price:"₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80",menu:[["Panki",160],["Handvo",180],["Pav Bhaji",220],["Shrikhand",120]]},
-{id:4,name:"Gordhan Thal",cuisine:"Gujarati",rating:4.5,time:"11:30 AM - 11:00 PM",price:"₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=80",menu:[["Gujarati Thali",350],["Dal Dhokli",180],["Kadhi",150],["Basundi",160]]},
-{id:5,name:"Sasuji Dining Hall",cuisine:"Gujarati",rating:4.3,time:"11:30 AM - 10:30 PM",price:"₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",menu:[["Gujarati Thali",300],["Khichdi",160],["Farsan",120],["Sweet Dish",100]]},
-{id:6,name:"Rajwadu",cuisine:"Gujarati",rating:4.4,time:"11:00 AM - 11:00 PM",price:"₹₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",menu:[["Royal Gujarati Thali",450],["Kathiyawadi Thali",400],["Bajra Rotla",160],["Chaas",70]]},
-{id:7,name:"Vishalla",cuisine:"Gujarati",rating:4.3,time:"11:30 AM - 10:30 PM",price:"₹₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80",menu:[["Traditional Thali",400],["Rotla",120],["Sev Tameta",180],["Chaas",70]]},
-{id:8,name:"The Esplendido",cuisine:"Multi Cuisine",rating:4.4,time:"12:00 PM - 11:00 PM",price:"₹₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",menu:[["Paneer Tikka",300],["Biryani",350],["Pasta",320],["Dessert",180]]},
-{id:9,name:"Rajpath Club Restaurant",cuisine:"Indian",rating:4.2,time:"11:00 AM - 11:00 PM",price:"₹₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80",menu:[["Butter Paneer",280],["Veg Biryani",260],["Tandoori Roti",45],["Dal Makhani",220]]},
-{id:10,name:"Peppermint Restaurant",cuisine:"Indian",rating:4.2,time:"12:00 PM - 11:00 PM",price:"₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",menu:[["Paneer Butter Masala",280],["Veg Biryani",250],["Naan",60],["Lassi",100]]},
-{id:11,name:"Nanjing",cuisine:"Multi Cuisine",rating:4.1,time:"12:00 PM - 11:00 PM",price:"₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80",menu:[["Noodles",220],["Manchurian",230],["Fried Rice",220],["Spring Rolls",180]]},
-{id:12,name:"Gajanand Pauva House",cuisine:"Indian",rating:4.4,time:"7:00 AM - 10:00 PM",price:"₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80",menu:[["Poha",60],["Masala Poha",80],["Tea",30],["Jalebi",70]]},
-{id:13,name:"Honest Restaurant",cuisine:"Indian",rating:4.2,time:"11:00 AM - 11:00 PM",price:"₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",menu:[["Pav Bhaji",180],["Pulav",220],["Masala Dosa",170],["Pizza",280]]},
-{id:14,name:"Atithi Dining Hall",cuisine:"Gujarati",rating:4.3,time:"11:30 AM - 10:30 PM",price:"₹₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",menu:[["Gujarati Thali",320],["Dal Dhokli",170],["Farsan",120],["Shrikhand",120]]},
-{id:15,name:"Karnavati Dabeli",cuisine:"Indian",rating:4.2,time:"8:00 AM - 10:00 PM",price:"₹",address:"Ahmedabad, Gujarat",phone:"",image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80",menu:[["Dabeli",50],["Cheese Dabeli",80],["Vada Pav",60],["Cold Drink",50]]}
+
+
+// ==========================================
+// RESTAURANT DATA
+// ==========================================
+
+const restaurants = [
+
+{
+  id:1,
+  name:"Agashiye",
+  cuisine:"Gujarati",
+  rating:4.5,
+  time:"12:00 PM - 3:00 PM",
+  price:"₹₹₹",
+  address:"The House of MG, Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Gujarati Thali",450],
+    ["Khaman",120],
+    ["Fafda Jalebi",150],
+    ["Shrikhand",120]
+  ]
+},
+
+{
+  id:2,
+  name:"650 - The Global Kitchen",
+  cuisine:"Multi Cuisine",
+  rating:4.4,
+  time:"12:00 PM - 11:00 PM",
+  price:"₹₹₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Paneer Tikka",280],
+    ["Pasta",320],
+    ["Pizza",350],
+    ["Brownie",180]
+  ]
+},
+
+{
+  id:3,
+  name:"Swati Snacks",
+  cuisine:"Gujarati",
+  rating:4.6,
+  time:"11:00 AM - 10:00 PM",
+  price:"₹₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Panki",160],
+    ["Handvo",180],
+    ["Pav Bhaji",220],
+    ["Shrikhand",120]
+  ]
+},
+
+{
+  id:4,
+  name:"Gordhan Thal",
+  cuisine:"Gujarati",
+  rating:4.5,
+  time:"11:30 AM - 11:00 PM",
+  price:"₹₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Gujarati Thali",350],
+    ["Dal Dhokli",180],
+    ["Kadhi",150],
+    ["Basundi",160]
+  ]
+},
+
+{
+  id:5,
+  name:"Sasuji Dining Hall",
+  cuisine:"Gujarati",
+  rating:4.3,
+  time:"11:30 AM - 10:30 PM",
+  price:"₹₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Gujarati Thali",300],
+    ["Khichdi",160],
+    ["Farsan",120],
+    ["Sweet Dish",100]
+  ]
+},
+
+{
+  id:6,
+  name:"Rajwadu",
+  cuisine:"Gujarati",
+  rating:4.4,
+  time:"11:00 AM - 11:00 PM",
+  price:"₹₹₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Royal Gujarati Thali",450],
+    ["Kathiyawadi Thali",400],
+    ["Bajra Rotla",160],
+    ["Chaas",70]
+  ]
+},
+
+{
+  id:7,
+  name:"Vishalla",
+  cuisine:"Gujarati",
+  rating:4.3,
+  time:"11:30 AM - 10:30 PM",
+  price:"₹₹₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Traditional Thali",400],
+    ["Rotla",120],
+    ["Sev Tameta",180],
+    ["Chaas",70]
+  ]
+},
+
+{
+  id:8,
+  name:"The Esplendido",
+  cuisine:"Multi Cuisine",
+  rating:4.4,
+  time:"12:00 PM - 11:00 PM",
+  price:"₹₹₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Paneer Tikka",300],
+    ["Biryani",350],
+    ["Pasta",320],
+    ["Dessert",180]
+  ]
+},
+
+{
+  id:9,
+  name:"Rajpath Club Restaurant",
+  cuisine:"Indian",
+  rating:4.2,
+  time:"11:00 AM - 11:00 PM",
+  price:"₹₹₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Butter Paneer",280],
+    ["Veg Biryani",260],
+    ["Tandoori Roti",45],
+    ["Dal Makhani",220]
+  ]
+},
+
+{
+  id:10,
+  name:"Peppermint Restaurant",
+  cuisine:"Indian",
+  rating:4.2,
+  time:"12:00 PM - 11:00 PM",
+  price:"₹₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Paneer Butter Masala",280],
+    ["Veg Biryani",250],
+    ["Naan",60],
+    ["Lassi",100]
+  ]
+},
+
+{
+  id:11,
+  name:"Nanjing",
+  cuisine:"Multi Cuisine",
+  rating:4.1,
+  time:"12:00 PM - 11:00 PM",
+  price:"₹₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Noodles",220],
+    ["Manchurian",230],
+    ["Fried Rice",220],
+    ["Spring Rolls",180]
+  ]
+},
+
+{
+  id:12,
+  name:"Gajanand Pauva House",
+  cuisine:"Indian",
+  rating:4.4,
+  time:"7:00 AM - 10:00 PM",
+  price:"₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Poha",60],
+    ["Masala Poha",80],
+    ["Tea",30],
+    ["Jalebi",70]
+  ]
+},
+
+{
+  id:13,
+  name:"Honest Restaurant",
+  cuisine:"Indian",
+  rating:4.2,
+  time:"11:00 AM - 11:00 PM",
+  price:"₹₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Pav Bhaji",180],
+    ["Pulav",220],
+    ["Masala Dosa",170],
+    ["Pizza",280]
+  ]
+},
+
+{
+  id:14,
+  name:"Atithi Dining Hall",
+  cuisine:"Gujarati",
+  rating:4.3,
+  time:"11:30 AM - 10:30 PM",
+  price:"₹₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Gujarati Thali",320],
+    ["Dal Dhokli",170],
+    ["Farsan",120],
+    ["Shrikhand",120]
+  ]
+},
+
+{
+  id:15,
+  name:"Karnavati Dabeli",
+  cuisine:"Indian",
+  rating:4.2,
+  time:"8:00 AM - 10:00 PM",
+  price:"₹",
+  address:"Ahmedabad, Gujarat",
+  phone:"",
+  image:"https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80",
+  menu:[
+    ["Dabeli",50],
+    ["Cheese Dabeli",80],
+    ["Vada Pav",60],
+    ["Cold Drink",50]
+  ]
+}
+
 ];
+
 
 let cart=[];
 
+
+// ==========================================
+// DISPLAY RESTAURANTS
+// ==========================================
+
 function displayRestaurants(data){
- const list=document.getElementById("restaurant-list");
- list.innerHTML="";
- if(!data.length){
-  list.innerHTML='<p style="grid-column:1/-1;text-align:center;padding:40px">No restaurant found.</p>';
-  return;
- }
- data.forEach(rest=>{
-  const card=document.createElement("div");
-  card.className="card";
-  card.innerHTML=`
-   <img src="${rest.image}" alt="${rest.name}" loading="lazy">
-   <div class="card-info">
-    <h2>${rest.name}</h2>
-    <div class="cuisine">${rest.cuisine}</div>
-    <div class="details">⭐ ${rest.rating} &nbsp; • &nbsp; ${rest.time}<br>💰 ${rest.price}</div>
-    <div class="card-bottom">
-     <span class="rating">⭐ ${rest.rating}</span>
-     <button class="btn-details" onclick="showDetails(${rest.id})">Details</button>
-     <button class="btn-menu" onclick="showMenu(${rest.id})">Menu</button>
-    </div>
-   </div>`;
-  list.appendChild(card);
- });
+
+  const list =
+    document.getElementById("restaurant-list");
+
+  list.innerHTML="";
+
+
+  if(!data.length){
+
+    list.innerHTML=`
+      <div class="no-results">
+
+        <h2>😔 No restaurant found</h2>
+
+        <p>
+          Try changing your search or filters.
+        </p>
+
+      </div>
+    `;
+
+    return;
+  }
+
+
+  data.forEach(rest=>{
+
+    const card =
+      document.createElement("div");
+
+    card.className="card";
+
+
+    card.innerHTML=`
+
+      <img
+        src="${rest.image}"
+        alt="${rest.name}"
+        loading="lazy"
+      >
+
+      <div class="card-info">
+
+        <h2>
+          ${rest.name}
+        </h2>
+
+        <div class="cuisine">
+          ${rest.cuisine}
+        </div>
+
+        <div class="details">
+
+          ⭐ ${rest.rating}
+          &nbsp; • &nbsp;
+          ${rest.time}
+
+          <br>
+
+          💰 ${rest.price}
+
+        </div>
+
+
+        <div class="card-bottom">
+
+          <span class="rating">
+            ⭐ ${rest.rating}
+          </span>
+
+          <button
+            class="btn-details"
+            onclick="showDetails(${rest.id})"
+          >
+            Details
+          </button>
+
+          <button
+            class="btn-menu"
+            onclick="showMenu(${rest.id})"
+          >
+            Menu
+          </button>
+
+        </div>
+
+      </div>
+    `;
+
+
+    list.appendChild(card);
+
+  });
+
 }
+
+
+// ==========================================
+// FILTERS
+// ==========================================
 
 function applyFilters(){
- const search=document.getElementById("search").value.toLowerCase().trim();
- const cuisine=document.getElementById("cuisineFilter").value;
- const price=document.getElementById("priceFilter").value;
- const rating=document.getElementById("ratingFilter").value;
- const minRating=rating==="All"?0:parseFloat(rating);
 
- const filtered=restaurants.filter(r=>{
-  const searchMatch=!search||r.name.toLowerCase().includes(search)||r.cuisine.toLowerCase().includes(search);
-  const cuisineMatch=cuisine==="All"||r.cuisine===cuisine;
-  const priceMatch=price==="All"||r.price===price;
-  const ratingMatch=r.rating>=minRating;
-  return searchMatch&&cuisineMatch&&priceMatch&&ratingMatch;
- });
- displayRestaurants(filtered);
+  const search =
+    document.getElementById("search")
+    .value
+    .toLowerCase()
+    .trim();
+
+
+  const cuisine =
+    document.getElementById("cuisineFilter")
+    .value;
+
+
+  const price =
+    document.getElementById("priceFilter")
+    .value;
+
+
+  const rating =
+    document.getElementById("ratingFilter")
+    .value;
+
+
+  const minRating =
+    rating==="All"
+      ? 0
+      : parseFloat(rating);
+
+
+  const filtered =
+    restaurants.filter(r=>{
+
+      const searchMatch =
+        !search ||
+        r.name.toLowerCase().includes(search) ||
+        r.cuisine.toLowerCase().includes(search);
+
+
+      const cuisineMatch =
+        cuisine==="All" ||
+        r.cuisine===cuisine;
+
+
+      const priceMatch =
+        price==="All" ||
+        r.price===price;
+
+
+      const ratingMatch =
+        r.rating>=minRating;
+
+
+      return (
+        searchMatch &&
+        cuisineMatch &&
+        priceMatch &&
+        ratingMatch
+      );
+
+    });
+
+
+  displayRestaurants(filtered);
+
 }
+
+
+// ==========================================
+// RESET
+// ==========================================
 
 function resetFilters(){
- document.getElementById("search").value="";
- document.getElementById("cuisineFilter").value="All";
- document.getElementById("priceFilter").value="All";
- document.getElementById("ratingFilter").value="All";
- displayRestaurants(restaurants);
+
+  document.getElementById("search").value="";
+
+  document.getElementById("cuisineFilter").value="All";
+
+  document.getElementById("priceFilter").value="All";
+
+  document.getElementById("ratingFilter").value="All";
+
+  displayRestaurants(restaurants);
+
 }
+
+
+// ==========================================
+// MENU
+// ==========================================
 
 function showMenu(id){
- const r=restaurants.find(x=>x.id===id);
- document.getElementById("modal-rest-name").textContent=r.name+" Menu";
- const box=document.getElementById("modal-menu-items");
- box.innerHTML="";
- r.menu.forEach(([name,price])=>{
-  const row=document.createElement("div");
-  row.className="menu-item";
-  row.innerHTML=`<div><strong>${name}</strong><br><span style="color:#94a3b8">₹${price}</span></div><button class="add-btn" onclick='addToCart(${JSON.stringify(r.name)},${JSON.stringify(name)},${price})'>+ Add</button>`;
-  box.appendChild(row);
- });
- document.getElementById("menu-modal").style.display="flex";
+
+  const r =
+    restaurants.find(x=>x.id===id);
+
+
+  if(!r) return;
+
+
+  document.getElementById(
+    "modal-rest-name"
+  ).textContent =
+    r.name+" Menu";
+
+
+  const box =
+    document.getElementById(
+      "modal-menu-items"
+    );
+
+
+  box.innerHTML="";
+
+
+  r.menu.forEach(([name,price])=>{
+
+    const row =
+      document.createElement("div");
+
+    row.className="menu-item";
+
+
+    row.innerHTML=`
+
+      <div>
+
+        <strong>
+          ${name}
+        </strong>
+
+        <br>
+
+        <span style="color:#94a3b8">
+          ₹${price}
+        </span>
+
+      </div>
+
+      <button
+        class="add-btn"
+        onclick='addToCart(
+          ${JSON.stringify(r.name)},
+          ${JSON.stringify(name)},
+          ${price}
+        )'
+      >
+        + Add
+      </button>
+
+    `;
+
+
+    box.appendChild(row);
+
+  });
+
+
+  document.getElementById(
+    "menu-modal"
+  ).style.display="flex";
+
 }
-function closeMenu(){document.getElementById("menu-modal").style.display="none"}
+
+
+function closeMenu(){
+
+  document.getElementById(
+    "menu-modal"
+  ).style.display="none";
+
+}
+
+
+// ==========================================
+// DETAILS
+// ==========================================
 
 function showDetails(id){
- const r=restaurants.find(x=>x.id===id);
- document.getElementById("detail-rest-name").textContent=r.name;
- document.getElementById("detail-rest-address").textContent="📍 "+r.address;
- document.getElementById("detail-rest-phone").textContent=r.phone?"📞 "+r.phone:"📞 Contact details coming soon";
- document.getElementById("detail-rest-map").src="https://www.google.com/maps?q="+encodeURIComponent(r.name+", Ahmedabad")+"&output=embed";
- document.getElementById("details-modal").style.display="flex";
-}
-function closeDetails(){document.getElementById("details-modal").style.display="none"}
 
-function addToCart(restaurant,item,price){
- cart.push({restaurant,item,price});
- updateCart();
+  const r =
+    restaurants.find(x=>x.id===id);
+
+
+  if(!r) return;
+
+
+  document.getElementById(
+    "detail-rest-name"
+  ).textContent =
+    r.name;
+
+
+  document.getElementById(
+    "detail-rest-address"
+  ).textContent =
+    "📍 "+r.address;
+
+
+  document.getElementById(
+    "detail-rest-phone"
+  ).textContent =
+    r.phone
+      ? "📞 "+r.phone
+      : "📞 Contact details coming soon";
+
+
+  document.getElementById(
+    "detail-rest-map"
+  ).src =
+    "https://www.google.com/maps?q="
+    +
+    encodeURIComponent(
+      r.name+", Ahmedabad"
+    )
+    +
+    "&output=embed";
+
+
+  document.getElementById(
+    "details-modal"
+  ).style.display="flex";
+
 }
+
+
+function closeDetails(){
+
+  document.getElementById(
+    "details-modal"
+  ).style.display="none";
+
+}
+
+
+// ==========================================
+// CART
+// ==========================================
+
+function addToCart(
+  restaurant,
+  item,
+  price
+){
+
+  cart.push({
+    restaurant,
+    item,
+    price
+  });
+
+
+  updateCart();
+
+}
+
+
 function updateCart(){
- document.getElementById("cart-count").textContent=cart.length;
- const box=document.getElementById("cart-items");
- if(!cart.length){box.innerHTML="<p>Your cart is empty.</p>";document.getElementById("cart-total").textContent="0";return}
- box.innerHTML="";
- let total=0;
- cart.forEach((x,i)=>{
-  total+=x.price;
-  const row=document.createElement("div");
-  row.className="cart-item-row";
-  row.innerHTML=`<div><strong>${x.item}</strong><br><small>${x.restaurant}</small><br>₹${x.price}</div><button onclick="removeFromCart(${i})" style="background:#ef4444;border:0;color:#fff;padding:5px 8px;border-radius:5px">X</button>`;
-  box.appendChild(row);
- });
- document.getElementById("cart-total").textContent=total;
-}
-function removeFromCart(i){cart.splice(i,1);updateCart()}
-function toggleCart(){document.getElementById("cart-drawer").classList.toggle("active")}
-function checkout(){
- if(!cart.length){alert("Your cart is empty.");return}
- alert("Checkout system is ready for payment/order integration.");
+
+  document.getElementById(
+    "cart-count"
+  ).textContent =
+    cart.length;
+
+
+  const box =
+    document.getElementById(
+      "cart-items"
+    );
+
+
+  if(!cart.length){
+
+    box.innerHTML=
+      "<p>Your cart is empty.</p>";
+
+
+    document.getElementById(
+      "cart-total"
+    ).textContent="0";
+
+
+    return;
+  }
+
+
+  box.innerHTML="";
+
+
+  let total=0;
+
+
+  cart.forEach((x,i)=>{
+
+    total+=x.price;
+
+
+    const row =
+      document.createElement("div");
+
+
+    row.className=
+      "cart-item-row";
+
+
+    row.innerHTML=`
+
+      <div>
+
+        <strong>
+          ${x.item}
+        </strong>
+
+        <br>
+
+        <small>
+          ${x.restaurant}
+        </small>
+
+        <br>
+
+        ₹${x.price}
+
+      </div>
+
+
+      <button
+        onclick="removeFromCart(${i})"
+        style="
+          background:#ef4444;
+          border:0;
+          color:#fff;
+          padding:5px 8px;
+          border-radius:5px;
+          cursor:pointer;
+        "
+      >
+        X
+      </button>
+
+    `;
+
+
+    box.appendChild(row);
+
+  });
+
+
+  document.getElementById(
+    "cart-total"
+  ).textContent =
+    total;
+
 }
 
-window.onclick=e=>{
- if(e.target===document.getElementById("menu-modal"))closeMenu();
- if(e.target===document.getElementById("details-modal"))closeDetails();
+
+function removeFromCart(i){
+
+  cart.splice(i,1);
+
+  updateCart();
+
+}
+
+
+function toggleCart(){
+
+  document.getElementById(
+    "cart-drawer"
+  ).classList.toggle("active");
+
+}
+
+
+function checkout(){
+
+  if(!cart.length){
+
+    alert(
+      "Your cart is empty."
+    );
+
+    return;
+  }
+
+
+  alert(
+    "Checkout system is ready for payment/order integration."
+  );
+
+}
+
+
+// ==========================================
+// CLOSE MODALS
+// ==========================================
+
+window.onclick=function(e){
+
+  if(
+    e.target===
+    document.getElementById("menu-modal")
+  ){
+
+    closeMenu();
+
+  }
+
+
+  if(
+    e.target===
+    document.getElementById("details-modal")
+  ){
+
+    closeDetails();
+
+  }
+
 };
 
+
+// ==========================================
+// START WEBSITE
+// ==========================================
+
 displayRestaurants(restaurants);
+
+updateCart();
+
+
 </script>
+
 </body>
 </html>
