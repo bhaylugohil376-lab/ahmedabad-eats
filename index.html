@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="description"
-    content="Ahmedabad Eats is a food discovery website for finding restaurants, cuisines, menus, prices, ratings and locations across Ahmedabad."
-  >
+  <meta name="description"
+        content="Ahmedabad Eats is a food discovery website for finding restaurants, cuisines, menus, prices, ratings and locations across Ahmedabad.">
 
-  <meta
-    name="keywords"
-    content="Ahmedabad restaurants, Ahmedabad food, Gujarati food, restaurants near me, Ahmedabad Eats"
-  >
+  <meta name="keywords"
+        content="Ahmedabad restaurants, Ahmedabad food, Gujarati food, restaurants near me, Ahmedabad Eats">
 
-  <meta name="author" content="Ahmedabad Eats">
+  <meta name="author"
+        content="Ahmedabad Eats">
 
-  <meta name="robots" content="index, follow">
+  <meta name="robots"
+        content="index, follow">
 
-  <title>Ahmedabad Eats | Discover Restaurants & Food</title>
+  <title>
+    Ahmedabad Eats | Discover Restaurants & Food
+  </title>
 
   <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+
+  <!-- =====================================
+       HEADER
+  ====================================== -->
 
   <header class="header">
 
@@ -36,7 +44,9 @@
 
     <nav class="navbar">
 
-      <a href="#home">Home</a>
+      <a href="#home">
+        Home
+      </a>
 
       <a href="#restaurants">
         Restaurants
@@ -59,9 +69,15 @@
   </header>
 
 
-  <!-- ================= HERO ================= -->
 
-  <section class="hero" id="home">
+  <!-- =====================================
+       HERO
+  ====================================== -->
+
+  <section
+    class="hero"
+    id="home"
+  >
 
     <div class="hero-content">
 
@@ -70,8 +86,9 @@
       </h1>
 
       <p>
-        Explore restaurants, cuisines, menus,
-        ratings, prices and food places across Ahmedabad.
+        Discover restaurants, cuisines, menus,
+        ratings, prices and food places across
+        Ahmedabad.
       </p>
 
       <a
@@ -86,7 +103,10 @@
   </section>
 
 
-  <!-- ================= SEARCH & FILTER ================= -->
+
+  <!-- =====================================
+       SEARCH & FILTER
+  ====================================== -->
 
   <section
     class="search-section"
@@ -109,6 +129,7 @@
 
     <div class="filter-box">
 
+
       <!-- SEARCH -->
 
       <div class="filter-item">
@@ -121,9 +142,11 @@
           type="search"
           id="searchInput"
           placeholder="Search restaurant or cuisine..."
+          autocomplete="off"
         >
 
       </div>
+
 
 
       <!-- CUISINE -->
@@ -169,6 +192,7 @@
       </div>
 
 
+
       <!-- PRICE -->
 
       <div class="filter-item">
@@ -198,6 +222,7 @@
         </select>
 
       </div>
+
 
 
       <!-- RATING -->
@@ -231,6 +256,7 @@
       </div>
 
 
+
       <!-- CLEAR -->
 
       <button
@@ -241,16 +267,23 @@
         Clear Filters
       </button>
 
+
     </div>
 
   </section>
 
 
-  <!-- ================= RESTAURANTS ================= -->
+
+  <!-- =====================================
+       RESTAURANT LIST
+  ====================================== -->
 
   <main>
 
-    <section class="restaurant-section">
+    <section
+      class="restaurant-section"
+      aria-label="Ahmedabad Restaurants"
+    >
 
       <div
         id="restaurantList"
@@ -258,8 +291,13 @@
       >
 
         <!--
-          Restaurants yahan script.js
-          se automatically load honge.
+          IMPORTANT:
+
+          Restaurant cards yahan manually
+          add nahi karne hain.
+
+          script.js automatically 15 restaurants
+          aur unki different images load karega.
         -->
 
       </div>
@@ -269,7 +307,10 @@
   </main>
 
 
-  <!-- ================= LIVE LOCATION ================= -->
+
+  <!-- =====================================
+       LIVE LOCATION
+  ====================================== -->
 
   <section
     class="about-section"
@@ -284,8 +325,8 @@
 
       <p>
         Ahmedabad Eats can use your device
-        location to help you find food places
-        around your current location.
+        location to help you discover food
+        places around your current location.
       </p>
 
       <button
@@ -309,7 +350,10 @@
   </section>
 
 
-  <!-- ================= ABOUT ================= -->
+
+  <!-- =====================================
+       ABOUT
+  ====================================== -->
 
   <section
     class="about-section"
@@ -323,39 +367,57 @@
       </h2>
 
       <p>
-        <strong>Ahmedabad Eats</strong> is an
-        independent restaurant discovery platform
-        created to make exploring Ahmedabad's food
-        scene easier.
+
+        <strong>
+          Ahmedabad Eats
+        </strong>
+
+        is an independent restaurant discovery
+        platform created to make exploring
+        Ahmedabad's food scene easier.
+
       </p>
 
+
       <p>
-        Users can discover restaurants, explore
-        different cuisines, compare approximate
-        prices, check ratings, view menu items
+
+        Users can discover restaurants,
+        explore different cuisines,
+        compare approximate prices,
+        check ratings, view menu items
         and find restaurant locations.
+
       </p>
 
-      <p>
-        Our goal is to create a simple, colourful
-        and mobile-friendly food guide for people
-        who love discovering new places to eat
-        in Ahmedabad.
-      </p>
 
       <p>
-        We aim to provide useful restaurant
-        information in one convenient place,
-        helping visitors discover Gujarati food,
-        Indian cuisine, street food, cafes and
-        other dining options.
+
+        Our goal is to create a simple,
+        colourful and mobile-friendly food
+        guide for people who love discovering
+        new places to eat in Ahmedabad.
+
       </p>
 
+
       <p>
-        Restaurant information may change over
-        time. Users should confirm current prices,
-        menus, timings and availability directly
-        with the restaurant.
+
+        The website covers different food
+        categories including Gujarati food,
+        Indian cuisine, street food,
+        cafes and multi-cuisine restaurants.
+
+      </p>
+
+
+      <p>
+
+        Restaurant information can change
+        over time. Users should confirm
+        current prices, menus, timings and
+        availability directly with the
+        restaurant.
+
       </p>
 
     </div>
@@ -363,7 +425,10 @@
   </section>
 
 
-  <!-- ================= CONTACT ================= -->
+
+  <!-- =====================================
+       CONTACT
+  ====================================== -->
 
   <section
     class="contact-section"
@@ -375,10 +440,13 @@
     </h2>
 
     <p>
+
       Restaurant information, corrections,
-      suggestions or business enquiries ke liye
-      humse contact karein.
+      suggestions or business enquiries
+      ke liye humse contact karein.
+
     </p>
+
 
     <a
       href="mailto:contact@ahmedabadeats.com"
@@ -390,7 +458,10 @@
   </section>
 
 
-  <!-- ================= FOOTER ================= -->
+
+  <!-- =====================================
+       FOOTER
+  ====================================== -->
 
   <footer class="footer">
 
@@ -399,22 +470,27 @@
       All rights reserved.
     </p>
 
+
     <div class="footer-links">
 
       <a href="#home">
         Home
       </a>
 
+      <a href="#restaurants">
+        Restaurants
+      </a>
+
       <a href="#about">
         About
       </a>
 
-      <a href="#contact">
-        Contact
-      </a>
-
       <a href="#location">
         Location
+      </a>
+
+      <a href="#contact">
+        Contact
       </a>
 
       <a href="#">
@@ -430,7 +506,10 @@
   </footer>
 
 
-  <!-- ================= LIVE LOCATION ================= -->
+
+  <!-- =====================================
+       LIVE LOCATION JAVASCRIPT
+  ====================================== -->
 
   <script>
 
@@ -441,13 +520,16 @@
           "locationResult"
         );
 
+
       if (!navigator.geolocation) {
 
         result.textContent =
           "Aapke browser me location support nahi hai.";
 
         return;
+
       }
+
 
       result.textContent =
         "📍 Location find ho rahi hai...";
@@ -506,9 +588,14 @@
   </script>
 
 
-  <!-- ================= MAIN JAVASCRIPT ================= -->
+
+  <!-- =====================================
+       MAIN SCRIPT
+  ====================================== -->
 
   <script src="script.js"></script>
 
+
 </body>
+
 </html>
