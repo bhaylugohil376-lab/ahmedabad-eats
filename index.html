@@ -7,10 +7,8 @@
 
 <title>Ahmedabad Eats - Best Restaurants in Ahmedabad</title>
 
-<meta
-  name="description"
-  content="Discover restaurants, cuisines, menus, ratings and dining places in Ahmedabad with Ahmedabad Eats."
->
+<meta name="description"
+content="Discover restaurants, cuisines, menus, ratings and dining places in Ahmedabad with Ahmedabad Eats.">
 
 <style>
 
@@ -192,7 +190,7 @@ header{
 
 
 /* ==========================================
-   ABOUT SECTION
+   ABOUT
    ========================================== */
 
 .about-section{
@@ -270,6 +268,45 @@ header{
   border-radius:8px;
   color:#cbd5e1;
   line-height:1.6;
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.site-footer{
+  max-width:1200px;
+  margin:50px auto 10px;
+  padding:25px 20px;
+  text-align:center;
+  border-top:1px solid #334155;
+  color:#94a3b8;
+}
+
+.footer-links{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-bottom:15px;
+}
+
+.footer-links button{
+  background:none;
+  border:0;
+  color:#38bdf8;
+  cursor:pointer;
+  font-size:14px;
+}
+
+.footer-links button:hover{
+  color:#f59e0b;
+  text-decoration:underline;
+}
+
+.site-footer p{
+  font-size:13px;
 }
 
 
@@ -495,67 +532,31 @@ header{
 
   <select id="cuisineFilter" onchange="applyFilters()">
 
-    <option value="All">
-      🍛 All Cuisine
-    </option>
-
-    <option value="Gujarati">
-      Gujarati
-    </option>
-
-    <option value="Indian">
-      Indian
-    </option>
-
-    <option value="North Indian">
-      North Indian
-    </option>
-
-    <option value="Multi Cuisine">
-      Multi Cuisine
-    </option>
+    <option value="All">🍛 All Cuisine</option>
+    <option value="Gujarati">Gujarati</option>
+    <option value="Indian">Indian</option>
+    <option value="North Indian">North Indian</option>
+    <option value="Multi Cuisine">Multi Cuisine</option>
 
   </select>
 
 
   <select id="priceFilter" onchange="applyFilters()">
 
-    <option value="All">
-      💰 All Prices
-    </option>
-
-    <option value="₹">
-      ₹ Budget
-    </option>
-
-    <option value="₹₹">
-      ₹₹ Moderate
-    </option>
-
-    <option value="₹₹₹">
-      ₹₹₹ Premium
-    </option>
+    <option value="All">💰 All Prices</option>
+    <option value="₹">₹ Budget</option>
+    <option value="₹₹">₹₹ Moderate</option>
+    <option value="₹₹₹">₹₹₹ Premium</option>
 
   </select>
 
 
   <select id="ratingFilter" onchange="applyFilters()">
 
-    <option value="All">
-      ⭐ All Ratings
-    </option>
-
-    <option value="4.5">
-      4.5+ ⭐
-    </option>
-
-    <option value="4.0">
-      4.0+ ⭐
-    </option>
-
-    <option value="3.5">
-      3.5+ ⭐
-    </option>
+    <option value="All">⭐ All Ratings</option>
+    <option value="4.5">4.5+ ⭐</option>
+    <option value="4.0">4.0+ ⭐</option>
+    <option value="3.5">3.5+ ⭐</option>
 
   </select>
 
@@ -605,78 +606,44 @@ header{
 
     <div class="about-grid">
 
-
       <div class="about-card">
-
-        <div class="about-icon">
-          🔍
-        </div>
-
-        <h3>
-          Easy Restaurant Search
-        </h3>
-
+        <div class="about-icon">🔍</div>
+        <h3>Easy Restaurant Search</h3>
         <p>
           Search restaurants by name or cuisine and quickly find
           food options that match your preference.
         </p>
-
       </div>
 
 
       <div class="about-card">
-
-        <div class="about-icon">
-          🍛
-        </div>
-
-        <h3>
-          Explore Cuisines
-        </h3>
-
+        <div class="about-icon">🍛</div>
+        <h3>Explore Cuisines</h3>
         <p>
           Explore Gujarati, Indian, North Indian and multi-cuisine
           dining options in Ahmedabad.
         </p>
-
       </div>
 
 
       <div class="about-card">
-
-        <div class="about-icon">
-          ⭐
-        </div>
-
-        <h3>
-          Ratings & Filters
-        </h3>
-
+        <div class="about-icon">⭐</div>
+        <h3>Ratings & Filters</h3>
         <p>
           Use cuisine, price and rating filters to find suitable
           restaurants faster.
         </p>
-
       </div>
 
 
       <div class="about-card">
-
-        <div class="about-icon">
-          📍
-        </div>
-
-        <h3>
-          Restaurant Details
-        </h3>
-
+        <div class="about-icon">📍</div>
+        <h3>Restaurant Details</h3>
         <p>
           View restaurant information, address and map location
           before deciding where to eat.
         </p>
-
       </div>
-
 
     </div>
 
@@ -693,6 +660,61 @@ header{
   </div>
 
 </section>
+
+
+<!-- ==========================================
+     FOOTER
+     ========================================== -->
+
+<footer class="site-footer">
+
+  <div class="footer-links">
+
+    <button onclick="openLegal('about')">
+      About Us
+    </button>
+
+    <button onclick="openLegal('privacy')">
+      Privacy Policy
+    </button>
+
+    <button onclick="openLegal('terms')">
+      Terms & Conditions
+    </button>
+
+    <button onclick="openLegal('contact')">
+      Contact Us
+    </button>
+
+  </div>
+
+  <p>
+    © 2026 Ahmedabad Eats. All rights reserved.
+  </p>
+
+</footer>
+
+
+<!-- ==========================================
+     LEGAL MODAL
+     ========================================== -->
+
+<div id="legal-modal" class="modal">
+
+  <div class="modal-content">
+
+    <button
+      class="close-btn"
+      onclick="closeLegal()"
+    >
+      &times;
+    </button>
+
+    <div id="legal-content"></div>
+
+  </div>
+
+</div>
 
 
 <!-- ==========================================
@@ -779,9 +801,7 @@ header{
     "
   >
 
-    <h2>
-      Your Cart
-    </h2>
+    <h2>Your Cart</h2>
 
     <button
       class="close-btn"
@@ -794,10 +814,7 @@ header{
   </div>
 
 
-  <div
-    id="cart-items"
-    class="cart-items"
-  >
+  <div id="cart-items" class="cart-items">
 
     <p>
       Your cart is empty.
@@ -1121,37 +1138,27 @@ let cart=[];
 
 function displayRestaurants(data){
 
-  const list =
-    document.getElementById("restaurant-list");
+  const list=document.getElementById("restaurant-list");
 
   list.innerHTML="";
-
 
   if(!data.length){
 
     list.innerHTML=`
       <div class="no-results">
-
         <h2>😔 No restaurant found</h2>
-
-        <p>
-          Try changing your search or filters.
-        </p>
-
+        <p>Try changing your search or filters.</p>
       </div>
     `;
 
     return;
   }
 
-
   data.forEach(rest=>{
 
-    const card =
-      document.createElement("div");
+    const card=document.createElement("div");
 
     card.className="card";
-
 
     card.innerHTML=`
 
@@ -1163,9 +1170,7 @@ function displayRestaurants(data){
 
       <div class="card-info">
 
-        <h2>
-          ${rest.name}
-        </h2>
+        <h2>${rest.name}</h2>
 
         <div class="cuisine">
           ${rest.cuisine}
@@ -1182,7 +1187,6 @@ function displayRestaurants(data){
           💰 ${rest.price}
 
         </div>
-
 
         <div class="card-bottom">
 
@@ -1209,7 +1213,6 @@ function displayRestaurants(data){
       </div>
     `;
 
-
     list.appendChild(card);
 
   });
@@ -1223,66 +1226,52 @@ function displayRestaurants(data){
 
 function applyFilters(){
 
-  const search =
+  const search=
     document.getElementById("search")
     .value
     .toLowerCase()
     .trim();
 
+  const cuisine=
+    document.getElementById("cuisineFilter").value;
 
-  const cuisine =
-    document.getElementById("cuisineFilter")
-    .value;
+  const price=
+    document.getElementById("priceFilter").value;
 
+  const rating=
+    document.getElementById("ratingFilter").value;
 
-  const price =
-    document.getElementById("priceFilter")
-    .value;
-
-
-  const rating =
-    document.getElementById("ratingFilter")
-    .value;
-
-
-  const minRating =
+  const minRating=
     rating==="All"
       ? 0
       : parseFloat(rating);
 
+  const filtered=restaurants.filter(r=>{
 
-  const filtered =
-    restaurants.filter(r=>{
+    const searchMatch=
+      !search ||
+      r.name.toLowerCase().includes(search) ||
+      r.cuisine.toLowerCase().includes(search);
 
-      const searchMatch =
-        !search ||
-        r.name.toLowerCase().includes(search) ||
-        r.cuisine.toLowerCase().includes(search);
+    const cuisineMatch=
+      cuisine==="All" ||
+      r.cuisine===cuisine;
 
+    const priceMatch=
+      price==="All" ||
+      r.price===price;
 
-      const cuisineMatch =
-        cuisine==="All" ||
-        r.cuisine===cuisine;
+    const ratingMatch=
+      r.rating>=minRating;
 
+    return(
+      searchMatch &&
+      cuisineMatch &&
+      priceMatch &&
+      ratingMatch
+    );
 
-      const priceMatch =
-        price==="All" ||
-        r.price===price;
-
-
-      const ratingMatch =
-        r.rating>=minRating;
-
-
-      return (
-        searchMatch &&
-        cuisineMatch &&
-        priceMatch &&
-        ratingMatch
-      );
-
-    });
-
+  });
 
   displayRestaurants(filtered);
 
@@ -1296,11 +1285,8 @@ function applyFilters(){
 function resetFilters(){
 
   document.getElementById("search").value="";
-
   document.getElementById("cuisineFilter").value="All";
-
   document.getElementById("priceFilter").value="All";
-
   document.getElementById("ratingFilter").value="All";
 
   displayRestaurants(restaurants);
@@ -1314,43 +1300,28 @@ function resetFilters(){
 
 function showMenu(id){
 
-  const r =
-    restaurants.find(x=>x.id===id);
+  const r=restaurants.find(x=>x.id===id);
 
+  if(!r)return;
 
-  if(!r) return;
-
-
-  document.getElementById(
-    "modal-rest-name"
-  ).textContent =
+  document.getElementById("modal-rest-name").textContent=
     r.name+" Menu";
 
-
-  const box =
-    document.getElementById(
-      "modal-menu-items"
-    );
-
+  const box=document.getElementById("modal-menu-items");
 
   box.innerHTML="";
 
-
   r.menu.forEach(([name,price])=>{
 
-    const row =
-      document.createElement("div");
+    const row=document.createElement("div");
 
     row.className="menu-item";
-
 
     row.innerHTML=`
 
       <div>
 
-        <strong>
-          ${name}
-        </strong>
+        <strong>${name}</strong>
 
         <br>
 
@@ -1373,24 +1344,18 @@ function showMenu(id){
 
     `;
 
-
     box.appendChild(row);
 
   });
 
-
-  document.getElementById(
-    "menu-modal"
-  ).style.display="flex";
+  document.getElementById("menu-modal").style.display="flex";
 
 }
 
 
 function closeMenu(){
 
-  document.getElementById(
-    "menu-modal"
-  ).style.display="none";
+  document.getElementById("menu-modal").style.display="none";
 
 }
 
@@ -1401,57 +1366,33 @@ function closeMenu(){
 
 function showDetails(id){
 
-  const r =
-    restaurants.find(x=>x.id===id);
+  const r=restaurants.find(x=>x.id===id);
 
+  if(!r)return;
 
-  if(!r) return;
+  document.getElementById("detail-rest-name").textContent=r.name;
 
-
-  document.getElementById(
-    "detail-rest-name"
-  ).textContent =
-    r.name;
-
-
-  document.getElementById(
-    "detail-rest-address"
-  ).textContent =
+  document.getElementById("detail-rest-address").textContent=
     "📍 "+r.address;
 
-
-  document.getElementById(
-    "detail-rest-phone"
-  ).textContent =
+  document.getElementById("detail-rest-phone").textContent=
     r.phone
       ? "📞 "+r.phone
       : "📞 Contact details coming soon";
 
-
-  document.getElementById(
-    "detail-rest-map"
-  ).src =
-    "https://www.google.com/maps?q="
-    +
-    encodeURIComponent(
-      r.name+", Ahmedabad"
-    )
-    +
+  document.getElementById("detail-rest-map").src=
+    "https://www.google.com/maps?q="+
+    encodeURIComponent(r.name+", Ahmedabad")+
     "&output=embed";
 
-
-  document.getElementById(
-    "details-modal"
-  ).style.display="flex";
+  document.getElementById("details-modal").style.display="flex";
 
 }
 
 
 function closeDetails(){
 
-  document.getElementById(
-    "details-modal"
-  ).style.display="none";
+  document.getElementById("details-modal").style.display="none";
 
 }
 
@@ -1460,18 +1401,13 @@ function closeDetails(){
 // CART
 // ==========================================
 
-function addToCart(
-  restaurant,
-  item,
-  price
-){
+function addToCart(restaurant,item,price){
 
   cart.push({
     restaurant,
     item,
     price
   });
-
 
   updateCart();
 
@@ -1480,72 +1416,46 @@ function addToCart(
 
 function updateCart(){
 
-  document.getElementById(
-    "cart-count"
-  ).textContent =
-    cart.length;
+  document.getElementById("cart-count").textContent=cart.length;
 
-
-  const box =
-    document.getElementById(
-      "cart-items"
-    );
-
+  const box=document.getElementById("cart-items");
 
   if(!cart.length){
 
-    box.innerHTML=
-      "<p>Your cart is empty.</p>";
+    box.innerHTML="<p>Your cart is empty.</p>";
 
-
-    document.getElementById(
-      "cart-total"
-    ).textContent="0";
-
+    document.getElementById("cart-total").textContent="0";
 
     return;
   }
 
-
   box.innerHTML="";
 
-
   let total=0;
-
 
   cart.forEach((x,i)=>{
 
     total+=x.price;
 
+    const row=document.createElement("div");
 
-    const row =
-      document.createElement("div");
-
-
-    row.className=
-      "cart-item-row";
-
+    row.className="cart-item-row";
 
     row.innerHTML=`
 
       <div>
 
-        <strong>
-          ${x.item}
-        </strong>
+        <strong>${x.item}</strong>
 
         <br>
 
-        <small>
-          ${x.restaurant}
-        </small>
+        <small>${x.restaurant}</small>
 
         <br>
 
         ₹${x.price}
 
       </div>
-
 
       <button
         onclick="removeFromCart(${i})"
@@ -1563,16 +1473,11 @@ function updateCart(){
 
     `;
 
-
     box.appendChild(row);
 
   });
 
-
-  document.getElementById(
-    "cart-total"
-  ).textContent =
-    total;
+  document.getElementById("cart-total").textContent=total;
 
 }
 
@@ -1588,9 +1493,8 @@ function removeFromCart(i){
 
 function toggleCart(){
 
-  document.getElementById(
-    "cart-drawer"
-  ).classList.toggle("active");
+  document.getElementById("cart-drawer")
+    .classList.toggle("active");
 
 }
 
@@ -1599,17 +1503,191 @@ function checkout(){
 
   if(!cart.length){
 
-    alert(
-      "Your cart is empty."
-    );
+    alert("Your cart is empty.");
 
     return;
   }
 
-
   alert(
     "Checkout system is ready for payment/order integration."
   );
+
+}
+
+
+// ==========================================
+// LEGAL PAGES
+// ==========================================
+
+function openLegal(type){
+
+  const content=
+    document.getElementById("legal-content");
+
+
+  if(type==="about"){
+
+    content.innerHTML=`
+
+      <h2>About Ahmedabad Eats</h2>
+
+      <p style="margin-top:15px;line-height:1.8;color:#cbd5e1">
+
+        Ahmedabad Eats is a restaurant discovery platform
+        created to help food lovers explore restaurants,
+        cuisines, menus and dining options across Ahmedabad.
+
+      </p>
+
+      <p style="margin-top:12px;line-height:1.8;color:#cbd5e1">
+
+        Our goal is to make discovering Ahmedabad's food scene
+        simple, convenient and enjoyable.
+
+      </p>
+
+    `;
+
+  }
+
+
+  else if(type==="privacy"){
+
+    content.innerHTML=`
+
+      <h2>Privacy Policy</h2>
+
+      <p style="margin-top:15px;line-height:1.8;color:#cbd5e1">
+
+        Ahmedabad Eats respects your privacy. This website may
+        collect limited information necessary to operate,
+        maintain and improve the website.
+
+      </p>
+
+      <p style="margin-top:12px;line-height:1.8;color:#cbd5e1">
+
+        We may use cookies and similar technologies to understand
+        website usage and improve the user experience.
+
+      </p>
+
+      <p style="margin-top:12px;line-height:1.8;color:#cbd5e1">
+
+        If advertising services are used on this website,
+        third-party providers may use cookies or similar
+        technologies in accordance with their own policies.
+
+      </p>
+
+      <p style="margin-top:12px;line-height:1.8;color:#cbd5e1">
+
+        If you contact us by email or phone, the information
+        you provide may be used only to respond to your request.
+
+      </p>
+
+      <p style="margin-top:12px;line-height:1.8;color:#cbd5e1">
+
+        Contact:
+        bhaylugohil376@gmail.com
+
+      </p>
+
+    `;
+
+  }
+
+
+  else if(type==="terms"){
+
+    content.innerHTML=`
+
+      <h2>Terms & Conditions</h2>
+
+      <p style="margin-top:15px;line-height:1.8;color:#cbd5e1">
+
+        Ahmedabad Eats provides restaurant information for
+        general informational and discovery purposes.
+
+      </p>
+
+      <p style="margin-top:12px;line-height:1.8;color:#cbd5e1">
+
+        Restaurant information, prices, menus, ratings,
+        addresses and opening hours may change.
+
+      </p>
+
+      <p style="margin-top:12px;line-height:1.8;color:#cbd5e1">
+
+        Users should verify important information directly
+        with the restaurant before visiting or placing an order.
+
+      </p>
+
+      <p style="margin-top:12px;line-height:1.8;color:#cbd5e1">
+
+        Ahmedabad Eats is not responsible for changes made by
+        restaurants or third-party services.
+
+      </p>
+
+    `;
+
+  }
+
+
+  else if(type==="contact"){
+
+    content.innerHTML=`
+
+      <h2>Contact Us</h2>
+
+      <p style="margin-top:15px;line-height:1.8;color:#cbd5e1">
+
+        For questions, corrections, restaurant information
+        or other enquiries, contact Ahmedabad Eats.
+
+      </p>
+
+      <p style="margin-top:15px;line-height:1.8;color:#cbd5e1">
+
+        📧 Email:
+        <a
+          href="mailto:bhaylugohil376@gmail.com"
+          style="color:#38bdf8"
+        >
+          bhaylugohil376@gmail.com
+        </a>
+
+      </p>
+
+      <p style="margin-top:12px;line-height:1.8;color:#cbd5e1">
+
+        📞 Phone:
+        <a
+          href="tel:7043636973"
+          style="color:#38bdf8"
+        >
+          7043636973
+        </a>
+
+      </p>
+
+    `;
+
+  }
+
+
+  document.getElementById("legal-modal").style.display="flex";
+
+}
+
+
+function closeLegal(){
+
+  document.getElementById("legal-modal").style.display="none";
 
 }
 
@@ -1636,6 +1714,16 @@ window.onclick=function(e){
   ){
 
     closeDetails();
+
+  }
+
+
+  if(
+    e.target===
+    document.getElementById("legal-modal")
+  ){
+
+    closeLegal();
 
   }
 
