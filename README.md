@@ -1,6 +1,6 @@
-# ahmedabad-eats
-ahmedabad-eats
-# 🍴 Ahmedabad Eats
+
+
+#  Ahmedabad Eats
 
 ## Discover. Explore. Enjoy.
 
@@ -59,17 +59,5 @@ Clean layout, restaurant cards and responsive design provide an easy browsing ex
 
 **Ahmedabad Eats:**
 
-https://ahmedabad-eats.vercel.app/
+https://ahmedabad-eats.vercel.app
 
----
-
-## 📁 Project Structure
-
-```text
-ahmedabad-eats/
-│
-├── index.html
-├── style.css
-├── script.js
-├── logo.png
-└── README.md
