@@ -1,7 +1,7 @@
-/* =====================================================
-   AHMEDABAD EATS
-   MAIN STYLESHEET
-   ===================================================== */
+/* ======================================================
+   AHMEDABAD EATS - STYLE.CSS
+   Restaurant Discovery Website
+====================================================== */
 
 * {
   box-sizing: border-box;
@@ -21,21 +21,14 @@ body {
   line-height: 1.6;
 }
 
-button,
-input,
-select {
-  font: inherit;
-}
-
-
-/* =====================================================
+/* ======================================================
    HEADER
-   ===================================================== */
+====================================================== */
 
 .site-header {
-  width: min(1200px, calc(100% - 30px));
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 22px 0;
+  padding: 22px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,12 +47,12 @@ select {
 
 .cart-btn {
   border: 0;
-  background: #38bdf8;
-  color: #082f49;
-  padding: 11px 17px;
   border-radius: 9px;
-  cursor: pointer;
+  padding: 11px 17px;
+  background: #38bdf8;
+  color: #0f172a;
   font-weight: 700;
+  cursor: pointer;
   transition: 0.2s ease;
 }
 
@@ -67,79 +60,77 @@ select {
   transform: translateY(-2px);
 }
 
-
-/* =====================================================
+/* ======================================================
    HERO
-   ===================================================== */
+====================================================== */
 
-.hero {
-  width: min(1200px, calc(100% - 30px));
+.hero-section {
+  max-width: 1200px;
   margin: 10px auto 30px;
-  padding: 55px 30px;
+  padding: 45px 25px;
   border: 1px solid #334155;
-  border-radius: 20px;
-  background: #172554;
+  border-radius: 18px;
+  background: #1e293b;
+  text-align: center;
 }
 
 .hero-content {
   max-width: 850px;
+  margin: auto;
 }
 
 .hero-badge,
+.section-badge,
 .about-badge {
   display: inline-block;
-  padding: 7px 12px;
-  border-radius: 20px;
   background: #f59e0b;
   color: #111827;
+  padding: 7px 13px;
+  border-radius: 20px;
   font-size: 12px;
   font-weight: 800;
   margin-bottom: 15px;
 }
 
-.hero h1 {
-  font-size: clamp(30px, 5vw, 52px);
-  line-height: 1.15;
-  margin-bottom: 18px;
+.hero-section h1 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 15px;
 }
 
-.hero p {
-  max-width: 800px;
+.hero-section p {
   color: #cbd5e1;
   font-size: 17px;
+  max-width: 760px;
+  margin: auto;
 }
 
+/* ======================================================
+   FILTERS
+====================================================== */
 
-/* =====================================================
-   SEARCH / FILTERS
-   ===================================================== */
-
-.search-section {
-  width: min(1200px, calc(100% - 30px));
-  margin: 0 auto 35px;
+.filter-section {
+  max-width: 1200px;
+  margin: 0 auto 28px;
 }
 
 .filters {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr auto;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr auto;
   gap: 10px;
 }
 
 .filters input,
 .filters select,
 .filters button {
-  min-height: 46px;
-  border-radius: 9px;
-  border: 1px solid #334155;
-  outline: none;
-}
-
-.filters input,
-.filters select {
   width: 100%;
-  padding: 10px 13px;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid #334155;
+  border-radius: 8px;
   background: #1e293b;
   color: #fff;
+  outline: none;
 }
 
 .filters input::placeholder {
@@ -151,80 +142,55 @@ select {
   border-color: #38bdf8;
 }
 
-.filters button {
-  padding: 10px 17px;
-  background: #f59e0b;
-  color: #111827;
-  font-weight: 700;
+.reset-btn {
+  background: #f59e0b !important;
+  color: #111827 !important;
+  font-weight: 800;
   cursor: pointer;
 }
 
-.filters button:hover {
-  background: #fbbf24;
-}
-
-
-/* =====================================================
-   SECTION HEADINGS
-   ===================================================== */
-
-.restaurant-section {
-  width: min(1200px, calc(100% - 30px));
-  margin: 0 auto;
-}
-
-.section-heading {
-  margin-bottom: 22px;
-}
-
-.section-heading span {
-  color: #38bdf8;
-  font-size: 13px;
-  font-weight: 800;
-}
-
-.section-heading h2 {
-  margin: 5px 0;
-  font-size: 30px;
-}
-
-.section-heading p {
-  color: #94a3b8;
-}
-
-
-/* =====================================================
+/* ======================================================
    RESTAURANT GRID
-   ===================================================== */
+====================================================== */
 
-#restaurant-list {
+.restaurant-grid {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(280px, 1fr)
+  );
   gap: 20px;
 }
 
+/* ======================================================
+   RESTAURANT CARD
+====================================================== */
+
 .card {
-  overflow: hidden;
   background: #1e293b;
   border: 1px solid #334155;
-  border-radius: 15px;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.25s ease,
+              box-shadow 0.25s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
 .card img {
   width: 100%;
-  height: 210px;
-  display: block;
+  height: 195px;
   object-fit: cover;
+  display: block;
 }
 
 .card-info {
-  padding: 17px;
+  padding: 16px;
 }
 
 .card-info h2 {
@@ -234,20 +200,22 @@ select {
 }
 
 .cuisine {
-  color: #38bdf8;
+  color: #94a3b8;
   font-size: 14px;
-  margin-bottom: 9px;
+  margin-bottom: 8px;
 }
 
 .details {
   color: #cbd5e1;
   font-size: 14px;
-  margin-bottom: 15px;
+  line-height: 1.8;
+  margin-bottom: 13px;
 }
 
 .card-bottom {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 7px;
 }
 
@@ -258,16 +226,14 @@ select {
   border-radius: 6px;
   font-size: 13px;
   font-weight: 700;
-  margin-right: auto;
 }
 
 .btn-details,
 .btn-menu {
   border: 0;
   padding: 8px 11px;
-  border-radius: 7px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 13px;
   font-weight: 700;
 }
 
@@ -276,53 +242,84 @@ select {
   color: #fff;
 }
 
-.btn-details:hover {
-  background: #475569;
-}
-
 .btn-menu {
   background: #eab308;
   color: #111827;
 }
 
-.btn-menu:hover {
-  background: #facc15;
-}
+/* ======================================================
+   INFORMATION SECTION
+====================================================== */
 
-
-/* =====================================================
-   NO RESULTS
-   ===================================================== */
-
-.no-results {
-  grid-column: 1 / -1;
-  padding: 60px 20px;
-  text-align: center;
+.information-section {
+  max-width: 1200px;
+  margin: 60px auto 30px;
+  padding: 35px;
   background: #1e293b;
   border: 1px solid #334155;
-  border-radius: 15px;
+  border-radius: 18px;
 }
 
-.no-results h2 {
+.information-content {
+  max-width: 1050px;
+  margin: auto;
+}
+
+.information-content h2,
+.about-content h2 {
+  font-size: 30px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.information-content > p,
+.about-content > p {
+  color: #cbd5e1;
+  margin-bottom: 13px;
+  line-height: 1.8;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.info-card {
+  padding: 20px;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  background: #0f172a;
+}
+
+.info-icon {
+  font-size: 28px;
   margin-bottom: 8px;
 }
 
-.no-results p {
-  color: #94a3b8;
+.info-card h3 {
+  font-size: 17px;
+  margin-bottom: 7px;
 }
 
+.info-card p {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+}
 
-/* =====================================================
+/* ======================================================
    ABOUT
-   ===================================================== */
+====================================================== */
 
 .about-section {
-  width: min(1200px, calc(100% - 30px));
-  margin: 70px auto 35px;
-  padding: 40px 30px;
+  max-width: 1200px;
+  margin: 30px auto 45px;
+  padding: 35px;
   background: #1e293b;
   border: 1px solid #334155;
-  border-radius: 20px;
+  border-radius: 18px;
 }
 
 .about-content {
@@ -330,50 +327,9 @@ select {
   margin: auto;
 }
 
-.about-content h2 {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-
-.about-content > p {
-  color: #cbd5e1;
-  margin-bottom: 14px;
-  line-height: 1.85;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-top: 28px;
-}
-
-.about-card {
-  padding: 20px;
-  background: #0f172a;
-  border: 1px solid #334155;
-  border-radius: 12px;
-}
-
-.about-icon {
-  font-size: 28px;
-  margin-bottom: 8px;
-}
-
-.about-card h3 {
-  font-size: 17px;
-  margin-bottom: 7px;
-}
-
-.about-card p {
-  color: #94a3b8;
-  font-size: 14px;
-}
-
-
-/* =====================================================
+/* ======================================================
    MODALS
-   ===================================================== */
+====================================================== */
 
 .modal {
   display: none;
@@ -388,13 +344,19 @@ select {
 
 .modal-content {
   position: relative;
-  width: min(650px, 100%);
+  width: 92%;
+  max-width: 650px;
   max-height: 88vh;
   overflow-y: auto;
   padding: 25px;
-  border-radius: 15px;
+  border: 1px solid #334155;
+  border-radius: 14px;
   background: #1e293b;
-  border: 1px solid #475569;
+}
+
+.modal-content h2 {
+  padding-right: 35px;
+  line-height: 1.3;
 }
 
 .close-btn {
@@ -403,9 +365,8 @@ select {
   right: 13px;
   border: 0;
   background: transparent;
-  color: #cbd5e1;
-  font-size: 28px;
-  line-height: 1;
+  color: #94a3b8;
+  font-size: 29px;
   cursor: pointer;
 }
 
@@ -413,116 +374,119 @@ select {
   color: #fff;
 }
 
-.modal-content h2 {
-  padding-right: 35px;
-  margin-bottom: 15px;
-}
-
 .modal-divider {
   height: 1px;
   background: #334155;
-  margin-bottom: 5px;
+  margin: 14px 0;
 }
 
-
-/* =====================================================
+/* ======================================================
    RESTAURANT DETAILS
-   ===================================================== */
+====================================================== */
 
 .details-content {
-  max-width: 720px;
+  max-width: 750px;
 }
 
-#detail-rest-description {
-  color: #cbd5e1;
-  line-height: 1.8;
-  margin: 10px 0 20px;
-}
-
-#detail-rest-description h3 {
-  color: #f8fafc;
-  margin: 20px 0 8px;
-}
-
-#detail-rest-description p {
-  margin-bottom: 12px;
-}
-
-.detail-box {
+.restaurant-meta {
+  margin: 18px 0;
   padding: 15px;
-  margin-bottom: 20px;
+  border: 1px solid #334155;
   border-radius: 10px;
   background: #0f172a;
-  border: 1px solid #334155;
 }
 
-.detail-box p {
+.restaurant-meta p {
   color: #cbd5e1;
-  margin: 7px 0;
+  margin: 6px 0;
 }
 
-#detail-rest-map {
+.description-box {
+  margin-top: 20px;
+  padding: 20px;
+  border-left: 4px solid #f59e0b;
+  border-radius: 8px;
+  background: #0f172a;
+}
+
+.description-box h3 {
+  font-size: 21px;
+  margin-bottom: 15px;
+}
+
+.description-box p {
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.85;
+}
+
+.description-box h4 {
+  color: #f8fafc;
+  margin: 18px 0 8px;
+  font-size: 17px;
+}
+
+.map-section {
+  margin-top: 22px;
+}
+
+.map-section h3 {
+  margin-bottom: 10px;
+}
+
+.map-section iframe {
   display: block;
-  width: 100%;
-  border: 0;
-  border-radius: 10px;
-  margin-top: 10px;
 }
 
-
-/* =====================================================
+/* ======================================================
    MENU
-   ===================================================== */
+====================================================== */
 
 .menu-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
   padding: 13px 0;
   border-bottom: 1px solid #334155;
 }
 
 .menu-item strong {
-  color: #f8fafc;
+  font-size: 15px;
 }
 
-.menu-item span {
+.menu-price {
   color: #94a3b8;
+  font-size: 14px;
 }
 
 .add-btn {
   flex-shrink: 0;
   border: 0;
-  padding: 7px 12px;
   border-radius: 6px;
+  padding: 7px 12px;
   background: #22c55e;
   color: #fff;
-  cursor: pointer;
   font-weight: 700;
+  cursor: pointer;
 }
 
-.add-btn:hover {
-  background: #16a34a;
-}
-
-
-/* =====================================================
+/* ======================================================
    CART DRAWER
-   ===================================================== */
+====================================================== */
 
 .drawer {
   position: fixed;
   top: 0;
-  right: -380px;
+  right: -370px;
   z-index: 2000;
-  width: 350px;
+  width: 340px;
   height: 100vh;
   padding: 20px;
+  background: #1e293b;
+  border-left: 1px solid #334155;
   display: flex;
   flex-direction: column;
-  background: #1e293b;
-  border-left: 1px solid #475569;
   transition: right 0.3s ease;
 }
 
@@ -531,13 +495,16 @@ select {
 }
 
 .drawer-header {
+  position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding-right: 35px;
 }
 
-.drawer-header .close-btn {
-  position: static;
+.drawer-close {
+  top: -5px;
+  right: 0;
 }
 
 .cart-items {
@@ -546,11 +513,16 @@ select {
   margin: 18px 0;
 }
 
+.cart-items > p {
+  color: #94a3b8;
+}
+
 .cart-item-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 10px;
-  padding: 12px 0;
+  padding: 11px 0;
   border-bottom: 1px solid #334155;
 }
 
@@ -558,13 +530,12 @@ select {
   color: #94a3b8;
 }
 
-.cart-remove {
+.remove-cart-btn {
   border: 0;
+  border-radius: 5px;
+  padding: 5px 8px;
   background: #ef4444;
   color: #fff;
-  padding: 5px 8px;
-  height: fit-content;
-  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -585,30 +556,47 @@ select {
   cursor: pointer;
 }
 
-.checkout-btn:hover {
-  background: #16a34a;
+/* ======================================================
+   NO RESULTS
+====================================================== */
+
+.no-results {
+  grid-column: 1 / -1;
+  padding: 55px 20px;
+  text-align: center;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  background: #1e293b;
 }
 
+.no-results h2 {
+  margin-bottom: 8px;
+}
 
-/* =====================================================
+.no-results p {
+  color: #94a3b8;
+}
+
+/* ======================================================
    FOOTER
-   ===================================================== */
+====================================================== */
 
 .site-footer {
-  width: min(1200px, calc(100% - 30px));
-  margin: 60px auto 10px;
-  padding: 25px 15px;
-  text-align: center;
+  max-width: 1200px;
+  margin: 40px auto 15px;
+  padding: 25px 20px;
   border-top: 1px solid #334155;
+  text-align: center;
   color: #94a3b8;
 }
 
 .footer-links {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 15px;
+  gap: 15px;
+  margin-bottom: 14px;
 }
 
 .footer-links button {
@@ -616,6 +604,7 @@ select {
   background: transparent;
   color: #38bdf8;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .footer-links button:hover {
@@ -627,39 +616,43 @@ select {
   font-size: 13px;
 }
 
+.footer-note {
+  max-width: 800px;
+  margin: 8px auto 0;
+  color: #64748b;
+}
 
-/* =====================================================
-   MOBILE
-   ===================================================== */
+/* ======================================================
+   RESPONSIVE - TABLET
+====================================================== */
 
 @media (max-width: 950px) {
-
-  #restaurant-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   .filters {
     grid-template-columns: 1fr 1fr;
   }
 
-  .filters input {
-    grid-column: 1 / -1;
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .about-grid {
-    grid-template-columns: 1fr 1fr;
+  .hero-section h1 {
+    font-size: 34px;
   }
 }
 
+/* ======================================================
+   RESPONSIVE - MOBILE
+====================================================== */
 
-@media (max-width: 650px) {
+@media (max-width: 600px) {
 
   body {
-    font-size: 15px;
+    padding: 0 12px;
   }
 
   .site-header {
-    width: calc(100% - 20px);
+    padding: 17px 0;
   }
 
   .logo {
@@ -667,56 +660,51 @@ select {
   }
 
   .cart-btn {
-    padding: 9px 12px;
+    padding: 9px 11px;
     font-size: 13px;
   }
 
-  .hero {
-    width: calc(100% - 20px);
-    padding: 35px 20px;
-    margin-top: 5px;
+  .hero-section {
+    margin-top: 8px;
+    padding: 30px 17px;
   }
 
-  .hero h1 {
-    font-size: 32px;
+  .hero-section h1 {
+    font-size: 27px;
   }
 
-  .hero p {
+  .hero-section p {
     font-size: 15px;
   }
 
-  .search-section,
-  .restaurant-section,
-  .about-section,
-  .site-footer {
-    width: calc(100% - 20px);
+  .filter-section {
+    margin-bottom: 20px;
   }
 
   .filters {
     grid-template-columns: 1fr;
   }
 
-  .filters input {
-    grid-column: auto;
-  }
-
-  #restaurant-list {
+  .restaurant-grid {
     grid-template-columns: 1fr;
   }
 
   .card img {
-    height: 200px;
+    height: 205px;
   }
 
+  .information-section,
   .about-section {
-    padding: 28px 18px;
+    padding: 25px 17px;
+    margin-top: 35px;
   }
 
+  .information-content h2,
   .about-content h2 {
-    font-size: 25px;
+    font-size: 24px;
   }
 
-  .about-grid {
+  .info-grid {
     grid-template-columns: 1fr;
   }
 
@@ -725,8 +713,18 @@ select {
   }
 
   .modal-content {
-    padding: 20px 15px;
-    max-height: 92vh;
+    width: 96%;
+    padding: 20px 16px;
+    max-height: 90vh;
+  }
+
+  .description-box {
+    padding: 16px;
+  }
+
+  .description-box p {
+    font-size: 14px;
+    line-height: 1.75;
   }
 
   .drawer {
@@ -737,16 +735,8 @@ select {
   .drawer.active {
     right: 0;
   }
-}
 
-
-/* =====================================================
-   ACCESSIBILITY
-   ===================================================== */
-
-button:focus-visible,
-input:focus-visible,
-select:focus-visible {
-  outline: 2px solid #38bdf8;
-  outline-offset: 2px;
+  .card-bottom {
+    flex-wrap: wrap;
+  }
 }
