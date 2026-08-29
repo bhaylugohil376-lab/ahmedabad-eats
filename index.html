@@ -11,14 +11,9 @@
   <meta name="description"
         content="Ahmedabad Eats is a local restaurant discovery guide featuring Gujarati, Indian and multi-cuisine restaurants, menus, dining information, locations and useful restaurant details across Ahmedabad.">
 
-  <meta name="robots"
-        content="index, follow">
-
-  <meta name="author"
-        content="Ahmedabad Eats">
-
-  <meta name="theme-color"
-        content="#0f172a">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Ahmedabad Eats">
+  <meta name="theme-color" content="#0f172a">
 
   <!-- Google AdSense -->
   <script async
@@ -31,10 +26,6 @@
 
 <body>
 
-<!-- ==================================================
-     HEADER
-================================================== -->
-
 <header class="site-header">
 
   <div class="logo">
@@ -45,18 +36,11 @@
     class="cart-btn"
     onclick="toggleCart()"
     aria-label="Open shopping cart">
-
-    🛒 Cart
-    (<span id="cart-count">0</span>)
-
+    🛒 Cart (<span id="cart-count">0</span>)
   </button>
 
 </header>
 
-
-<!-- ==================================================
-     INTRODUCTION
-================================================== -->
 
 <section class="hero-section">
 
@@ -82,9 +66,23 @@
 </section>
 
 
-<!-- ==================================================
-     SEARCH & FILTER
-================================================== -->
+<!-- ================= ADVERTISEMENT ================= -->
+
+<section class="ad-section" aria-label="Advertisement">
+
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-3529915475164293"
+       data-ad-slot="AUTO"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</section>
+
 
 <section class="filter-section">
 
@@ -103,83 +101,42 @@
       onchange="applyFilters()"
       aria-label="Filter by cuisine">
 
-      <option value="All">
-        🍛 All Cuisines
-      </option>
-
-      <option value="Gujarati">
-        Gujarati
-      </option>
-
-      <option value="Indian">
-        Indian
-      </option>
-
-      <option value="North Indian">
-        North Indian
-      </option>
-
-      <option value="Multi Cuisine">
-        Multi Cuisine
-      </option>
+      <option value="All">🍛 All Cuisines</option>
+      <option value="Gujarati">Gujarati</option>
+      <option value="Indian">Indian</option>
+      <option value="North Indian">North Indian</option>
+      <option value="Multi Cuisine">Multi Cuisine</option>
 
     </select>
-
 
     <select
       id="priceFilter"
       onchange="applyFilters()"
       aria-label="Filter by price">
 
-      <option value="All">
-        💰 All Prices
-      </option>
-
-      <option value="₹">
-        ₹ Budget
-      </option>
-
-      <option value="₹₹">
-        ₹₹ Moderate
-      </option>
-
-      <option value="₹₹₹">
-        ₹₹₹ Premium
-      </option>
+      <option value="All">💰 All Prices</option>
+      <option value="₹">₹ Budget</option>
+      <option value="₹₹">₹₹ Moderate</option>
+      <option value="₹₹₹">₹₹₹ Premium</option>
 
     </select>
-
 
     <select
       id="ratingFilter"
       onchange="applyFilters()"
       aria-label="Filter by rating">
 
-      <option value="All">
-        ⭐ All Ratings
-      </option>
-
-      <option value="4.5">
-        4.5+ ⭐
-      </option>
-
-      <option value="4.0">
-        4.0+ ⭐
-      </option>
-
-      <option value="3.5">
-        3.5+ ⭐
-      </option>
+      <option value="All">⭐ All Ratings</option>
+      <option value="4.5">4.5+ ⭐</option>
+      <option value="4.0">4.0+ ⭐</option>
+      <option value="3.5">3.5+ ⭐</option>
 
     </select>
-
 
     <button
       class="reset-btn"
       onclick="resetFilters()">
-
       🔄 Reset
-
     </button>
 
   </div>
@@ -187,25 +144,34 @@
 </section>
 
 
-<!-- ==================================================
-     RESTAURANT CONTENT
-================================================== -->
-
 <main>
 
   <section
     id="restaurant-list"
     class="restaurant-grid"
     aria-label="Restaurant listings">
-
   </section>
 
 </main>
 
 
-<!-- ==================================================
-     INFORMATION SECTION
-================================================== -->
+<!-- ================= ADVERTISEMENT ================= -->
+
+<section class="ad-section" aria-label="Advertisement">
+
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-3529915475164293"
+       data-ad-slot="AUTO"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</section>
+
 
 <section class="information-section">
 
@@ -239,66 +205,39 @@
     <div class="info-grid">
 
       <article class="info-card">
-
         <div class="info-icon">🔎</div>
-
-        <h3>
-          Search Restaurants
-        </h3>
-
+        <h3>Search Restaurants</h3>
         <p>
           Find restaurants by their name or cuisine using
           the search box.
         </p>
-
       </article>
 
-
       <article class="info-card">
-
         <div class="info-icon">🍛</div>
-
-        <h3>
-          Compare Cuisines
-        </h3>
-
+        <h3>Compare Cuisines</h3>
         <p>
           Explore Gujarati, Indian and multi-cuisine
           dining options.
         </p>
-
       </article>
 
-
       <article class="info-card">
-
         <div class="info-icon">💰</div>
-
-        <h3>
-          Check Price Range
-        </h3>
-
+        <h3>Check Price Range</h3>
         <p>
           Use the price filter to browse budget,
           moderate and premium listings.
         </p>
-
       </article>
 
-
       <article class="info-card">
-
         <div class="info-icon">📍</div>
-
-        <h3>
-          View Location
-        </h3>
-
+        <h3>View Location</h3>
         <p>
           Open restaurant details and view the location
           using the integrated map.
         </p>
-
       </article>
 
     </div>
@@ -307,10 +246,6 @@
 
 </section>
 
-
-<!-- ==================================================
-     ABOUT AHMEDABAD EATS
-================================================== -->
 
 <section class="about-section">
 
@@ -354,9 +289,23 @@
 </section>
 
 
-<!-- ==================================================
-     MENU MODAL
-================================================== -->
+<!-- ================= ADVERTISEMENT ================= -->
+
+<section class="ad-section" aria-label="Advertisement">
+
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-3529915475164293"
+       data-ad-slot="AUTO"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</section>
+
 
 <div
   id="menu-modal"
@@ -371,9 +320,7 @@
       class="close-btn"
       onclick="closeMenu()"
       aria-label="Close menu">
-
       &times;
-
     </button>
 
     <h2 id="modal-rest-name">
@@ -389,10 +336,6 @@
 </div>
 
 
-<!-- ==================================================
-     RESTAURANT DETAILS MODAL
-================================================== -->
-
 <div
   id="details-modal"
   class="modal"
@@ -406,35 +349,23 @@
       class="close-btn"
       onclick="closeDetails()"
       aria-label="Close restaurant details">
-
       &times;
-
     </button>
-
 
     <h2 id="detail-rest-name">
       Restaurant Details
     </h2>
 
-
     <div class="restaurant-meta">
 
       <p id="detail-rest-cuisine"></p>
-
       <p id="detail-rest-rating"></p>
-
       <p id="detail-rest-time"></p>
-
       <p id="detail-rest-price"></p>
-
       <p id="detail-rest-address"></p>
-
       <p id="detail-rest-phone"></p>
 
     </div>
-
-
-    <!-- Detailed content inserted by script.js -->
 
     <div class="description-box">
 
@@ -442,11 +373,9 @@
         About This Restaurant
       </h3>
 
-      <div id="detail-rest-description">
-      </div>
+      <div id="detail-rest-description"></div>
 
     </div>
-
 
     <div class="map-section">
 
@@ -471,10 +400,6 @@
 </div>
 
 
-<!-- ==================================================
-     LEGAL / INFORMATION MODAL
-================================================== -->
-
 <div
   id="legal-modal"
   class="modal"
@@ -488,9 +413,7 @@
       class="close-btn"
       onclick="closeLegal()"
       aria-label="Close information">
-
       &times;
-
     </button>
 
     <div id="legal-content"></div>
@@ -499,10 +422,6 @@
 
 </div>
 
-
-<!-- ==================================================
-     CART DRAWER
-================================================== -->
 
 <aside
   id="cart-drawer"
@@ -519,13 +438,10 @@
       class="close-btn drawer-close"
       onclick="toggleCart()"
       aria-label="Close cart">
-
       &times;
-
     </button>
 
   </div>
-
 
   <div
     id="cart-items"
@@ -537,7 +453,6 @@
 
   </div>
 
-
   <div class="cart-total">
 
     <strong>
@@ -547,21 +462,14 @@
 
   </div>
 
-
   <button
     class="checkout-btn"
     onclick="checkout()">
-
     Proceed to Checkout
-
   </button>
 
 </aside>
 
-
-<!-- ==================================================
-     FOOTER
-================================================== -->
 
 <footer class="site-footer">
 
@@ -585,7 +493,6 @@
 
   </div>
 
-
   <p>
     © 2026 Ahmedabad Eats. All rights reserved.
   </p>
@@ -598,10 +505,6 @@
 
 </footer>
 
-
-<!-- ==================================================
-     JAVASCRIPT
-================================================== -->
 
 <script src="script.js"></script>
 
